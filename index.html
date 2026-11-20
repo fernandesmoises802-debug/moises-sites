@@ -10,18 +10,18 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:#0A0A0A;color:#111;line-height:1.55}
 img{display:block;width:100%}
-#intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s;overflow:hidden;cursor:pointer}
-#intro.hide{opacity:0;visibility:hidden}
-#intro .bigM{font-family:'Playfair Display',serif;font-size:150px;line-height:1;color:#FFC107;font-weight:800;animation:netflixM 2.2s ease forwards;text-shadow:0 0 60px rgba(255,193,7,.6)}
-#intro .fullName{font-family:'Playfair Display',serif;color:#fff;font-size:36px;letter-spacing:6px;margin-top:5px;opacity:0;animation:showName 1s ease 2.3s forwards}
+/* INTRO CORRIGIDA - SOME DE VERDADE */
+#intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .5s}
+#intro.hide{opacity:0;pointer-events:none;visibility:hidden}
+#intro .bigM{font-family:'Playfair Display',serif;font-size:140px;line-height:1;color:#FFC107;font-weight:800;animation:netflixM 2.2s ease forwards}
+#intro .fullName{font-family:'Playfair Display',serif;color:#fff;font-size:34px;letter-spacing:6px;margin-top:5px;opacity:0;animation:showName 1s ease 2.3s forwards}
 #intro .fullName span{color:#FFC107;font-style:italic;letter-spacing:2px}
 #intro p{color:#888;letter-spacing:4px;font-size:11px;margin-top:10px;opacity:0;animation:showName 1s ease 2.8s forwards}
 #intro .bar{width:200px;height:4px;background:#222;border-radius:99px;margin-top:22px;overflow:hidden}
 #intro .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#FFC107,#25D366);animation:load 7s linear forwards}
 #intro .count{color:#FFC107;font-weight:900;font-size:26px;margin-top:12px}
-#skip{margin-top:18px;background:transparent;border:1px solid #444;color:#aaa;padding:11px 20px;border-radius:99px;font-weight:700}
-#soundBtn{margin-top:10px;background:#FFC107;border:0;padding:10px 18px;border-radius:99px;font-weight:800;font-size:13px}
-@keyframes netflixM{0%{transform:scale(3);opacity:0;letter-spacing:40px}30%{transform:scale(1.4);opacity:1}60%{transform:scale(1);text-shadow:0 0 80px rgba(255,193,7,.9)}100%{transform:scale(.85) translateY(-8px)}}
+#skip{margin-top:18px;background:transparent;border:1px solid #444;color:#fff;padding:12px 22px;border-radius:99px;font-weight:700;font-size:15px}
+@keyframes netflixM{0%{transform:scale(3);opacity:0}30%{transform:scale(1.4);opacity:1}100%{transform:scale(.85)}}
 @keyframes showName{to{opacity:1}}
 @keyframes load{to{width:100%}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -37,7 +37,7 @@ img{display:block;width:100%}
 .hero h1{font-size:38px;line-height:1.05;letter-spacing:-1.5px;margin:18px 0 12px;font-weight:900}
 .hero h1 em{font-family:'Playfair Display',serif;color:#FFC107}
 .hero p{color:#B8B8B8;font-size:16px;max-width:460px;margin:0 auto}
-.btn{display:block;background:#25D366;color:#fff;font-weight:800;font-size:16px;padding:17px;border-radius:99px;text-decoration:none;text-align:center;margin:20px auto;max-width:500px;box-shadow:0 12px 30px rgba(37,211,102,.3)}
+.btn{display:block;background:#25D366;color:#fff;font-weight:800;font-size:16px;padding:17px;border-radius:99px;text-decoration:none;text-align:center;margin:20px auto;max-width:500px;box-shadow:0 12px 30px rgba(37,211,102,.3);cursor:pointer;border:0;width:100%}
 .btn:active{transform:scale(.97)}
 .btn-dark{background:#111;color:#fff;box-shadow:none}
 .hero-stats{display:flex;justify-content:center;margin:22px auto 0;max-width:500px;border-top:1px solid #222;padding:16px 0}
@@ -57,7 +57,7 @@ h2 em{font-family:'Playfair Display',serif;color:#EAB308;font-style:italic}
 .live-box b{font-size:17px}.live-box small{color:#aaa}
 .tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 2px 10px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
 .tabs::-webkit-scrollbar{display:none}
-.tab{border:1.5px solid #E8E5DD;background:#fff;padding:11px 15px;border-radius:99px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;flex-shrink:0;display:flex;align-items:center;gap:6px}
+.tab{border:1.5px solid #E8E5DD;background:#fff;padding:11px 15px;border-radius:99px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;flex-shrink:0}
 .tab.active{background:#111;color:#fff;border-color:#111}
 .preview{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 16px 35px rgba(0,0,0,.08);margin-top:4px;border:1px solid #EFEDE8}
 .preview img{height:230px;object-fit:cover}
@@ -68,7 +68,7 @@ h2 em{font-family:'Playfair Display',serif;color:#EAB308;font-style:italic}
 .card .ico{font-size:26px;margin-bottom:8px}.card b{font-size:15px;display:block;line-height:1.3}.card span{color:#777;font-size:13px;line-height:1.4;display:block;margin-top:4px}
 .pricebox{background:#111;color:#fff;border-radius:24px;padding:26px;text-align:center;position:relative;overflow:hidden}
 .old{color:#999;text-decoration:line-through}.new{font-size:56px;font-weight:900;line-height:1}.new small{font-size:18px}
-.opt{display:flex;justify-content:space-between;align-items:center;background:#F3F2EE;border-radius:14px;padding:13px;margin:10px 0;gap:10px}
+.opt{display:flex;justify-content:space-between;align-items:center;background:#F3F2EE;border-radius:14px;padding:13px;margin:10px 0;gap:10px;cursor:pointer}
 .opt input{width:22px;height:22px;accent-color:#25D366;flex-shrink:0}
 .testi{background:#fff;border-radius:22px;padding:22px;box-shadow:0 10px 30px rgba(0,0,0,.06);min-height:170px;border:1px solid #F0EEE9}
 .testi .stars{color:#FFB800;font-size:20px}
@@ -79,14 +79,12 @@ summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-cont
 details p{color:#666;margin-top:8px}
 .step{display:flex;gap:14px;margin-bottom:16px}
 .num{background:#111;color:#FFC107;width:38px;height:38px;min-width:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
-/* PORTFOLIO */
 .portfolio{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .port-card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #F0EEE9;box-shadow:0 8px 20px rgba(0,0,0,.05)}
 .port-card img{height:140px;object-fit:cover}
 .port-card div{padding:14px}
 .port-card b{font-size:15px;display:block}.port-card span{color:#777;font-size:12px}
 .port-card a{color:#25D366;font-weight:800;font-size:13px;text-decoration:none}
-/* FORMULARIO */
 .form-box{background:#fff;border-radius:22px;padding:22px;border:1px solid #F0EEE9;box-shadow:0 10px 30px rgba(0,0,0,.06)}
 .form-box label{font-weight:700;font-size:13px;display:block;margin:14px 0 6px}
 .form-box input,.form-box select,.form-box textarea{width:100%;padding:14px;border:1.5px solid #E8E5DD;border-radius:12px;font-family:inherit;font-size:15px;outline:none;background:#FAFAF8}
@@ -98,9 +96,11 @@ details p{color:#666;margin-top:8px}
 </style>
 </head>
 <body>
-<div id="intro" onclick="playTudum()"><div class="bigM">M</div><div class="fullName">MOISÉS <span>Sites</span></div><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">7</div><div class="bar"><i></i></div><button id="soundBtn" onclick="playTudum(event)">🔊 ATIVAR SOM TUDUM</button><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
+<div id="intro"><div class="bigM">M</div><div class="fullName">MOISÉS <span>Sites</span></div><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">7</div><div class="bar"><i></i></div><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
+
 <div class="topbar">⚡ <span>SÓ 2 VAGAS ESSA SEMANA</span> • <span id="topClock">--:--:--</span> • São Paulo</div>
 <nav class="nav"><b>Moisés <span>Sites</span></b><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO O MEU →</a></nav>
+
 <header class="hero">
 <div class="pill"><span class="live-dot"></span> <span id="onlineStatus">Online agora</span> • <span id="viewers">12</span> pessoas vendo</div>
 <h1>Seu negócio com cara de <em>empresa grande.</em><br>Pronto amanhã.</h1>
@@ -110,7 +110,9 @@ details p{color:#666;margin-top:8px}
 <div class="hero-stats"><div><b>24h</b><span>ENTREGA</span></div><div><b>4.9 ★</b><span>AVALIAÇÃO</span></div><div><b>R$150</b><span>PREÇO ÚNICO</span></div></div>
 <div class="hero-img"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1000&q=80"></div>
 </header>
+
 <div class="marquee"><div class="marquee-track"><span>BARBEARIA <i>✦</i></span><span>CONFEITARIA <i>✦</i></span><span>SALÃO <i>✦</i></span><span>LANCHONETE <i>✦</i></span><span>LOJA <i>✦</i></span><span>ESTÉTICA <i>✦</i></span><span>BARBEARIA <i>✦</i></span><span>CONFEITARIA <i>✦</i></span><span>SALÃO <i>✦</i></span><span>LANCHONETE <i>✦</i></span><span>LOJA <i>✦</i></span><span>ESTÉTICA <i>✦</i></span></div></div>
+
 <div class="white-section">
 <section class="wrap">
 <div class="live-box"><div><span class="live-dot"></span> <b id="clockBig">--:--:--</b><br><small id="dateBig">São Paulo • Hoje</small></div><div style="text-align:right"><b style="color:#25D366" id="lastOrder">há 4 min</b><br><small>Último pedido</small></div></div>
@@ -144,12 +146,10 @@ details p{color:#666;margin-top:8px}
 <div class="port-card"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80"><div><b>Studio de Beleza</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20ao%20salao">Quero um igual →</a></div></div>
 <div class="port-card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"><div><b>Lanches do Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20lanchonete">Quero um igual →</a></div></div>
 </div>
-<p style="font-size:12px;color:#999;margin-top:10px">* Quando tu fizer os primeiros de verdade, me manda foto que eu troco aqui!</p>
 </section>
 
 <section class="wrap">
 <h2>O que você <em>recebe</em></h2>
-<p class="muted">Tudo incluso, sem pegadinha:</p>
 <div class="grid">
 <div class="card"><div class="ico">📱</div><b>Perfeito no celular</b><span>90% dos clientes veem pelo celular.</span></div>
 <div class="card"><div class="ico">💬</div><b>Botão que vende</b><span>Cliente clica e cai no seu Zap.</span></div>
@@ -166,7 +166,7 @@ details p{color:#666;margin-top:8px}
 <label class="opt"><span>➕ Bio Instagram</span><span><input type="checkbox" onchange="calc()" id="c2"> +R$20</span></label>
 <label class="opt"><span>➕ Cardápio digital</span><span><input type="checkbox" onchange="calc()" id="c3"> +R$30</span></label>
 <div style="text-align:center;padding-top:10px">Seu total: <span id="total" style="font-size:32px;font-weight:900">R$150</span><br><small style="color:#777">Só paga depois de aprovar</small></div>
-<a class="btn" id="calcBtn" href="#" onclick="sendCalc(event)">QUERO ESSE PACOTE POR R$150 →</a>
+<button class="btn" id="calcBtn" onclick="sendCalc(event)">QUERO ESSE PACOTE POR R$150 →</button>
 </div>
 </section>
 
@@ -178,8 +178,8 @@ details p{color:#666;margin-top:8px}
 <label>Nome do seu negócio</label><input id="fNegocio" placeholder="Ex: Barbearia do João">
 <label>Tipo de negócio</label><select id="fTipo"><option>Barbearia</option><option>Confeitaria</option><option>Salão / Estética</option><option>Lanchonete</option><option>Loja</option><option>Outro</option></select>
 <label>Seu WhatsApp</label><input id="fZap" placeholder="Ex: 11 99999-9999">
-<label>O que você quer no site?</label><textarea id="fObs" rows="3" placeholder="Ex: Quero agenda, preços e fotos dos cortes..."></textarea>
-<a class="btn" href="#" onclick="sendForm(event)">ENVIAR PEDIDO NO WHATSAPP →</a>
+<label>O que você quer no site?</label><textarea id="fObs" rows="3" placeholder="Ex: Quero agenda, preços e fotos..."></textarea>
+<button class="btn" onclick="sendForm(event)">ENVIAR PEDIDO NO WHATSAPP →</button>
 <p style="text-align:center;font-size:12px;color:#888;margin-top:8px">Respondo em minutos • Sem compromisso</p>
 </div>
 </section>
@@ -225,21 +225,14 @@ details p{color:#666;margin-top:8px}
 </section>
 <div class="footer">Moisés Sites • São Paulo • 11 98678-9954<br><span id="footerDate">Hoje</span> • Feito pra vender no celular 📱</div>
 </div>
+
 <a class="float-wa" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">💬</a>
 <div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><small id="stickyStatus">Online agora • Só paga depois</small></div><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO →</a></div>
+
 <script>
 let introSec=7;
-let introTimer=setInterval(()=>{introSec--; if(introSec>0){document.getElementById('introCount').innerText=introSec;} else{hideIntro();}},1000);
-function hideIntro(){clearInterval(introTimer);document.getElementById('intro').classList.add('hide');}
-let audioPlayed=false;
-function playTudum(e){if(e) e.stopPropagation(); if(audioPlayed) return; audioPlayed=true;
-try{
-let ctx=new (window.AudioContext||window.webkitAudioContext)();
-let o1=ctx.createOscillator(), o2=ctx.createOscillator(), g=ctx.createGain();
-o1.type='sawtooth'; o2.type='sawtooth'; o1.frequency.value=110; o2.frequency.value=165;
-g.gain.setValueAtTime(0,ctx.currentTime); g.gain.linearRampToValueAtTime(0.35,ctx.currentTime+0.05); g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+1.8);
-o1.connect(g); o2.connect(g); g.connect(ctx.destination); o1.start(); o2.start(); o1.stop(ctx.currentTime+1.8); o2.stop(ctx.currentTime+1.8);
-document.getElementById('soundBtn').innerText='🔊 TUDUM!';}catch(err){}}
+let introTimer=setInterval(function(){introSec--; if(introSec>0){document.getElementById('introCount').innerText=introSec;} else{hideIntro();}},1000);
+function hideIntro(){clearInterval(introTimer); var el=document.getElementById('intro'); el.classList.add('hide'); setTimeout(function(){el.style.display='none';},600);}
 function updateTime(){
 let now=new Date();
 let time=now.toLocaleTimeString('pt-BR',{timeZone:'America/Sao_Paulo'});
@@ -257,9 +250,9 @@ document.getElementById('countdown').innerText='Faltam '+left+' dia(s) pra acaba
 }
 setInterval(updateTime,1000); updateTime();
 let viewers=12;
-setInterval(()=>{viewers=Math.max(7,Math.min(28,viewers+Math.floor(Math.random()*5)-2)); document.getElementById('viewers').innerText=viewers;},3500);
+setInterval(function(){viewers=Math.max(7,Math.min(28,viewers+Math.floor(Math.random()*5)-2)); document.getElementById('viewers').innerText=viewers;},3500);
 let lastMin=4;
-setInterval(()=>{lastMin++; if(lastMin>59) lastMin=3; document.getElementById('lastOrder').innerText='há '+lastMin+' min';},60000);
+setInterval(function(){lastMin++; if(lastMin>59) lastMin=3; document.getElementById('lastOrder').innerText='há '+lastMin+' min';},60000);
 const data={
 barb:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80","Quero%20um%20site%20de%20barbearia","📅 Agenda online","💲 Preços","💬 WhatsApp"],
 bolo:["Doces da Camila","Fotos dos bolos, cardápio com preços e botão de encomendar. Cliente escolhe, clica e já pede no seu Zap.","https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1000&q=80","Quero%20um%20site%20de%20confeitaria","🎂 Cardápio","📸 Fotos","💬 Encomenda"],
@@ -269,10 +262,10 @@ loja:["Loja da Bia","Vitrine com seus produtos, preços e botão de comprar no W
 estetica:["Estética Bella","Procedimentos, valores, antes e depois e botão pra agendar avaliação. Agenda cheia sem esforço.","https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80","Quero%20um%20site%20de%20estetica","✨ Procedimentos","⭐ Antes e depois","📅 Agendar"]
 };
 function show(k,el){
-document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});
 if(el) el.classList.add('active');
 const d=data[k];
-const img=document.getElementById('pimg'); img.style.opacity=0; setTimeout(()=>{img.src=d[2]; img.style.opacity=1;},140);
+const img=document.getElementById('pimg'); img.style.opacity=0; setTimeout(function(){img.src=d[2]; img.style.opacity=1;},140);
 document.getElementById('ptitle').innerText=d[0];
 document.getElementById('ptext').innerText=d[1];
 document.getElementById('pbtn').href='https://wa.me/5511986789954?text='+d[3];
@@ -288,7 +281,7 @@ document.getElementById('total').innerText='R$'+total;
 document.getElementById('calcBtn').innerText='QUERO ESSE PACOTE POR R$'+total+' →';
 }
 function sendCalc(e){
-e.preventDefault();
+if(e) e.preventDefault();
 let extras=[];
 if(document.getElementById('c1').checked) extras.push('Logo simples (+R$30)');
 if(document.getElementById('c2').checked) extras.push('Bio Instagram (+R$20)');
@@ -299,13 +292,13 @@ msg+='. Pode montar pra mim?';
 window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');
 }
 function sendForm(e){
-e.preventDefault();
+if(e) e.preventDefault();
 let nome=document.getElementById('fNome').value||'Não informou';
 let neg=document.getElementById('fNegocio').value||'Não informou';
 let tipo=document.getElementById('fTipo').value;
 let zap=document.getElementById('fZap').value||'Não informou';
 let obs=document.getElementById('fObs').value||'Sem detalhes';
-let msg='🔥 NOVO PEDIDO DE SITE\n\n👤 Nome: '+nome+'\n🏪 Negócio: '+neg+'\n📂 Tipo: '+tipo+'\n📱 Zap do cliente: '+zap+'\n📝 Quer no site: '+obs+'\n\nQuero meu site por R$150, pode montar?';
+let msg='NOVO PEDIDO DE SITE\n\nNome: '+nome+'\nNegócio: '+neg+'\nTipo: '+tipo+'\nZap do cliente: '+zap+'\nQuer no site: '+obs+'\n\nQuero meu site por R$150, pode montar?';
 window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');
 }
 const depo=[
@@ -315,7 +308,7 @@ const depo=[
 ["\"Atendimento rápido demais. Mandei de manhã, à noite já tava vendendo.\"","Rafa","Lanchonete em SP"]
 ];
 let ti=0;
-setInterval(()=>{ti=(ti+1)%4; document.getElementById('ttext').innerText=depo[ti][0]; document.getElementById('tname').innerText=depo[ti][1]; document.getElementById('tsub').innerText=depo[ti][2]; for(let i=0;i<4;i++) document.getElementById('d'+i).className='dot'+(i===ti?' on':'');},4000);
+setInterval(function(){ti=(ti+1)%4; document.getElementById('ttext').innerText=depo[ti][0]; document.getElementById('tname').innerText=depo[ti][1]; document.getElementById('tsub').innerText=depo[ti][2]; for(let i=0;i<4;i++) document.getElementById('d'+i).className='dot'+(i===ti?' on':'');},4000);
 </script>
 </body>
-                                </html>
+</html>
