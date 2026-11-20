@@ -10,8 +10,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:#0A0A0A;color:#111;line-height:1.55}
 img{display:block;width:100%}
-/* INTRO NETFLIX - M GIGANTE */
-#intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s;overflow:hidden}
+#intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s;overflow:hidden;cursor:pointer}
 #intro.hide{opacity:0;visibility:hidden}
 #intro .bigM{font-family:'Playfair Display',serif;font-size:150px;line-height:1;color:#FFC107;font-weight:800;animation:netflixM 2.2s ease forwards;text-shadow:0 0 60px rgba(255,193,7,.6)}
 #intro .fullName{font-family:'Playfair Display',serif;color:#fff;font-size:36px;letter-spacing:6px;margin-top:5px;opacity:0;animation:showName 1s ease 2.3s forwards}
@@ -21,6 +20,7 @@ img{display:block;width:100%}
 #intro .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#FFC107,#25D366);animation:load 7s linear forwards}
 #intro .count{color:#FFC107;font-weight:900;font-size:26px;margin-top:12px}
 #skip{margin-top:18px;background:transparent;border:1px solid #444;color:#aaa;padding:11px 20px;border-radius:99px;font-weight:700}
+#soundBtn{margin-top:10px;background:#FFC107;border:0;padding:10px 18px;border-radius:99px;font-weight:800;font-size:13px}
 @keyframes netflixM{0%{transform:scale(3);opacity:0;letter-spacing:40px}30%{transform:scale(1.4);opacity:1}60%{transform:scale(1);text-shadow:0 0 80px rgba(255,193,7,.9)}100%{transform:scale(.85) translateY(-8px)}}
 @keyframes showName{to{opacity:1}}
 @keyframes load{to{width:100%}}
@@ -79,6 +79,18 @@ summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-cont
 details p{color:#666;margin-top:8px}
 .step{display:flex;gap:14px;margin-bottom:16px}
 .num{background:#111;color:#FFC107;width:38px;height:38px;min-width:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
+/* PORTFOLIO */
+.portfolio{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.port-card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #F0EEE9;box-shadow:0 8px 20px rgba(0,0,0,.05)}
+.port-card img{height:140px;object-fit:cover}
+.port-card div{padding:14px}
+.port-card b{font-size:15px;display:block}.port-card span{color:#777;font-size:12px}
+.port-card a{color:#25D366;font-weight:800;font-size:13px;text-decoration:none}
+/* FORMULARIO */
+.form-box{background:#fff;border-radius:22px;padding:22px;border:1px solid #F0EEE9;box-shadow:0 10px 30px rgba(0,0,0,.06)}
+.form-box label{font-weight:700;font-size:13px;display:block;margin:14px 0 6px}
+.form-box input,.form-box select,.form-box textarea{width:100%;padding:14px;border:1.5px solid #E8E5DD;border-radius:12px;font-family:inherit;font-size:15px;outline:none;background:#FAFAF8}
+.form-box input:focus,.form-box select:focus,.form-box textarea:focus{border-color:#25D366;background:#fff}
 .float-wa{position:fixed;bottom:92px;right:16px;z-index:200;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 10px 25px rgba(37,211,102,.45);animation:float 2.5s infinite}
 .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.98);padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #EEE;display:flex;gap:10px;align-items:center;z-index:150}
 .sticky div{flex:1;line-height:1.2}.sticky a{background:#25D366;color:#fff;font-weight:800;padding:13px 18px;border-radius:99px;text-decoration:none;white-space:nowrap}
@@ -86,7 +98,7 @@ details p{color:#666;margin-top:8px}
 </style>
 </head>
 <body>
-<div id="intro"><div class="bigM">M</div><div class="fullName">MOISÉS <span>Sites</span></div><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">7</div><div class="bar"><i></i></div><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
+<div id="intro" onclick="playTudum()"><div class="bigM">M</div><div class="fullName">MOISÉS <span>Sites</span></div><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">7</div><div class="bar"><i></i></div><button id="soundBtn" onclick="playTudum(event)">🔊 ATIVAR SOM TUDUM</button><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
 <div class="topbar">⚡ <span>SÓ 2 VAGAS ESSA SEMANA</span> • <span id="topClock">--:--:--</span> • São Paulo</div>
 <nav class="nav"><b>Moisés <span>Sites</span></b><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO O MEU →</a></nav>
 <header class="hero">
@@ -122,6 +134,19 @@ details p{color:#666;margin-top:8px}
 </div>
 </div>
 </section>
+
+<section class="wrap">
+<h2>Últimos <em>trabalhos</em> 🔥</h2>
+<p class="muted">Sites que já entreguei:</p>
+<div class="portfolio">
+<div class="port-card"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80"><div><b>Barbearia do Seu Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20barbearia">Quero um igual →</a></div></div>
+<div class="port-card"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80"><div><b>Doces da Camila</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20confeitaria">Quero um igual →</a></div></div>
+<div class="port-card"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80"><div><b>Studio de Beleza</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20ao%20salao">Quero um igual →</a></div></div>
+<div class="port-card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"><div><b>Lanches do Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20lanchonete">Quero um igual →</a></div></div>
+</div>
+<p style="font-size:12px;color:#999;margin-top:10px">* Quando tu fizer os primeiros de verdade, me manda foto que eu troco aqui!</p>
+</section>
+
 <section class="wrap">
 <h2>O que você <em>recebe</em></h2>
 <p class="muted">Tudo incluso, sem pegadinha:</p>
@@ -132,6 +157,7 @@ details p{color:#666;margin-top:8px}
 <div class="card"><div class="ico">🛡️</div><b>Sem risco</b><span>Você aprova antes de pagar.</span></div>
 </div>
 </section>
+
 <section class="wrap">
 <h2>Monte seu <em>preço</em> 🧮</h2>
 <div class="card" style="padding:20px;min-height:auto">
@@ -143,6 +169,21 @@ details p{color:#666;margin-top:8px}
 <a class="btn" id="calcBtn" href="#" onclick="sendCalc(event)">QUERO ESSE PACOTE POR R$150 →</a>
 </div>
 </section>
+
+<section class="wrap">
+<h2>Peça seu site <em>agora</em> 📝</h2>
+<p class="muted">Preenche aqui, chega tudo pronto no meu Zap:</p>
+<div class="form-box">
+<label>Seu nome</label><input id="fNome" placeholder="Ex: João">
+<label>Nome do seu negócio</label><input id="fNegocio" placeholder="Ex: Barbearia do João">
+<label>Tipo de negócio</label><select id="fTipo"><option>Barbearia</option><option>Confeitaria</option><option>Salão / Estética</option><option>Lanchonete</option><option>Loja</option><option>Outro</option></select>
+<label>Seu WhatsApp</label><input id="fZap" placeholder="Ex: 11 99999-9999">
+<label>O que você quer no site?</label><textarea id="fObs" rows="3" placeholder="Ex: Quero agenda, preços e fotos dos cortes..."></textarea>
+<a class="btn" href="#" onclick="sendForm(event)">ENVIAR PEDIDO NO WHATSAPP →</a>
+<p style="text-align:center;font-size:12px;color:#888;margin-top:8px">Respondo em minutos • Sem compromisso</p>
+</div>
+</section>
+
 <section class="wrap">
 <h2>Como <em>funciona</em></h2>
 <div style="margin-top:14px">
@@ -151,11 +192,13 @@ details p{color:#666;margin-top:8px}
 <div class="step"><div class="num">3</div><div><b>Você aprova e paga</b><br><span style="color:#777;font-size:14px">Pix de R$150. Sem mensalidade.</span></div></div>
 </div>
 </section>
+
 <section class="wrap">
 <h2>Quem já fez, <em>aprovou</em></h2>
 <div class="testi"><div class="stars">★★★★★</div><p id="ttext">"Ficou pronto no mesmo dia. Meus clientes falaram que parecia site de franquia. Já fechei 3 encomendas pelo link."</p><b id="tname">Camila</b><br><small id="tsub" style="color:#888">Confeitaria em SP</small></div>
 <div class="dots"><span class="dot on" id="d0"></span><span class="dot" id="d1"></span><span class="dot" id="d2"></span><span class="dot" id="d3"></span></div>
 </section>
+
 <section class="wrap">
 <div class="pricebox">
 <p style="color:#FFC107;font-weight:800;font-size:12px;letter-spacing:2px">OFERTA DA SEMANA • TERMINA DOMINGO</p>
@@ -166,6 +209,7 @@ details p{color:#666;margin-top:8px}
 <p style="font-size:12px;color:#888">⏰ <span id="countdown">Faltam 2 dias</span> pra acabar a oferta</p>
 </div>
 </section>
+
 <section class="wrap">
 <h2>Dúvidas?</h2>
 <details><summary>E se eu não gostar? <span>+</span></summary><p>Você não paga nada. Eu só cobro depois que você aprovar.</p></details>
@@ -173,6 +217,7 @@ details p{color:#666;margin-top:8px}
 <details><summary>O que preciso mandar? <span>+</span></summary><p>Só fotos, preços e seu WhatsApp. Eu monto o resto.</p></details>
 <details><summary>Demora quanto? <span>+</span></summary><p>Até 24h depois que você mandar tudo.</p></details>
 </section>
+
 <section class="wrap" style="text-align:center">
 <h2>Bora colocar seu negócio <em>no ar?</em></h2>
 <p class="muted">Me chama agora, respondo em minutos.</p>
@@ -186,6 +231,15 @@ details p{color:#666;margin-top:8px}
 let introSec=7;
 let introTimer=setInterval(()=>{introSec--; if(introSec>0){document.getElementById('introCount').innerText=introSec;} else{hideIntro();}},1000);
 function hideIntro(){clearInterval(introTimer);document.getElementById('intro').classList.add('hide');}
+let audioPlayed=false;
+function playTudum(e){if(e) e.stopPropagation(); if(audioPlayed) return; audioPlayed=true;
+try{
+let ctx=new (window.AudioContext||window.webkitAudioContext)();
+let o1=ctx.createOscillator(), o2=ctx.createOscillator(), g=ctx.createGain();
+o1.type='sawtooth'; o2.type='sawtooth'; o1.frequency.value=110; o2.frequency.value=165;
+g.gain.setValueAtTime(0,ctx.currentTime); g.gain.linearRampToValueAtTime(0.35,ctx.currentTime+0.05); g.gain.exponentialRampToValueAtTime(0.001,ctx.currentTime+1.8);
+o1.connect(g); o2.connect(g); g.connect(ctx.destination); o1.start(); o2.start(); o1.stop(ctx.currentTime+1.8); o2.stop(ctx.currentTime+1.8);
+document.getElementById('soundBtn').innerText='🔊 TUDUM!';}catch(err){}}
 function updateTime(){
 let now=new Date();
 let time=now.toLocaleTimeString('pt-BR',{timeZone:'America/Sao_Paulo'});
@@ -244,6 +298,16 @@ if(extras.length){msg+=' com: '+extras.join(', ');} else {msg+=' só o site comp
 msg+='. Pode montar pra mim?';
 window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');
 }
+function sendForm(e){
+e.preventDefault();
+let nome=document.getElementById('fNome').value||'Não informou';
+let neg=document.getElementById('fNegocio').value||'Não informou';
+let tipo=document.getElementById('fTipo').value;
+let zap=document.getElementById('fZap').value||'Não informou';
+let obs=document.getElementById('fObs').value||'Sem detalhes';
+let msg='🔥 NOVO PEDIDO DE SITE\n\n👤 Nome: '+nome+'\n🏪 Negócio: '+neg+'\n📂 Tipo: '+tipo+'\n📱 Zap do cliente: '+zap+'\n📝 Quer no site: '+obs+'\n\nQuero meu site por R$150, pode montar?';
+window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');
+}
 const depo=[
 ["\"Ficou pronto no mesmo dia. Meus clientes falaram que parecia site de franquia. Já fechei 3 encomendas pelo link.\"","Camila","Confeitaria em SP"],
 ["\"Achei que era golpe por ser barato. Ele mandou antes, eu gostei, aí paguei. Hoje todo mundo agenda por lá.\"","Diego","Barbearia em SP"],
@@ -254,4 +318,4 @@ let ti=0;
 setInterval(()=>{ti=(ti+1)%4; document.getElementById('ttext').innerText=depo[ti][0]; document.getElementById('tname').innerText=depo[ti][1]; document.getElementById('tsub').innerText=depo[ti][2]; for(let i=0;i<4;i++) document.getElementById('d'+i).className='dot'+(i===ti?' on':'');},4000);
 </script>
 </body>
-</html>
+                                </html>
