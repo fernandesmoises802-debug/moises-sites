@@ -10,15 +10,19 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:#0A0A0A;color:#111;line-height:1.55}
 img{display:block;width:100%}
-#intro{position:fixed;inset:0;background:#0A0A0A;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
+/* INTRO NETFLIX - M GIGANTE */
+#intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s;overflow:hidden}
 #intro.hide{opacity:0;visibility:hidden}
-#intro h1{font-family:'Playfair Display',serif;color:#fff;font-size:56px;line-height:.9;text-align:center}
-#intro h1 span{color:#FFC107;font-style:italic}
-#intro p{color:#888;letter-spacing:4px;font-size:11px;margin-top:14px}
-#intro .bar{width:200px;height:4px;background:#222;border-radius:99px;margin-top:20px;overflow:hidden}
+#intro .bigM{font-family:'Playfair Display',serif;font-size:150px;line-height:1;color:#FFC107;font-weight:800;animation:netflixM 2.2s ease forwards;text-shadow:0 0 60px rgba(255,193,7,.6)}
+#intro .fullName{font-family:'Playfair Display',serif;color:#fff;font-size:36px;letter-spacing:6px;margin-top:5px;opacity:0;animation:showName 1s ease 2.3s forwards}
+#intro .fullName span{color:#FFC107;font-style:italic;letter-spacing:2px}
+#intro p{color:#888;letter-spacing:4px;font-size:11px;margin-top:10px;opacity:0;animation:showName 1s ease 2.8s forwards}
+#intro .bar{width:200px;height:4px;background:#222;border-radius:99px;margin-top:22px;overflow:hidden}
 #intro .bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,#FFC107,#25D366);animation:load 7s linear forwards}
-#intro .count{color:#FFC107;font-weight:900;font-size:30px;margin-top:14px}
-#skip{margin-top:20px;background:transparent;border:1px solid #444;color:#aaa;padding:11px 20px;border-radius:99px;font-weight:700}
+#intro .count{color:#FFC107;font-weight:900;font-size:26px;margin-top:12px}
+#skip{margin-top:18px;background:transparent;border:1px solid #444;color:#aaa;padding:11px 20px;border-radius:99px;font-weight:700}
+@keyframes netflixM{0%{transform:scale(3);opacity:0;letter-spacing:40px}30%{transform:scale(1.4);opacity:1}60%{transform:scale(1);text-shadow:0 0 80px rgba(255,193,7,.9)}100%{transform:scale(.85) translateY(-8px)}}
+@keyframes showName{to{opacity:1}}
 @keyframes load{to{width:100%}}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
@@ -82,7 +86,7 @@ details p{color:#666;margin-top:8px}
 </style>
 </head>
 <body>
-<div id="intro"><h1>MOISÉS<br><span>Sites</span></h1><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">7</div><div class="bar"><i></i></div><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
+<div id="intro"><div class="bigM">M</div><div class="fullName">MOISÉS <span>Sites</span></div><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">7</div><div class="bar"><i></i></div><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
 <div class="topbar">⚡ <span>SÓ 2 VAGAS ESSA SEMANA</span> • <span id="topClock">--:--:--</span> • São Paulo</div>
 <nav class="nav"><b>Moisés <span>Sites</span></b><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO O MEU →</a></nav>
 <header class="hero">
@@ -136,7 +140,7 @@ details p{color:#666;margin-top:8px}
 <label class="opt"><span>➕ Bio Instagram</span><span><input type="checkbox" onchange="calc()" id="c2"> +R$20</span></label>
 <label class="opt"><span>➕ Cardápio digital</span><span><input type="checkbox" onchange="calc()" id="c3"> +R$30</span></label>
 <div style="text-align:center;padding-top:10px">Seu total: <span id="total" style="font-size:32px;font-weight:900">R$150</span><br><small style="color:#777">Só paga depois de aprovar</small></div>
-<a class="btn" href="#" onclick="sendCalc(event)">QUERO ESSE PACOTE →</a>
+<a class="btn" id="calcBtn" href="#" onclick="sendCalc(event)">QUERO ESSE PACOTE POR R$150 →</a>
 </div>
 </section>
 <section class="wrap">
@@ -227,14 +231,17 @@ if(document.getElementById('c1').checked) total+=30;
 if(document.getElementById('c2').checked) total+=20;
 if(document.getElementById('c3').checked) total+=30;
 document.getElementById('total').innerText='R$'+total;
+document.getElementById('calcBtn').innerText='QUERO ESSE PACOTE POR R$'+total+' →';
 }
 function sendCalc(e){
 e.preventDefault();
 let extras=[];
-if(document.getElementById('c1').checked) extras.push('Logo');
-if(document.getElementById('c2').checked) extras.push('Bio Instagram');
-if(document.getElementById('c3').checked) extras.push('Cardápio');
-let msg='Quero meu site por R$'+total + (extras.length? ' com: '+extras.join(', ') : '');
+if(document.getElementById('c1').checked) extras.push('Logo simples (+R$30)');
+if(document.getElementById('c2').checked) extras.push('Bio Instagram (+R$20)');
+if(document.getElementById('c3').checked) extras.push('Cardápio digital (+R$30)');
+let msg='Opa Moisés! Quero meu site por R$'+total;
+if(extras.length){msg+=' com: '+extras.join(', ');} else {msg+=' só o site completo';}
+msg+='. Pode montar pra mim?';
 window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');
 }
 const depo=[
