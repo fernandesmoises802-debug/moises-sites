@@ -4,11 +4,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Moisés Sites | Seu site profissional em 24h - R$150</title>
-<meta name="description" content="Site profissional para seu negócio em 24h. Você só paga depois de aprovar.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html{scroll-behavior:smooth}
 body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:#F6F5F2;color:#141414;line-height:1.5;padding-bottom:96px}
 img{display:block;width:100%}
+/* INTRO */
+#intro{position:fixed;inset:0;background:#141414;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
+#intro.hide{opacity:0;visibility:hidden}
+#intro h1{color:#fff;font-size:48px;letter-spacing:-1px;line-height:1;animation:pop .6s ease}
+#intro h1 span{color:#FFC107}
+#intro p{color:#aaa;margin-top:10px;letter-spacing:3px;font-size:12px;animation:fade 1s .3s both}
+#intro .bar{width:120px;height:4px;background:#333;border-radius:99px;margin-top:20px;overflow:hidden}
+#intro .bar i{display:block;height:100%;width:0;background:#25D366;animation:load 1.2s forwards}
+@keyframes pop{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+@keyframes fade{from{opacity:0}to{opacity:1}}
+@keyframes load{to{width:100%}}
 .top{background:#141414;color:#fff;text-align:center;padding:9px 10px;font-size:13px}
 .top b{color:#FFC107}
 .hero{background:#141414;color:#fff;padding:24px 18px 34px;text-align:center;border-radius:0 0 26px 26px}
@@ -25,11 +36,12 @@ img{display:block;width:100%}
 .wrap{max-width:520px;margin:auto;padding:26px 16px 0}
 h2{font-size:25px;letter-spacing:-.5px;margin-bottom:6px}
 .muted{color:#6B6B6B;margin-bottom:16px}
-.tabs{display:flex;gap:8px;flex-wrap:wrap}
-.tab{border:1.5px solid #E3E0D9;background:#fff;padding:10px 14px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{border:1.5px solid #E3E0D9;background:#fff;padding:10px 14px;border-radius:999px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;flex-shrink:0}
 .tab.active{background:#141414;color:#fff;border-color:#141414}
-.preview{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.08);margin-top:14px}
-.preview img{height:215px;object-fit:cover}
+.preview{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 12px 30px rgba(0,0,0,.08);margin-top:12px}
+.preview img{height:215px;object-fit:cover;transition:opacity .2s}
 .preview .in{padding:18px}
 .preview h3{font-size:21px}
 .preview p{color:#555;margin:8px 0 14px}
@@ -37,13 +49,13 @@ h2{font-size:25px;letter-spacing:-.5px;margin-bottom:6px}
 .card{background:#fff;border-radius:16px;padding:16px;margin-bottom:12px;box-shadow:0 4px 14px rgba(0,0,0,.04)}
 .card b{font-size:16px}
 .card span{color:#666;font-size:14px}
-.pricebox{background:#fff;border:2px solid #FFC107;border-radius:20px;padding:22px;text-align:center;box-shadow:0 10px 25px rgba(255,193,7,.15)}
+.pricebox{background:#fff;border:2px solid #FFC107;border-radius:20px;padding:22px;text-align:center}
 .old{text-decoration:line-through;color:#999}
 .new{font-size:48px;font-weight:900;line-height:1}
-.opt{display:flex;justify-content:space-between;align-items:center;background:#F6F5F2;border-radius:12px;padding:12px;margin:10px 0;text-align:left;cursor:pointer}
+.opt{display:flex;justify-content:space-between;align-items:center;background:#F6F5F2;border-radius:12px;padding:12px;margin:10px 0;text-align:left}
 .opt input{width:20px;height:20px;accent-color:#25D366}
-.testi{background:#141414;color:#fff;border-radius:20px;padding:20px;min-height:150px}
-.testi .stars{color:#FFC107;font-size:20px;letter-spacing:2px}
+.testi{background:#141414;color:#fff;border-radius:20px;padding:20px;min-height:155px}
+.testi .stars{color:#FFC107;font-size:20px}
 .testi p{font-size:17px;margin:10px 0}
 .testi b{color:#FFC107}
 .dots{text-align:center;margin-top:10px}
@@ -54,14 +66,16 @@ summary{font-weight:800;cursor:pointer;list-style:none}
 details p{color:#555;margin-top:8px}
 .how{display:flex;gap:12px;align-items:flex-start}
 .num{background:#FFC107;width:34px;height:34px;min-width:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900}
-.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #eee;display:flex;gap:10px;align-items:center;z-index:99}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.97);padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #eee;display:flex;gap:10px;align-items:center;z-index:99}
 .sticky div{flex:1;line-height:1.2}
 .sticky a{background:#25D366;color:#fff;font-weight:800;padding:13px 18px;border-radius:12px;text-decoration:none;white-space:nowrap}
 .progress{height:6px;background:#E8E5DD;border-radius:99px;overflow:hidden;margin:10px 0}
-.progress i{display:block;height:100%;background:#25D366;width:70%;transition:.5s}
+.progress i{display:block;height:100%;background:#25D366;width:70%}
 </style>
 </head>
 <body>
+
+<div id="intro"><h1>MOISÉS<br><span>SITES</span></h1><p>SEU NEGÓCIO NO AR EM 24H</p><div class="bar"><i></i></div></div>
 
 <div class="top">⭐ <b>4.9/5</b> • +20 sites entregues • Resposta em minutos</div>
 
@@ -100,10 +114,10 @@ details p{color:#555;margin-top:8px}
 <p class="muted">Marca o que você quer, o valor atualiza na hora:</p>
 <div class="card">
 <label class="opt"><span>✅ Site completo <small style="display:block;color:#888">Já incluso</small></span><b>R$150</b></label>
-<label class="opt"><span>➕ Logo simples pro seu negócio</span><span><input type="checkbox" onchange="calc()" id="c1"> +R$30</span></label>
-<label class="opt"><span>➕ Instagram / Bio profissional</span><span><input type="checkbox" onchange="calc()" id="c2"> +R$20</span></label>
+<label class="opt"><span>➕ Logo simples</span><span><input type="checkbox" onchange="calc()" id="c1"> +R$30</span></label>
+<label class="opt"><span>➕ Bio Instagram profissional</span><span><input type="checkbox" onchange="calc()" id="c2"> +R$20</span></label>
 <label class="opt"><span>➕ Cardápio digital com fotos</span><span><input type="checkbox" onchange="calc()" id="c3"> +R$30</span></label>
-<div style="text-align:center;padding-top:8px">Seu total: <span id="total" style="font-size:28px;font-weight:900;color:#141414">R$150</span><br><small style="color:#666">Você só paga depois de aprovar tudo</small></div>
+<div style="text-align:center;padding-top:8px">Seu total: <span id="total" style="font-size:28px;font-weight:900">R$150</span><br><small style="color:#666">Você só paga depois de aprovar tudo</small></div>
 <a class="btn" href="#" onclick="sendCalc(event)">QUERO ESSE PACOTE →</a>
 </div>
 </section>
@@ -119,11 +133,7 @@ details p{color:#555;margin-top:8px}
 
 <section class="wrap">
 <h2>Quem já fez, aprovou</h2>
-<div class="testi" id="testi">
-<div class="stars">★★★★★</div>
-<p id="ttext">"Ficou pronto no mesmo dia. Meus clientes falaram que parecia site de franquia. Já fechei 3 encomendas pelo link."</p>
-<b id="tname">— Camila, Confeitaria em SP</b>
-</div>
+<div class="testi"><div class="stars">★★★★★</div><p id="ttext">"Ficou pronto no mesmo dia. Meus clientes falaram que parecia site de franquia. Já fechei 3 encomendas pelo link."</p><b id="tname">— Camila, Confeitaria em SP</b></div>
 <div class="dots"><span class="dot on" id="d0"></span><span class="dot" id="d1"></span><span class="dot" id="d2"></span></div>
 </section>
 
@@ -155,6 +165,7 @@ details p{color:#555;margin-top:8px}
 <div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><small>Só paga depois de aprovar</small></div><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO →</a></div>
 
 <script>
+setTimeout(()=>{document.getElementById('intro').classList.add('hide')},1500);
 const data={
 barb:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80","Quero%20um%20site%20de%20barbearia","📅 Agenda online","💲 Preços","💬 WhatsApp"],
 bolo:["Doces da Camila","Fotos dos bolos, cardápio com preços e botão de encomendar. Cliente escolhe, clica e já pede no seu Zap.","https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=900&q=80","Quero%20um%20site%20de%20confeitaria","🎂 Cardápio","📸 Fotos","💬 Encomenda"],
