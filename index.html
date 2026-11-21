@@ -3,61 +3,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Moisés Sites - Seu negócio com cara de empresa grande</title>
+<title>Moisés Sites | Seu negócio com cara de empresa grande - Pronto em 24h</title>
+<meta name="description" content="Site profissional em 24h. Você aprova antes de pagar. Sem mensalidade.">
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f7f3eb;color:#111}
-.top{background:#ffcc00;text-align:center;padding:8px;font-weight:900;font-size:12px}
-header{background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;position:sticky;top:0;z-index:10}
-.logo{font-family:Georgia,serif;font-size:24px;font-weight:bold}.logo i{color:#ffcc00;font-style:italic}
-.btn-green{background:#00d465;color:#fff;border:0;padding:10px 14px;border-radius:999px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-block;font-size:13px}
-.hero{background:#000;color:#fff;padding:24px 16px 20px;text-align:center}
-.badge{background:#1a1a1a;border-radius:999px;display:inline-block;padding:7px 14px;font-size:13px;color:#ddd}
-.dot{color:#00d465}
-.hero h1{font-size:34px;line-height:1.05;margin:18px 0 12px}.hero h1 em{color:#ffcc00;font-family:Georgia,serif}
-.hero p{color:#aaa;line-height:1.5}.hero p b{color:#fff}
-.hero .big{width:100%;padding:16px;margin:18px 0 10px;font-size:15px}
+body{background:#f8f4ea;color:#111;line-height:1.5;padding-bottom:70px}
+a{color:inherit}
+.top{background:#ffcc00;text-align:center;padding:9px 10px;font-weight:900;font-size:12px;letter-spacing:.3px}
+header{background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;position:sticky;top:0;z-index:30}
+.logo{font-family:Georgia,serif;font-size:26px;line-height:1}.logo i{color:#ffcc00}.logo small{display:block;font-family:Arial;font-size:9px;letter-spacing:3px;color:#888}
+.btn-green{background:#00c853;color:#fff;border:0;padding:12px 16px;border-radius:999px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-block;font-size:13px;text-align:center}
+.btn-black{background:#000;color:#fff;width:100%;padding:17px;border:0;border-radius:999px;font-weight:900;margin-top:16px;cursor:pointer;font-size:15px}
+.hero{background:#000;color:#fff;padding:26px 16px 20px;text-align:center}
+.badge{background:#1c1c1c;border:1px solid #333;border-radius:999px;display:inline-block;padding:8px 14px;font-size:13px}.dot{color:#00e676}
+.hero h1{font-size:35px;line-height:1.05;margin:18px 0 12px}.hero h1 em{color:#ffcc00;font-family:Georgia,serif}
+.hero p{color:#aaa;font-size:15px}.hero p b{color:#fff}
+.hero .big{width:100%;padding:17px;margin:18px 0 10px;font-size:15px}
 .small{font-size:12px;color:#777}
-.stats{display:flex;justify-content:space-around;text-align:center;padding:18px 0;border-top:1px solid #222;margin-top:18px}.stats b{font-size:22px;display:block}.stats span{font-size:11px;color:#888;text-transform:uppercase}
-.hero-img{width:100%;height:280px;object-fit:cover;border-radius:18px;margin-top:18px}
-.marquee{background:#000;color:#fff;white-space:nowrap;overflow:hidden;padding:12px 0;border-top:1px solid #222}.marquee span{padding:0 14px;font-weight:800}
-section{padding:26px 16px}h2{font-size:28px;line-height:1.1}h2 em{color:#d9a400;font-family:Georgia,serif}
+.stats{display:flex;justify-content:space-around;text-align:center;padding:18px 0;border-top:1px solid #222;margin-top:18px}.stats b{font-size:22px;display:block}.stats span{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:.5px}
+.hero-img{width:100%;height:280px;object-fit:cover;border-radius:18px;margin-top:18px;border:3px solid #ffcc00}
+.marquee{background:#ffcc00;color:#000;white-space:nowrap;overflow:hidden;padding:11px 0;font-weight:900;font-size:13px}
+section{padding:28px 16px}h2{font-size:29px;line-height:1.1}h2 em{color:#c99a00;font-family:Georgia,serif}
 .sub{color:#777;margin:8px 0 16px}
-.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:6px}.tab{white-space:nowrap;border:1px solid #ddd;background:#fff;padding:10px 14px;border-radius:999px;cursor:pointer}.tab.active{background:#000;color:#fff}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.06)}.card img{width:100%;height:220px;object-fit:cover}.card-body{padding:18px}.pills span{background:#fff3c4;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;margin-right:6px}
-.btn-black{background:#000;color:#fff;width:100%;padding:16px;border:0;border-radius:999px;font-weight:900;margin-top:16px;cursor:pointer}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.job{background:#fff;border-radius:16px;overflow:hidden}.job img{width:100%;height:140px;object-fit:cover}.job div{padding:12px}.job small{color:#888}.job a{color:#00b85c;font-weight:800;text-decoration:none;font-size:13px}
-.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feat div{background:#fff;padding:16px;border-radius:16px}.feat b{display:block;margin:10px 0 4px}.feat p{color:#777;font-size:13px;line-height:1.4}
-.price-box{background:#fff;border-radius:20px;padding:16px}.price-row{display:flex;justify-content:space-between;align-items:center;background:#f4f0e6;padding:14px;border-radius:12px;margin-bottom:10px;cursor:pointer}.price-row b{font-size:18px}.total{text-align:center;padding:18px 0}.total b{font-size:42px;color:#555}
-form{background:#fff;padding:18px;border-radius:20px}label{font-weight:800;font-size:13px;display:block;margin:14px 0 6px}input,select,textarea{width:100%;padding:14px;border:1px solid #eee;border-radius:12px;background:#faf7f0;font-size:15px}textarea{height:80px}
-.steps div{display:flex;gap:12px;margin-bottom:18px}.num{background:#000;color:#ffcc00;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0}.steps p{color:#777;font-size:14px;margin-top:4px}
-.depo{background:#fff;padding:20px;border-radius:20px}.depo p{line-height:1.6;margin:12px 0}
-.offer{background:#000;color:#fff;border-radius:20px;padding:24px 16px;text-align:center}.offer small{color:#ffcc00;letter-spacing:2px;font-weight:900}.offer h3{font-size:56px;margin:10px 0}.offer h3 span{font-size:22px}
-.faq{background:#fff;padding:14px;border-radius:12px;margin-top:10px}.faq b{display:flex;justify-content:space-between}
-.sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-top:1px solid #eee;z-index:20}.sticky b{font-size:15px}.sticky span{font-size:12px;color:#555}
-.float{position:fixed;right:14px;bottom:72px;background:#00d465;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:20;box-shadow:0 8px 20px rgba(0,0,0,.2)}
-.pb{height:70px}
+.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:6px;scrollbar-width:none}.tab{white-space:nowrap;border:1px solid #ddd;background:#fff;padding:11px 15px;border-radius:999px;cursor:pointer;font-weight:700}.tab.active{background:#000;color:#fff;border-color:#000}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,.07);border:1px solid #eee}.card img{width:100%;height:230px;object-fit:cover}.card-body{padding:18px}.pills span{background:#fff3c4;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;margin-right:6px;display:inline-block;margin-bottom:6px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.job{background:#fff;border-radius:16px;overflow:hidden;border:1px solid #eee}.job img{width:100%;height:140px;object-fit:cover}.job div{padding:12px}.job small{color:#888}.job a{color:#00a651;font-weight:800;text-decoration:none;font-size:13px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feat div{background:#fff;padding:16px;border-radius:16px;border:1px solid #eee}.feat b{display:block;margin:10px 0 4px}.feat p{color:#777;font-size:13px}
+.price-box{background:#fff;border-radius:20px;padding:16px;border:1px solid #eee}.price-row{display:flex;justify-content:space-between;align-items:center;background:#f4f0e6;padding:14px;border-radius:12px;margin-bottom:10px;cursor:pointer}.price-row.active{border:2px solid #000;background:#fffbe0}.price-row b{font-size:18px}
+.total{text-align:center;padding:18px 0}.total b{font-size:44px}.total s{color:#999}
+form{background:#fff;padding:18px;border-radius:20px;border:1px solid #eee}label{font-weight:800;font-size:13px;display:block;margin:14px 0 6px}input,select,textarea{width:100%;padding:14px;border:1px solid #eee;border-radius:12px;background:#faf7f0;font-size:15px}textarea{height:85px}
+.steps div{display:flex;gap:12px;margin-bottom:18px}.num{background:#000;color:#ffcc00;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0}.steps p{color:#777;font-size:14px;margin-top:4px}
+.depo{background:#fff;padding:20px;border-radius:20px;border:1px solid #eee;margin-bottom:12px}.depo p{line-height:1.6;margin:12px 0}
+.offer{background:#000;color:#fff;border-radius:20px;padding:24px 16px;text-align:center}.offer small{color:#ffcc00;letter-spacing:2px;font-weight:900}.offer h3{font-size:58px;margin:10px 0}.offer h3 span{font-size:22px}
+.faq{background:#fff;padding:14px;border-radius:12px;margin-top:10px;border:1px solid #eee;cursor:pointer}.faq p{display:none;color:#666;margin-top:8px;font-size:14px}.faq.open p{display:block}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-top:1px solid #eee;z-index:40}.sticky b{font-size:15px}.sticky span{font-size:12px;color:#555}
+.float{position:fixed;right:14px;bottom:74px;background:#00c853;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:40;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+footer{background:#000;color:#888;text-align:center;padding:20px;font-size:12px}
+@media(min-width:700px){body{max-width:520px;margin:0 auto}}
 </style>
 </head>
 <body>
-<div class="top">SÓ 2 VAGAS ESSA SEMANA • <span id="clock">12:12:39</span> • São Paulo</div>
-<header><div class="logo">Moisés <i>Sites</i></div><a class="btn-green" href="#pedido">QUERO O MEU →</a></header>
+<div class="top">🔥 SÓ 2 VAGAS ESSA SEMANA • <span id="clock">12:00:00</span> • SÃO PAULO</div>
+<header><div class="logo">Moisés <i>Sites</i><small>CRIADOR DE SITES</small></div><a class="btn-green" href="#pedido">QUERO O MEU →</a></header>
 
 <div class="hero">
-<div class="badge"><span class="dot">●</span> Online agora • 10 pessoas vendo</div>
+<div class="badge"><span class="dot">●</span> Online agora • 10 pessoas vendo essa página</div>
 <h1>Seu negócio com cara de <em>empresa grande.</em> Pronto amanhã.</h1>
 <p>Eu crio seu site profissional em até 24h. Você vê, aprova, e <b>só depois paga.</b></p>
 <a class="btn-green big" href="#pedido">QUERO MEU SITE NO WHATSAPP →</a>
-<div class="small">Sem mensalidade • Sem enrolação • Pix após aprovação</div>
+<div class="small">✅ Sem mensalidade • ✅ Sem enrolação • ✅ Pix após aprovação</div>
 <div class="stats"><div><b>24h</b><span>Entrega</span></div><div><b>4.9 ★</b><span>Avaliação</span></div><div><b>R$150</b><span>Preço único</span></div></div>
-<img class="hero-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80">
+<img class="hero-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80" alt="Pagamento no celular">
 </div>
-<div class="marquee"><span>LOJA ✦</span><span>ESTÉTICA ✦</span><span>BARBEARIA ✦</span><span>CONFEITARIA ✦</span><span>SALÃO ✦</span><span>LANCHONETE ✦</span></div>
+<div class="marquee">LOJA ✦ ESTÉTICA ✦ BARBEARIA ✦ CONFEITARIA ✦ SALÃO ✦ LANCHONETE ✦ CLÍNICA ✦</div>
 
 <section>
 <h2>Veja como ficaria <em>o seu</em> 👇</h2>
 <p class="sub">Clica no seu negócio e testa:</p>
-<div class="tabs" id="tabs">
+<div class="tabs">
 <div class="tab active" onclick="troca(this,'barbearia')">✂️ Barbearia</div>
 <div class="tab" onclick="troca(this,'confeitaria')">🍰 Confeitaria</div>
 <div class="tab" onclick="troca(this,'salao')">💅 Salão</div>
@@ -66,7 +69,7 @@ form{background:#fff;padding:18px;border-radius:20px}label{font-weight:800;font-
 <div class="card" style="margin-top:14px">
 <img id="prevImg" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80">
 <div class="card-body">
-<div class="pills"><span>📅 Agenda online</span><span>💲 Preços</span><span>💬 WhatsApp</span></div>
+<div class="pills"><span>📅 Agenda online</span><span>💲 Preços</span><span>💬 WhatsApp</span><span>📍 Localização</span></div>
 <h3 id="prevTitle" style="font-size:22px;margin:14px 0 8px">Barbearia do Seu Bairro</h3>
 <p id="prevDesc" style="color:#666;line-height:1.6">Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.</p>
 <button class="btn-black" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">QUERO UM ASSIM →</button>
@@ -75,78 +78,95 @@ form{background:#fff;padding:18px;border-radius:20px}label{font-weight:800;font-
 
 <section>
 <h2>Últimos <em>trabalhos</em> 🔥</h2>
-<p class="sub">Sites que já entreguei:</p>
+<p class="sub">Sites que já entreguei - clica e pede um igual:</p>
 <div class="grid">
-<div class="job"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80"><div><b>Barbearia do Seu Bairro</b><br><small>Entregue em 24h • São Paulo</small><br><a href="#pedido">Quero um igual →</a></div></div>
-<div class="job"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80"><div><b>Doces da Camila</b><br><small>Entregue em 24h • São Paulo</small><br><a href="#pedido">Quero um igual →</a></div></div>
-<div class="job"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80"><div><b>Studio de Beleza</b><br><small>Entregue em 24h • São Paulo</small><br><a href="#pedido">Quero um igual →</a></div></div>
-<div class="job"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80"><div><b>Lanches do Bairro</b><br><small>Entregue em 24h • São Paulo</small><br><a href="#pedido">Quero um igual →</a></div></div>
+<div class="job"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80"><div><b>Barbearia do Seu Bairro</b><br><small>Entregue em 24h • SP</small><br><a href="#pedido">Quero um igual →</a></div></div>
+<div class="job"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80"><div><b>Doces da Camila</b><br><small>Entregue em 24h • SP</small><br><a href="#pedido">Quero um igual →</a></div></div>
+<div class="job"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80"><div><b>Studio de Beleza</b><br><small>Entregue em 24h • SP</small><br><a href="#pedido">Quero um igual →</a></div></div>
+<div class="job"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80"><div><b>Lanches do Bairro</b><br><small>Entregue em 24h • SP</small><br><a href="#pedido">Quero um igual →</a></div></div>
 </div>
 </section>
 
 <section>
 <h2>O que você <em>recebe</em></h2>
 <div class="feat" style="margin-top:16px">
-<div>📱<b>Perfeito no celular</b><p>90% dos clientes veem pelo celular.</p></div>
-<div>💬<b>Botão que vende</b><p>Cliente clica e cai no seu Zap.</p></div>
+<div>📱<b>Perfeito no celular</b><p>90% dos clientes veem pelo celular. Seu site abre rápido.</p></div>
+<div>💬<b>Botão que vende</b><p>Cliente clica e cai direto no seu WhatsApp.</p></div>
 <div>⚡<b>Entrega em 24h</b><p>Manda hoje, divulga amanhã.</p></div>
-<div>🛡️<b>Sem risco</b><p>Você aprova antes de pagar.</p></div>
+<div>🛡️<b>Sem risco</b><p>Você aprova antes de pagar. 1 revisão grátis.</p></div>
+<div>🔍<b>Aparece no Google</b><p>Seu cliente te acha quando procura.</p></div>
+<div>🎨<b>Com sua cara</b><p>Suas cores, suas fotos, seu preço.</p></div>
 </div>
 </section>
 
 <section>
 <h2>Monte seu <em>preço</em> 🧮</h2>
-<div class="price-box" style="margin-top:14px">
-<div class="price-row"><label><input type="checkbox" checked disabled> Site completo<br><small>Já incluso</small></label><b>R$150</b></div>
-<div class="price-row" onclick="calc(this,30)"><span>➕ Logo simples</span><span><input type="checkbox"> +R$30</span></div>
-<div class="price-row" onclick="calc(this,20)"><span>➕ Bio Instagram</span><span><input type="checkbox"> +R$20</span></div>
-<div class="price-row" onclick="calc(this,30)"><span>➕ Cardápio digital</span><span><input type="checkbox"> +R$30</span></div>
-<div class="total">Seu total:<br><b id="total">R$150</b><p style="color:#888;margin-top:6px">Só paga depois de aprovar</p></div>
-<button class="btn-green" style="width:100%;padding:16px;font-size:15px" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">QUERO ESSE PACOTE POR <span id="total2">R$150</span> →</button>
+<p class="sub">Escolhe o que você quer e vê o preço na hora:</p>
+<div class="price-box">
+<div class="price-row active"><span><b>Site completo</b><br><small>Já incluso • Obrigatório</small></span><b>R$150</b></div>
+<div class="price-row" data-preco="30" onclick="togglePreco(this)"><span>➕ Logo simples</span><span><input type="checkbox"> +R$30</span></div>
+<div class="price-row" data-preco="20" onclick="togglePreco(this)"><span>➕ Bio do Instagram</span><span><input type="checkbox"> +R$20</span></div>
+<div class="price-row" data-preco="30" onclick="togglePreco(this)"><span>➕ Cardápio digital</span><span><input type="checkbox"> +R$30</span></div>
+<div class="total">Seu total:<br><s>R$350</s><br><b id="total">R$150</b><p style="color:#888;margin-top:6px">Só paga depois de aprovar • Pix</p></div>
+<button class="btn-green" style="width:100%;padding:17px;font-size:15px" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">QUERO ESSE PACOTE POR <span id="total2">R$150</span> →</button>
 </div>
 </section>
 
 <section id="pedido">
 <h2>Peça seu site <em>agora</em> 📝</h2>
-<p class="sub">Preenche aqui, chega tudo pronto no meu Zap:</p>
+<p class="sub">Preenche aqui, chega tudo pronto no meu WhatsApp:</p>
 <form onsubmit="enviar(event)">
-<label>Seu nome</label><input id="nome" placeholder="Ex: João" required>
-<label>Nome do seu negócio</label><input id="negocio" placeholder="Ex: Barbearia do João" required>
+<label>Seu nome *</label><input id="nome" placeholder="Ex: João" required>
+<label>Nome do seu negócio *</label><input id="negocio" placeholder="Ex: Barbearia do João" required>
 <label>Tipo de negócio</label><select id="tipo"><option>Barbearia</option><option>Confeitaria</option><option>Salão / Estética</option><option>Lanchonete</option><option>Loja</option><option>Outro</option></select>
 <label>Seu WhatsApp</label><input id="zap" placeholder="Ex: 11 99999-9999">
 <label>O que você quer no site?</label><textarea id="msg" placeholder="Ex: Quero agenda, preços e fotos..."></textarea>
-<button class="btn-green" style="width:100%;padding:16px;margin-top:16px;font-size:15px">ENVIAR PEDIDO NO WHATSAPP →</button>
+<button class="btn-green" style="width:100%;padding:17px;margin-top:16px;font-size:15px">ENVIAR PEDIDO NO WHATSAPP →</button>
+<p style="text-align:center;font-size:12px;color:#999;margin-top:10px">Resposta em até 1 hora • Sem compromisso</p>
 </form>
 </section>
 
 <section>
 <h2>Como <em>funciona</em></h2>
 <div class="steps" style="margin-top:16px">
-<div><div class="num">1</div><div><b>Você me chama no Zap</b><p>Manda fotos, preços e seu WhatsApp. 2 min.</p></div></div>
-<div><div class="num">2</div><div><b>Eu monto em até 24h</b><p>Te mando o link pra ver e pedir ajuste.</p></div></div>
-<div><div class="num">3</div><div><b>Você aprova e paga</b><p>Pix de R$150. Sem mensalidade.</p></div></div>
+<div><div class="num">1</div><div><b>Você me chama no Zap</b><p>Manda fotos, preços e seu WhatsApp. Leva 2 min.</p></div></div>
+<div><div class="num">2</div><div><b>Eu monto em até 24h</b><p>Te mando o link pra ver e pedir ajuste grátis.</p></div></div>
+<div><div class="num">3</div><div><b>Você aprova e paga</b><p>Pix único. Sem mensalidade. Seu site é seu pra sempre.</p></div></div>
 </div>
 <h2 style="margin-top:20px">Quem já fez, <em>aprovou</em></h2>
-<div class="depo" style="margin-top:14px">⭐⭐⭐⭐⭐<p>"Achei que era golpe por ser barato. Ele mandou antes, eu gostei, aí paguei. Hoje todo mundo agenda por lá."</p><b>Diego</b><br><small style="color:#888">Barbearia em SP</small></div>
-<div class="offer" style="margin-top:20px"><small>OFERTA DA SEMANA • TERMINA DOMINGO</small><p>De <s>R$350</s> por</p><h3><span>R$</span>150</h3><p style="color:#aaa">Pagamento único • Sem mensalidade<br>1 revisão grátis • Entrega em 24h</p><a class="btn-green" href="#pedido" style="width:100%;padding:16px;margin-top:16px">GARANTIR MEU SITE POR R$150</a><p style="font-size:12px;color:#888;margin-top:12px">⏰ Falta 1 dia pra acabar a oferta</p></div>
+<div class="depo" style="margin-top:14px">⭐⭐⭐⭐⭐<p>"Achei que era golpe por ser barato. Ele mandou antes, eu gostei, aí paguei. Hoje todo mundo agenda por lá."</p><b>Diego - Barbearia em SP</b></div>
+<div class="depo">⭐⭐⭐⭐⭐<p>"Mandei as fotos de manhã, à noite já tava vendendo pelo site. Melhor R$150 que já gastei."</p><b>Camila - Doces em SP</b></div>
+<div class="offer" style="margin-top:20px"><small>OFERTA DA SEMANA • TERMINA DOMINGO</small><p>De <s>R$350</s> por</p><h3><span>R$</span>150</h3><p style="color:#aaa">Pagamento único • Sem mensalidade<br>1 revisão grátis • Entrega em 24h<br>⏰ Só 2 vagas essa semana</p><a class="btn-green" href="#pedido" style="width:100%;padding:17px;margin-top:16px">GARANTIR MEU SITE POR R$150</a></div>
 <h2 style="margin-top:24px">Dúvidas?</h2>
-<div class="faq"><b>Preciso pagar antes? <span>↓</span></b><p style="color:#666;margin-top:8px;font-size:14px">Não. Você só paga depois de aprovar o site.</p></div>
-<div class="faq"><b>Demora quanto? <span>↓</span></b><p style="color:#666;margin-top:8px;font-size:14px">Até 24h depois que você mandar as fotos.</p></div>
+<div class="faq" onclick="this.classList.toggle('open')"><b>Preciso pagar antes? <span>↓</span></b><p>Não. Você só paga depois de aprovar o site. Zero risco.</p></div>
+<div class="faq" onclick="this.classList.toggle('open')"><b>Demora quanto? <span>↓</span></b><p>Até 24h depois que você mandar as fotos e os preços.</p></div>
+<div class="faq" onclick="this.classList.toggle('open')"><b>Tem mensalidade? <span>↓</span></b><p>Não. É pagamento único de R$150. O site é seu.</p></div>
+<div class="faq" onclick="this.classList.toggle('open')"><b>E se eu não gostar? <span>↓</span></b><p>Você tem 1 revisão grátis. A gente ajusta até você gostar.</p></div>
 </section>
-<div class="pb"></div>
+<footer>Moisés Sites • São Paulo - SP<br>Feito com dedicação para pequenos negócios crescerem.<br>© 2026 Moisés Sites - Todos os direitos reservados</footer>
 <a class="float" href="#pedido">💬</a>
 <div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><span>Online agora • Só paga depois</span></div><a class="btn-green" href="#pedido">QUERO →</a></div>
 <script>
-let total=150;
+let totalBase=150;
 function troca(el,tipo){
 document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
-const d={barbearia:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp.","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80"],confeitaria:["Doces da Camila","Cardápio com fotos, botão de encomenda e WhatsApp direto. Seu cliente encomenda sem enrolação.","https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=900&q=80"],salao:["Studio de Beleza","Agenda, preços, fotos dos trabalhos e botão pra marcar direto no Zap.","https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&q=80"],lanchonete:["Lanches do Bairro","Cardápio digital, fotos que dão fome e pedido direto no WhatsApp.","https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80"]};
+const d={barbearia:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80"],confeitaria:["Doces da Camila","Cardápio com fotos, botão de encomenda e WhatsApp direto. Seu cliente encomenda sem enrolação.","https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=900&q=80"],salao:["Studio de Beleza","Agenda, preços, fotos dos trabalhos e botão pra marcar direto no Zap.","https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&q=80"],lanchonete:["Lanches do Bairro","Cardápio digital, fotos que dão fome e pedido direto no WhatsApp.","https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80"]};
 document.getElementById('prevTitle').innerText=d[tipo][0];document.getElementById('prevDesc').innerText=d[tipo][1];document.getElementById('prevImg').src=d[tipo][2];
 }
-function calc(row,valor){
-let cb=row.querySelector('input');setTimeout(()=>{total=150;document.querySelectorAll('.price-row input').forEach(i=>{if(i.checked && !i.disabled){total+= i.closest('.price-row').innerText.includes('30')&&i.closest('.price-row').innerText.includes('Logo')?30 : i.closest('.price-row').innerText.includes('Bio')?20 : 30}});document.getElementById('total').innerText='R$'+total;document.getElementById('total2').innerText='R$'+total;},50);
+function togglePreco(row){
+let cb=row.querySelector('input');cb.checked=!cb.checked;row.classList.toggle('active',cb.checked);atualizaTotal();
 }
-function enviar(e){e.preventDefault();let n=document.getElementById('nome').value,b=document.getElementById('negocio').value,t=document.getElementById('tipo').value,z=document.getElementById('zap').value,m=document.getElementById('msg').value;let texto=`Olá Moisés! Quero meu site!%0A%0ANome: ${n}%0ANegócio: ${b}%0ATipo: ${t}%0AWhatsApp: ${z}%0AQuero: ${m}`;window.open('https://wa.me/5511999999999?text='+texto,'_blank');}
+function atualizaTotal(){
+let t=150;document.querySelectorAll('.price-row[data-preco]').forEach(r=>{if(r.querySelector('input').checked){t+=parseInt(r.dataset.preco)}});
+document.getElementById('total').innerText='R$'+t;document.getElementById('total2').innerText='R$'+t;
+}
+function enviar(e){e.preventDefault();
+let n=document.getElementById('nome').value,b=document.getElementById('negocio').value,t=document.getElementById('tipo').value,z=document.getElementById('zap').value,m=document.getElementById('msg').value;
+let extras=[];document.querySelectorAll('.price-row[data-preco]').forEach(r=>{if(r.querySelector('input').checked) extras.push(r.innerText.trim())});
+let total=document.getElementById('total').innerText;
+let texto=`Olá Moisés! Quero meu site!%0A%0A🧑 Nome: ${encodeURIComponent(n)}%0A🏪 Negócio: ${encodeURIComponent(b)}%0A📂 Tipo: ${encodeURIComponent(t)}%0A📱 WhatsApp: ${encodeURIComponent(z)}%0A💰 Pacote: ${encodeURIComponent(total)}%0A➕ Extras: ${encodeURIComponent(extras.join(', ')||'Nenhum')}%0A📝 Quero: ${encodeURIComponent(m)}`;
+window.open('https://wa.me/5511999999999?text='+texto,'_blank');
+}
 setInterval(()=>{let d=new Date();document.getElementById('clock').innerText=d.toLocaleTimeString('pt-BR');},1000);
 </script>
 </body>
