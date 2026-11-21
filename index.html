@@ -102,7 +102,7 @@ details p{color:#666;margin-top:8px}
 <nav class="nav"><b>Moisés <span>Sites</span></b><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO O MEU →</a></nav>
 
 <header class="hero">
-<div class="pill"><span class="live-dot"></span> <span id="onlineStatus">Online agora</span> • <span id="viewers">12</span> pessoas vendo</div>
+<div class="pill"><span class="live-dot" id="liveDot"></span> <span id="onlineStatus">Online agora</span> • <span id="viewers">12</span> pessoas vendo</div>
 <h1>Seu negócio com cara de <em>empresa grande.</em><br>Pronto amanhã.</h1>
 <p>Eu crio seu site profissional em até 24h. Você vê, aprova, e <b style="color:#fff">só depois paga.</b></p>
 <a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO MEU SITE NO WHATSAPP →</a>
@@ -243,10 +243,15 @@ document.getElementById('topClock').innerText=time;
 document.getElementById('dateBig').innerText='São Paulo • '+date;
 document.getElementById('footerDate').innerText=date;
 let open = hour>=8 && hour<23;
-document.getElementById('onlineStatus').innerText=open?'Online agora • Aberto':'Online agora • Respondo amanhã cedo';
-document.getElementById('stickyStatus').innerText=open?'Online agora • Só paga depois':'Online • Respondo cedo';
-let day=now.getDay(); let left=7-day; if(left===7) left=0;
-document.getElementById('countdown').innerText='Faltam '+left+' dia(s) pra acabar a oferta';
+document.getElementById('onlineStatus').innerText=open?'Online agora':'Respondo cedo';
+var dot=document.getElementById('liveDot');
+if(dot){dot.style.background=open?'#25D366':'#FFC107';}
+document.getElementById('stickyStatus').innerText=open?'Online agora • Só paga depois':'Respondo cedo • Só paga depois';
+let day=now.getDay(); let left=7-day;
+let countdownEl=document.getElementById('countdown');
+if(left===7){countdownEl.innerText='Hoje é o último dia';}
+else if(left===1){countdownEl.innerText='Falta 1 dia';}
+else{countdownEl.innerText='Faltam '+left+' dias';}
 }
 setInterval(updateTime,1000); updateTime();
 let viewers=12;
@@ -311,4 +316,4 @@ let ti=0;
 setInterval(function(){ti=(ti+1)%4; document.getElementById('ttext').innerText=depo[ti][0]; document.getElementById('tname').innerText=depo[ti][1]; document.getElementById('tsub').innerText=depo[ti][2]; for(let i=0;i<4;i++) document.getElementById('d'+i).className='dot'+(i===ti?' on':'');},4000);
 </script>
 </body>
-</html>
+  </html>
