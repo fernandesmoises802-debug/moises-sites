@@ -3,140 +3,151 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>K. STUDIO — Design & Conteúdo para Empresas | São Paulo</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<title>Moisés Sites - Seu negócio com cara de empresa grande</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-html{scroll-behavior:smooth}
-body{background:#050505;color:#fff;font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
-a{text-decoration:none;color:inherit}
-a:visited,a:active,a:hover{color:inherit}
-::selection{background:#d4af37;color:#000}
-img{max-width:100%}
-.container{max-width:1150px;margin:auto;padding:0 20px}
-.gold{background:linear-gradient(120deg,#fff2a8,#d4af37,#9a7b00,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:shine 3s linear infinite}
-@keyframes shine{to{background-position:200% center}}
-#intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:out .7s ease 2.2s forwards;pointer-events:none}
-@keyframes out{to{transform:translateY(-100%);visibility:hidden;opacity:0}}
-.intro-logo{font-family:'Playfair Display',serif;font-size:clamp(52px,13vw,96px);font-weight:900;letter-spacing:5px;text-align:center}
-.intro-logo span{color:#d4af37}
-.intro-line{width:260px;height:2px;background:#d4af37;margin:14px 0}
-.intro-sub{letter-spacing:5px;font-size:11px;color:#999;text-align:center}
-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.3)}
-.topbar{background:#d4af37;color:#000;text-align:center;font-size:11px;font-weight:800;padding:7px 8px}
-nav{display:flex;justify-content:space-between;align-items:center;height:66px;max-width:1150px;margin:auto;padding:0 16px;gap:10px}
-.logo{font-family:'Playfair Display',serif;font-size:23px;font-weight:900;white-space:nowrap}
-.logo span{color:#d4af37}
-.menu{display:flex;gap:18px;font-size:13px;font-weight:600}
-.btn-gold{background:linear-gradient(135deg,#ffe27a,#d4af37,#9c7a00);color:#000!important;padding:12px 20px;border-radius:50px;font-weight:800;font-size:14px;display:inline-block;text-align:center;white-space:nowrap}
-.hero{min-height:100svh;display:flex;align-items:center;text-align:center;position:relative;padding:150px 16px 70px;background:#000;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1600&auto=format&fit=crop') center/cover;opacity:.32}
-.hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55),#050505 96%)}
-.hero-c{position:relative;z-index:2;width:100%}
-.badge{display:inline-block;border:1px solid #d4af37;color:#d4af37;padding:8px 14px;border-radius:50px;font-size:11px;letter-spacing:2px}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,76px);line-height:1.05;margin:20px 0}
-.hero p{max-width:680px;margin:0 auto 12px;color:#ddd;font-size:17px}
-.hero small{color:#aaa;display:block;margin-bottom:26px;font-size:14px}
-.trust{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
-.trust div{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);padding:9px 14px;border-radius:50px;font-size:12px}
-.trust b{color:#d4af37}
-section{padding:75px 0}
-.tag{color:#d4af37;letter-spacing:3px;font-size:12px;font-weight:800}
-.title{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,46px);margin:12px 0 14px;line-height:1.15}
-.sub{color:#aaa;max-width:700px;font-size:15px}
-.grid{display:grid;gap:18px}
-.services{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));margin-top:28px}
-.card{background:#0f0f0f;border:1px solid #222;border-radius:22px;padding:26px}
-.card h3{font-family:'Playfair Display',serif;font-size:21px;margin:10px 0 8px}
-.card p{color:#aaa;font-size:15px}
-.card .price{margin-top:14px;color:#d4af37;font-weight:800;font-size:14px}
-.portfolio{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:28px}
-.port{border-radius:22px;overflow:hidden;background:#111;border:1px solid #222}
-.port img{width:100%;height:240px;object-fit:cover;display:block}
-.port div{padding:18px}
-.port span{font-size:11px;color:#d4af37;letter-spacing:2px;font-weight:800}
-.port h3{font-family:'Playfair Display',serif;font-size:20px;margin-top:6px}
-.process{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:28px}
-.step{background:#0f0f0f;border:1px solid #222;border-radius:20px;padding:22px}
-.step b{font-size:36px;color:#d4af37;font-family:'Playfair Display',serif}
-.step h4{margin:8px 0 6px}
-.step p{color:#aaa;font-size:14px}
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:18px;margin-top:30px}
-.plan{background:#0f0f0f;border:1px solid #222;border-radius:24px;padding:28px;position:relative;display:flex;flex-direction:column}
-.plan.hot{border-color:#d4af37}
-.plan .tag2{position:absolute;top:-12px;left:18px;background:#d4af37;color:#000;font-size:11px;font-weight:800;padding:5px 12px;border-radius:50px}
-.plan h3{font-size:19px}
-.plan .val{font-family:'Playfair Display',serif;font-size:34px;margin:10px 0}
-.plan ul{list-style:none;color:#bbb;font-size:15px;margin:14px 0;flex:1}
-.plan ul li{padding:6px 0;border-bottom:1px solid #1c1c1c}
-.testi{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:28px}
-.t{background:#0f0f0f;border:1px solid #222;border-radius:20px;padding:24px}
-.t .stars{color:#d4af37}
-.t p{margin:10px 0;color:#ddd;font-style:italic;font-size:15px}
-.t b{color:#d4af37}
-.faq{max-width:800px;margin-top:26px}
-.faq details{background:#0f0f0f;border:1px solid #222;border-radius:16px;padding:16px 18px;margin-bottom:10px}
-.faq summary{cursor:pointer;font-weight:700;font-size:15px}
-.faq p{color:#aaa;margin-top:10px;font-size:15px}
-.cta{background:radial-gradient(circle,#2a2000,#050505);border:1px solid #d4af37;border-radius:28px;padding:50px 18px;text-align:center}
-footer{background:#000;border-top:1px solid #222;padding:36px 0 18px;color:#888;font-size:14px}
-.foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;max-width:1150px;margin:auto;padding:0 20px}
-.foot h4{color:#fff;margin-bottom:8px}
-.whats{position:fixed;bottom:18px;right:18px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:200}
-@media(max-width:760px){.menu{display:none}.topbar{font-size:10px}.btn-gold{padding:11px 16px;font-size:13px}}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#f7f3eb;color:#111}
+.top{background:#ffcc00;text-align:center;padding:8px;font-weight:900;font-size:12px}
+header{background:#000;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:14px 16px;position:sticky;top:0;z-index:10}
+.logo{font-family:Georgia,serif;font-size:24px;font-weight:bold}.logo i{color:#ffcc00;font-style:italic}
+.btn-green{background:#00d465;color:#fff;border:0;padding:10px 14px;border-radius:999px;font-weight:900;cursor:pointer;text-decoration:none;display:inline-block;font-size:13px}
+.hero{background:#000;color:#fff;padding:24px 16px 20px;text-align:center}
+.badge{background:#1a1a1a;border-radius:999px;display:inline-block;padding:7px 14px;font-size:13px;color:#ddd}
+.dot{color:#00d465}
+.hero h1{font-size:34px;line-height:1.05;margin:18px 0 12px}.hero h1 em{color:#ffcc00;font-family:Georgia,serif}
+.hero p{color:#aaa;line-height:1.5}.hero p b{color:#fff}
+.hero .big{width:100%;padding:16px;margin:18px 0 10px;font-size:15px}
+.small{font-size:12px;color:#777}
+.stats{display:flex;justify-content:space-around;text-align:center;padding:18px 0;border-top:1px solid #222;margin-top:18px}.stats b{font-size:22px;display:block}.stats span{font-size:11px;color:#888;text-transform:uppercase}
+.hero-img{width:100%;height:280px;object-fit:cover;border-radius:18px;margin-top:18px}
+.marquee{background:#000;color:#fff;white-space:nowrap;overflow:hidden;padding:12px 0;border-top:1px solid #222}.marquee span{padding:0 14px;font-weight:800}
+section{padding:26px 16px}h2{font-size:28px;line-height:1.1}h2 em{color:#d9a400;font-family:Georgia,serif}
+.sub{color:#777;margin:8px 0 16px}
+.tabs{display:flex;gap:8px;overflow:auto;padding-bottom:6px}.tab{white-space:nowrap;border:1px solid #ddd;background:#fff;padding:10px 14px;border-radius:999px;cursor:pointer}.tab.active{background:#000;color:#fff}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,.06)}.card img{width:100%;height:220px;object-fit:cover}.card-body{padding:18px}.pills span{background:#fff3c4;padding:6px 10px;border-radius:999px;font-size:12px;font-weight:700;margin-right:6px}
+.btn-black{background:#000;color:#fff;width:100%;padding:16px;border:0;border-radius:999px;font-weight:900;margin-top:16px;cursor:pointer}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.job{background:#fff;border-radius:16px;overflow:hidden}.job img{width:100%;height:140px;object-fit:cover}.job div{padding:12px}.job small{color:#888}.job a{color:#00b85c;font-weight:800;text-decoration:none;font-size:13px}
+.feat{display:grid;grid-template-columns:1fr 1fr;gap:12px}.feat div{background:#fff;padding:16px;border-radius:16px}.feat b{display:block;margin:10px 0 4px}.feat p{color:#777;font-size:13px;line-height:1.4}
+.price-box{background:#fff;border-radius:20px;padding:16px}.price-row{display:flex;justify-content:space-between;align-items:center;background:#f4f0e6;padding:14px;border-radius:12px;margin-bottom:10px;cursor:pointer}.price-row b{font-size:18px}.total{text-align:center;padding:18px 0}.total b{font-size:42px;color:#555}
+form{background:#fff;padding:18px;border-radius:20px}label{font-weight:800;font-size:13px;display:block;margin:14px 0 6px}input,select,textarea{width:100%;padding:14px;border:1px solid #eee;border-radius:12px;background:#faf7f0;font-size:15px}textarea{height:80px}
+.steps div{display:flex;gap:12px;margin-bottom:18px}.num{background:#000;color:#ffcc00;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;flex-shrink:0}.steps p{color:#777;font-size:14px;margin-top:4px}
+.depo{background:#fff;padding:20px;border-radius:20px}.depo p{line-height:1.6;margin:12px 0}
+.offer{background:#000;color:#fff;border-radius:20px;padding:24px 16px;text-align:center}.offer small{color:#ffcc00;letter-spacing:2px;font-weight:900}.offer h3{font-size:56px;margin:10px 0}.offer h3 span{font-size:22px}
+.faq{background:#fff;padding:14px;border-radius:12px;margin-top:10px}.faq b{display:flex;justify-content:space-between}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:#fff;display:flex;justify-content:space-between;align-items:center;padding:10px 14px;border-top:1px solid #eee;z-index:20}.sticky b{font-size:15px}.sticky span{font-size:12px;color:#555}
+.float{position:fixed;right:14px;bottom:72px;background:#00d465;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:20;box-shadow:0 8px 20px rgba(0,0,0,.2)}
+.pb{height:70px}
 </style>
 </head>
 <body>
-<div id="intro"><div class="intro-logo">K. <span>STUDIO</span></div><div class="intro-line"></div><div class="intro-sub">DESIGN • CONTEÚDO • MARCA</div></div>
-<header><div class="topbar">✦ ATENDIMENTO RÁPIDO NO WHATSAPP • ORÇAMENTO SEM COMPROMISSO ✦</div>
-<nav><div class="logo">K. <span>STUDIO</span></div><div class="menu"><a href="#servicos">Serviços</a><a href="#portfolio">Portfólio</a><a href="#processo">Como Funciona</a><a href="#planos">Planos</a><a href="#faq">Dúvidas</a></div><a class="btn-gold" href="https://wa.me/5511969336575?text=Ol%C3%A1!%20Conheci%20a%20K.%20Studio%20pelo%20site%20e%20quero%20um%20or%C3%A7amento.">Orçamento</a></nav></header>
-<section class="hero"><div class="hero-bg"></div><div class="hero-c container">
-<span class="badge">✦ DESIGN • CONTEÚDO • MARCA — SÃO PAULO</span>
-<h1>Seu negócio com cara<br>de <span class="gold">marca grande.</span></h1>
-<p>Design e conteúdo premium para barbearias, lojas, restaurantes e academias que querem vender mais todos os dias.</p>
-<small>Você não precisa entender de design. A gente cria tudo pra você. É só postar e vender.</small>
-<a class="btn-gold" style="font-size:17px;padding:15px 32px" href="https://wa.me/5511969336575?text=Ol%C3%A1!%20Conheci%20a%20K.%20Studio%20pelo%20site%20e%20quero%20um%20or%C3%A7amento.">Quero um orçamento →</a>
-<div class="trust"><div><b>+120</b> artes entregues*</div><div><b>⭐ 4.9</b> avaliação*</div><div><b>⚡ 24h</b> entrega expressa</div><div><b>✅</b> Sem fidelidade</div></div>
-</div></section>
-<section id="servicos"><div class="container"><span class="tag">O QUE FAZEMOS</span><h2 class="title">Serviços pensados pra vender</h2><p class="sub">Não é só arte bonita. Cada serviço tem um objetivo: fazer o cliente parar, entender e chamar você.</p><div class="grid services">
-<div class="card"><div style="font-size:34px">✂️</div><h3>Barbearias & Salões</h3><p>Posts de corte, promoções e agenda cheia. Visual forte e direto.</p><div class="price">A partir de R$ 97 →</div></div>
-<div class="card"><div style="font-size:34px">👕</div><h3>Lojas de Roupa</h3><p>Lançamentos e vitrine digital que faz sua loja parecer marca famosa.</p><div class="price">A partir de R$ 97 →</div></div>
-<div class="card"><div style="font-size:34px">🍔</div><h3>Restaurantes & Delivery</h3><p>Cardápio visual e stories que dão fome e aumentam o pedido.</p><div class="price">A partir de R$ 97 →</div></div>
-<div class="card"><div style="font-size:34px">💪</div><h3>Academias</h3><p>Artes de matrícula e campanhas pra trazer aluno novo todo mês.</p><div class="price">A partir de R$ 97 →</div></div>
-<div class="card"><div style="font-size:34px">📱</div><h3>Posts & Stories</h3><p>Conteúdo pronto pra 30 dias. Você só posta, sem pensar no que criar.</p><div class="price">A partir de R$ 97 →</div></div>
-<div class="card"><div style="font-size:34px">✨</div><h3>Identidade Visual</h3><p>Logo, cores, fontes e padrão da sua marca. Cara de empresa grande.</p><div class="price">A partir de R$ 197 →</div></div>
-</div></div></section>
-<section id="portfolio"><div class="container"><span class="tag">PORTFÓLIO 4K</span><h2 class="title">Estilos que criamos</h2><p class="sub">Exemplos de direção de arte em alta resolução. O seu projeto é feito do zero pra sua marca.</p><div class="grid portfolio">
-<div class="port"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop" alt="Barbearia"><div><span>BARBEARIA</span><h3>Estilo Premium Masculino</h3></div></div>
-<div class="port"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" alt="Loja"><div><span>LOJA DE ROUPA</span><h3>Coleção / Lançamento</h3></div></div>
-<div class="port"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop" alt="Restaurante"><div><span>RESTAURANTE</span><h3>Promoção / Delivery</h3></div></div>
-<div class="port"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" alt="Academia"><div><span>ACADEMIA</span><h3>Campanha de Matrícula</h3></div></div>
-</div></div></section>
-<section id="processo"><div class="container"><span class="tag">COMO FUNCIONA</span><h2 class="title">Simples de contratar, fácil de receber</h2><div class="process">
-<div class="step"><b>01</b><h4>Você chama no WhatsApp</h4><p>Conta seu negócio e o que precisa. Resposta em poucas horas.</p></div>
-<div class="step"><b>02</b><h4>A gente cria a proposta</h4><p>Você escolhe o plano e a gente alinha cores, estilo e prazo.</p></div>
-<div class="step"><b>03</b><h4>Recebe as artes</h4><p>Artes prontas, em alta qualidade, organizadas pra postar.</p></div>
-<div class="step"><b>04</b><h4>Você posta e vende</h4><p>Se precisar, a gente ajusta. Sem complicação.</p></div>
-</div></div></section>
-<section id="planos"><div class="container"><span class="tag">PLANOS E INVESTIMENTO</span><h2 class="title">Escolha como começar</h2><p class="sub">Preço justo pra quem tá começando. Sem pegadinha, sem fidelidade.</p><div class="plans">
-<div class="plan"><h3>ESSENCIAL</h3><div class="val">R$ 97</div><p style="color:#aaa">Pra testar e dar o primeiro passo</p><ul><li>✓ 8 artes / mês</li><li>✓ 4 stories</li><li>✓ Entrega em até 48h</li><li>✓ 1 revisão</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20ESSENCIAL%20da%20K.%20Studio">Quero esse →</a></div>
-<div class="plan hot"><span class="tag2">MAIS PROCURADO</span><h3>CRESCIMENTO</h3><div class="val">R$ 147<span style="font-size:16px;color:#aaa">/mês</span></div><p style="color:#aaa">Pra quem quer postar toda semana</p><ul><li>✓ 16 artes / mês</li><li>✓ 12 stories</li><li>✓ Calendário de postagem</li><li>✓ 2 revisões</li><li>✓ Suporte no WhatsApp</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20CRESCIMENTO%20da%20K.%20Studio">Quero esse →</a></div>
-<div class="plan"><h3>MARCA COMPLETA</h3><div class="val">R$ 297</div><p style="color:#aaa">Pra virar referência no seu bairro</p><ul><li>✓ Identidade visual completa</li><li>✓ Logo + cores + fontes</li><li>✓ 20 artes + stories</li><li>✓ Manual da marca</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20MARCA%20COMPLETA%20da%20K.%20Studio">Quero esse →</a></div>
-</div></div></section>
-<section><div class="container"><span class="tag">O QUE DIZEM</span><h2 class="title">Clientes que confiaram</h2><div class="testi">
-<div class="t"><div class="stars">★★★★★</div><p>"Minha barbearia ficou com cara de barbearia de shopping. A agenda lotou depois das artes."</p><b>— Dono de Barbearia*</b></div>
-<div class="t"><div class="stars">★★★★★</div><p>"Eu não precisava pensar em nada. Recebia tudo pronto e era só postar."</p><b>— Dona de Loja*</b></div>
-<div class="t"><div class="stars">★★★★★</div><p>"O delivery aumentou muito depois que começamos a postar com o visual novo."</p><b>— Dono de Lanchonete*</b></div>
-</div></div></section>
-<section id="faq"><div class="container"><span class="tag">PERGUNTAS FREQUENTES</span><h2 class="title">Dúvidas de quem vai contratar</h2><div class="faq">
-<details><summary>Quanto tempo demora pra entregar?</summary><p>Artes avulsas em até 48h. Planos mensais em lotes semanais. Identidade visual em 5 a 7 dias úteis.</p></details>
-<details><summary>Preciso ter logo?</summary><p>Não. Se você não tem, a gente cria. Se já tem, a gente segue seu padrão e deixa melhor.</p></details>
-<details><summary>Como funciona o pagamento?</summary><p>Via Pix. 50% para começar e 50% na entrega, ou mensal no plano. Tudo combinado no WhatsApp.</p></details>
-<details><summary>Posso pedir ajuste?</summary><p>Sim. Cada plano inclui revisões. A gente ajusta cor, texto e estilo até ficar do seu gosto.</p></details>
-<details><summary>Atende só em São Paulo?</summary><p>Atendemos todo o Brasil pelo WhatsApp. Design 100% online.</p></details>
-</div></div></section>
-<section><div class="container"><div class="cta"><h2 style="font-family:'Playfair Display',serif;font-size:clamp(26px,5vw,42px)">Pronto pra deixar seu negócio<br>com cara de marca grande?</h2><p style="color:#ccc;margin:14px 0 26px">Chama no WhatsApp agora e receba seu orçamento em poucas horas.</p><a class="btn-gold" style="font-size:17px;padding:15px 34px" href="https://wa.me/5511969336575?text=Ol%C3%A1!%20Conheci%20a%20K.%20Studio%20pelo%20site%20e%20quero%20um%20or%C3%A7amento.">Chamar no WhatsApp →</a><p style="margin-top:14px;color:#888;font-size:13px">Sem compromisso • Resposta rápida • Sem fidelidade</p></div></div></section>
-<footer><div class="foot"><div><h4>K. STUDIO</h4><p>Design & Conteúdo para empresas que querem vender mais.<br>São Paulo — SP • Atendimento em todo Brasil</p></div><div><h4>Contato</h4><p>WhatsApp: (11) 96933-6575<br>Horário: Seg a Sáb, 9h às 19h</p></div><div><h4>Serviços</h4><p>Identidade Visual • Posts • Stories<br>Cardápios • Campanhas • Branding</p></div><div><h4>Empresa</h4><p>K. Studio © 2026<br>Feito com excelência em São Paulo</p></div></div><p style="text-align:center;margin-top:28px;color:#555">© 2026 K. STUDIO — Todos os direitos reservados.</p></footer>
-<a class="whats" href="https://wa.me/5511969336575?text=Ol%C3%A1!%20Conheci%20a%20K.%20Studio%20pelo%20site%20e%20quero%20um%20or%C3%A7amento.">💬</a>
+<div class="top">SÓ 2 VAGAS ESSA SEMANA • <span id="clock">12:12:39</span> • São Paulo</div>
+<header><div class="logo">Moisés <i>Sites</i></div><a class="btn-green" href="#pedido">QUERO O MEU →</a></header>
+
+<div class="hero">
+<div class="badge"><span class="dot">●</span> Online agora • 10 pessoas vendo</div>
+<h1>Seu negócio com cara de <em>empresa grande.</em> Pronto amanhã.</h1>
+<p>Eu crio seu site profissional em até 24h. Você vê, aprova, e <b>só depois paga.</b></p>
+<a class="btn-green big" href="#pedido">QUERO MEU SITE NO WHATSAPP →</a>
+<div class="small">Sem mensalidade • Sem enrolação • Pix após aprovação</div>
+<div class="stats"><div><b>24h</b><span>Entrega</span></div><div><b>4.9 ★</b><span>Avaliação</span></div><div><b>R$150</b><span>Preço único</span></div></div>
+<img class="hero-img" src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=900&q=80">
+</div>
+<div class="marquee"><span>LOJA ✦</span><span>ESTÉTICA ✦</span><span>BARBEARIA ✦</span><span>CONFEITARIA ✦</span><span>SALÃO ✦</span><span>LANCHONETE ✦</span></div>
+
+<section>
+<h2>Veja como ficaria <em>o seu</em> 👇</h2>
+<p class="sub">Clica no seu negócio e testa:</p>
+<div class="tabs" id="tabs">
+<div class="tab active" onclick="troca(this,'barbearia')">✂️ Barbearia</div>
+<div class="tab" onclick="troca(this,'confeitaria')">🍰 Confeitaria</div>
+<div class="tab" onclick="troca(this,'salao')">💅 Salão</div>
+<div class="tab" onclick="troca(this,'lanchonete')">🍔 Lanchonete</div>
+</div>
+<div class="card" style="margin-top:14px">
+<img id="prevImg" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80">
+<div class="card-body">
+<div class="pills"><span>📅 Agenda online</span><span>💲 Preços</span><span>💬 WhatsApp</span></div>
+<h3 id="prevTitle" style="font-size:22px;margin:14px 0 8px">Barbearia do Seu Bairro</h3>
+<p id="prevDesc" style="color:#666;line-height:1.6">Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.</p>
+<button class="btn-black" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">QUERO UM ASSIM →</button>
+</div></div>
+</section>
+
+<section>
+<h2>Últimos <em>trabalhos</em> 🔥</h2>
+<p class="sub">Sites que já entreguei:</p>
+<div class="grid">
+<div class="job"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80"><div><b>Barbearia do Seu Bairro</b><br><small>Entregue em 24h • São Paulo</small><br><a href="#pedido">Quero um igual →</a></div></div>
+<div class="job"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&q=80"><div><b>Doces da Camila</b><br><small>Entregue em 24h • São Paulo</small><br><a href="#pedido">Quero um igual →</a></div></div>
+<div class="job"><img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=600&q=80"><div><b>Studio de Beleza</b><br><small>Entregue em 24h • São Paulo</small><br><a href="#pedido">Quero um igual →</a></div></div>
+<div class="job"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80"><div><b>Lanches do Bairro</b><br><small>Entregue em 24h • São Paulo</small><br><a href="#pedido">Quero um igual →</a></div></div>
+</div>
+</section>
+
+<section>
+<h2>O que você <em>recebe</em></h2>
+<div class="feat" style="margin-top:16px">
+<div>📱<b>Perfeito no celular</b><p>90% dos clientes veem pelo celular.</p></div>
+<div>💬<b>Botão que vende</b><p>Cliente clica e cai no seu Zap.</p></div>
+<div>⚡<b>Entrega em 24h</b><p>Manda hoje, divulga amanhã.</p></div>
+<div>🛡️<b>Sem risco</b><p>Você aprova antes de pagar.</p></div>
+</div>
+</section>
+
+<section>
+<h2>Monte seu <em>preço</em> 🧮</h2>
+<div class="price-box" style="margin-top:14px">
+<div class="price-row"><label><input type="checkbox" checked disabled> Site completo<br><small>Já incluso</small></label><b>R$150</b></div>
+<div class="price-row" onclick="calc(this,30)"><span>➕ Logo simples</span><span><input type="checkbox"> +R$30</span></div>
+<div class="price-row" onclick="calc(this,20)"><span>➕ Bio Instagram</span><span><input type="checkbox"> +R$20</span></div>
+<div class="price-row" onclick="calc(this,30)"><span>➕ Cardápio digital</span><span><input type="checkbox"> +R$30</span></div>
+<div class="total">Seu total:<br><b id="total">R$150</b><p style="color:#888;margin-top:6px">Só paga depois de aprovar</p></div>
+<button class="btn-green" style="width:100%;padding:16px;font-size:15px" onclick="document.getElementById('pedido').scrollIntoView({behavior:'smooth'})">QUERO ESSE PACOTE POR <span id="total2">R$150</span> →</button>
+</div>
+</section>
+
+<section id="pedido">
+<h2>Peça seu site <em>agora</em> 📝</h2>
+<p class="sub">Preenche aqui, chega tudo pronto no meu Zap:</p>
+<form onsubmit="enviar(event)">
+<label>Seu nome</label><input id="nome" placeholder="Ex: João" required>
+<label>Nome do seu negócio</label><input id="negocio" placeholder="Ex: Barbearia do João" required>
+<label>Tipo de negócio</label><select id="tipo"><option>Barbearia</option><option>Confeitaria</option><option>Salão / Estética</option><option>Lanchonete</option><option>Loja</option><option>Outro</option></select>
+<label>Seu WhatsApp</label><input id="zap" placeholder="Ex: 11 99999-9999">
+<label>O que você quer no site?</label><textarea id="msg" placeholder="Ex: Quero agenda, preços e fotos..."></textarea>
+<button class="btn-green" style="width:100%;padding:16px;margin-top:16px;font-size:15px">ENVIAR PEDIDO NO WHATSAPP →</button>
+</form>
+</section>
+
+<section>
+<h2>Como <em>funciona</em></h2>
+<div class="steps" style="margin-top:16px">
+<div><div class="num">1</div><div><b>Você me chama no Zap</b><p>Manda fotos, preços e seu WhatsApp. 2 min.</p></div></div>
+<div><div class="num">2</div><div><b>Eu monto em até 24h</b><p>Te mando o link pra ver e pedir ajuste.</p></div></div>
+<div><div class="num">3</div><div><b>Você aprova e paga</b><p>Pix de R$150. Sem mensalidade.</p></div></div>
+</div>
+<h2 style="margin-top:20px">Quem já fez, <em>aprovou</em></h2>
+<div class="depo" style="margin-top:14px">⭐⭐⭐⭐⭐<p>"Achei que era golpe por ser barato. Ele mandou antes, eu gostei, aí paguei. Hoje todo mundo agenda por lá."</p><b>Diego</b><br><small style="color:#888">Barbearia em SP</small></div>
+<div class="offer" style="margin-top:20px"><small>OFERTA DA SEMANA • TERMINA DOMINGO</small><p>De <s>R$350</s> por</p><h3><span>R$</span>150</h3><p style="color:#aaa">Pagamento único • Sem mensalidade<br>1 revisão grátis • Entrega em 24h</p><a class="btn-green" href="#pedido" style="width:100%;padding:16px;margin-top:16px">GARANTIR MEU SITE POR R$150</a><p style="font-size:12px;color:#888;margin-top:12px">⏰ Falta 1 dia pra acabar a oferta</p></div>
+<h2 style="margin-top:24px">Dúvidas?</h2>
+<div class="faq"><b>Preciso pagar antes? <span>↓</span></b><p style="color:#666;margin-top:8px;font-size:14px">Não. Você só paga depois de aprovar o site.</p></div>
+<div class="faq"><b>Demora quanto? <span>↓</span></b><p style="color:#666;margin-top:8px;font-size:14px">Até 24h depois que você mandar as fotos.</p></div>
+</section>
+<div class="pb"></div>
+<a class="float" href="#pedido">💬</a>
+<div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><span>Online agora • Só paga depois</span></div><a class="btn-green" href="#pedido">QUERO →</a></div>
+<script>
+let total=150;
+function troca(el,tipo){
+document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));el.classList.add('active');
+const d={barbearia:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp.","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=900&q=80"],confeitaria:["Doces da Camila","Cardápio com fotos, botão de encomenda e WhatsApp direto. Seu cliente encomenda sem enrolação.","https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=900&q=80"],salao:["Studio de Beleza","Agenda, preços, fotos dos trabalhos e botão pra marcar direto no Zap.","https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&q=80"],lanchonete:["Lanches do Bairro","Cardápio digital, fotos que dão fome e pedido direto no WhatsApp.","https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=900&q=80"]};
+document.getElementById('prevTitle').innerText=d[tipo][0];document.getElementById('prevDesc').innerText=d[tipo][1];document.getElementById('prevImg').src=d[tipo][2];
+}
+function calc(row,valor){
+let cb=row.querySelector('input');setTimeout(()=>{total=150;document.querySelectorAll('.price-row input').forEach(i=>{if(i.checked && !i.disabled){total+= i.closest('.price-row').innerText.includes('30')&&i.closest('.price-row').innerText.includes('Logo')?30 : i.closest('.price-row').innerText.includes('Bio')?20 : 30}});document.getElementById('total').innerText='R$'+total;document.getElementById('total2').innerText='R$'+total;},50);
+}
+function enviar(e){e.preventDefault();let n=document.getElementById('nome').value,b=document.getElementById('negocio').value,t=document.getElementById('tipo').value,z=document.getElementById('zap').value,m=document.getElementById('msg').value;let texto=`Olá Moisés! Quero meu site!%0A%0ANome: ${n}%0ANegócio: ${b}%0ATipo: ${t}%0AWhatsApp: ${z}%0AQuero: ${m}`;window.open('https://wa.me/5511999999999?text='+texto,'_blank');}
+setInterval(()=>{let d=new Date();document.getElementById('clock').innerText=d.toLocaleTimeString('pt-BR');},1000);
+</script>
 </body>
 </html>
