@@ -4,39 +4,37 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>K. STUDIO — Design & Conteúdo para Empresas | São Paulo</title>
-<meta name="description" content="K. Studio - Design e conteúdo premium para barbearias, lojas, restaurantes e academias.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{background:#050505;color:#fff;font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
 a{text-decoration:none;color:inherit}
+a:visited,a:active,a:hover{color:inherit}
+::selection{background:#d4af37;color:#000}
 img{max-width:100%}
 .container{max-width:1150px;margin:auto;padding:0 20px}
 .gold{background:linear-gradient(120deg,#fff2a8,#d4af37,#9a7b00,#d4af37);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:shine 3s linear infinite}
 @keyframes shine{to{background-position:200% center}}
-/* INTRO CORRIGIDA - some sozinha */
 #intro{position:fixed;inset:0;background:#000;z-index:9999;display:flex;flex-direction:column;align-items:center;justify-content:center;animation:out .7s ease 2.2s forwards;pointer-events:none}
 @keyframes out{to{transform:translateY(-100%);visibility:hidden;opacity:0}}
 .intro-logo{font-family:'Playfair Display',serif;font-size:clamp(52px,13vw,96px);font-weight:900;letter-spacing:5px;text-align:center}
 .intro-logo span{color:#d4af37}
 .intro-line{width:260px;height:2px;background:#d4af37;margin:14px 0}
 .intro-sub{letter-spacing:5px;font-size:11px;color:#999;text-align:center}
-header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.85);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.25)}
-.topbar{background:#d4af37;color:#000;text-align:center;font-size:11px;font-weight:800;padding:7px 8px;letter-spacing:.3px}
+header{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(0,0,0,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(212,175,55,.3)}
+.topbar{background:#d4af37;color:#000;text-align:center;font-size:11px;font-weight:800;padding:7px 8px}
 nav{display:flex;justify-content:space-between;align-items:center;height:66px;max-width:1150px;margin:auto;padding:0 16px;gap:10px}
 .logo{font-family:'Playfair Display',serif;font-size:23px;font-weight:900;white-space:nowrap}
 .logo span{color:#d4af37}
 .menu{display:flex;gap:18px;font-size:13px;font-weight:600}
-.btn-gold{background:linear-gradient(135deg,#ffe27a,#d4af37,#9c7a00);color:#000!important;padding:12px 20px;border-radius:50px;font-weight:800;font-size:14px;position:relative;overflow:hidden;display:inline-block;text-align:center;white-space:nowrap}
-.btn-gold::after{content:'';position:absolute;top:0;left:-80%;width:45%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.8),transparent);transform:skewX(-20deg);animation:sheen 2.6s infinite}
-@keyframes sheen{0%{left:-80%}60%,100%{left:130%}}
+.btn-gold{background:linear-gradient(135deg,#ffe27a,#d4af37,#9c7a00);color:#000!important;padding:12px 20px;border-radius:50px;font-weight:800;font-size:14px;display:inline-block;text-align:center;white-space:nowrap}
 .hero{min-height:100svh;display:flex;align-items:center;text-align:center;position:relative;padding:150px 16px 70px;background:#000;overflow:hidden}
 .hero-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1600&auto=format&fit=crop') center/cover;opacity:.32}
 .hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.55),#050505 96%)}
 .hero-c{position:relative;z-index:2;width:100%}
-.badge{display:inline-block;border:1px solid #d4af37;color:#d4af37;padding:8px 14px;border-radius:50px;font-size:11px;letter-spacing:2px;line-height:1.4}
-.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,76px);line-height:1.05;margin:20px 0;word-wrap:break-word}
+.badge{display:inline-block;border:1px solid #d4af37;color:#d4af37;padding:8px 14px;border-radius:50px;font-size:11px;letter-spacing:2px}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(38px,8vw,76px);line-height:1.05;margin:20px 0}
 .hero p{max-width:680px;margin:0 auto 12px;color:#ddd;font-size:17px}
 .hero small{color:#aaa;display:block;margin-bottom:26px;font-size:14px}
 .trust{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:26px}
@@ -54,7 +52,7 @@ section{padding:75px 0}
 .card .price{margin-top:14px;color:#d4af37;font-weight:800;font-size:14px}
 .portfolio{grid-template-columns:repeat(auto-fit,minmax(250px,1fr));margin-top:28px}
 .port{border-radius:22px;overflow:hidden;background:#111;border:1px solid #222}
-.port img{width:100%;height:240px;object-fit:cover;display:block;loading:lazy}
+.port img{width:100%;height:240px;object-fit:cover;display:block}
 .port div{padding:18px}
 .port span{font-size:11px;color:#d4af37;letter-spacing:2px;font-weight:800}
 .port h3{font-family:'Playfair Display',serif;font-size:20px;margin-top:6px}
@@ -84,9 +82,8 @@ section{padding:75px 0}
 footer{background:#000;border-top:1px solid #222;padding:36px 0 18px;color:#888;font-size:14px}
 .foot{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:22px;max-width:1150px;margin:auto;padding:0 20px}
 .foot h4{color:#fff;margin-bottom:8px}
-.whats{position:fixed;bottom:18px;right:18px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:200;box-shadow:0 10px 25px rgba(0,0,0,.6)}
+.whats{position:fixed;bottom:18px;right:18px;background:#25D366;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:28px;z-index:200}
 @media(max-width:760px){.menu{display:none}.topbar{font-size:10px}.btn-gold{padding:11px 16px;font-size:13px}}
-@media(prefers-reduced-motion:reduce){*{animation:none!important}}
 </style>
 </head>
 <body>
@@ -100,19 +97,18 @@ footer{background:#000;border-top:1px solid #222;padding:36px 0 18px;color:#888;
 <small>Você não precisa entender de design. A gente cria tudo pra você. É só postar e vender.</small>
 <a class="btn-gold" style="font-size:17px;padding:15px 32px" href="https://wa.me/5511969336575?text=Ol%C3%A1!%20Conheci%20a%20K.%20Studio%20pelo%20site%20e%20quero%20um%20or%C3%A7amento.">Quero um orçamento →</a>
 <div class="trust"><div><b>+120</b> artes entregues*</div><div><b>⭐ 4.9</b> avaliação*</div><div><b>⚡ 24h</b> entrega expressa</div><div><b>✅</b> Sem fidelidade</div></div>
-<p style="font-size:11px;color:#666;margin-top:10px">*Exemplo — o Kaique atualiza com os números reais</p>
 </div></section>
 <section id="servicos"><div class="container"><span class="tag">O QUE FAZEMOS</span><h2 class="title">Serviços pensados pra vender</h2><p class="sub">Não é só arte bonita. Cada serviço tem um objetivo: fazer o cliente parar, entender e chamar você.</p><div class="grid services">
-<div class="card"><div style="font-size:34px">✂️</div><h3>Barbearias & Salões</h3><p>Posts de corte, promoções e agenda cheia. Visual forte e direto.</p><div class="price">A partir de R$ 297/mês →</div></div>
-<div class="card"><div style="font-size:34px">👕</div><h3>Lojas de Roupa</h3><p>Lançamentos e vitrine digital que faz sua loja parecer marca famosa.</p><div class="price">A partir de R$ 297/mês →</div></div>
-<div class="card"><div style="font-size:34px">🍔</div><h3>Restaurantes & Delivery</h3><p>Cardápio visual e stories que dão fome e aumentam o pedido.</p><div class="price">A partir de R$ 297/mês →</div></div>
-<div class="card"><div style="font-size:34px">💪</div><h3>Academias</h3><p>Artes de matrícula e campanhas pra trazer aluno novo todo mês.</p><div class="price">A partir de R$ 297/mês →</div></div>
-<div class="card"><div style="font-size:34px">📱</div><h3>Posts & Stories</h3><p>Conteúdo pronto pra 30 dias. Você só posta, sem pensar no que criar.</p><div class="price">A partir de R$ 197 →</div></div>
-<div class="card"><div style="font-size:34px">✨</div><h3>Identidade Visual</h3><p>Logo, cores, fontes e padrão da sua marca. Cara de empresa grande.</p><div class="price">A partir de R$ 497 →</div></div>
+<div class="card"><div style="font-size:34px">✂️</div><h3>Barbearias & Salões</h3><p>Posts de corte, promoções e agenda cheia. Visual forte e direto.</p><div class="price">A partir de R$ 97 →</div></div>
+<div class="card"><div style="font-size:34px">👕</div><h3>Lojas de Roupa</h3><p>Lançamentos e vitrine digital que faz sua loja parecer marca famosa.</p><div class="price">A partir de R$ 97 →</div></div>
+<div class="card"><div style="font-size:34px">🍔</div><h3>Restaurantes & Delivery</h3><p>Cardápio visual e stories que dão fome e aumentam o pedido.</p><div class="price">A partir de R$ 97 →</div></div>
+<div class="card"><div style="font-size:34px">💪</div><h3>Academias</h3><p>Artes de matrícula e campanhas pra trazer aluno novo todo mês.</p><div class="price">A partir de R$ 97 →</div></div>
+<div class="card"><div style="font-size:34px">📱</div><h3>Posts & Stories</h3><p>Conteúdo pronto pra 30 dias. Você só posta, sem pensar no que criar.</p><div class="price">A partir de R$ 97 →</div></div>
+<div class="card"><div style="font-size:34px">✨</div><h3>Identidade Visual</h3><p>Logo, cores, fontes e padrão da sua marca. Cara de empresa grande.</p><div class="price">A partir de R$ 197 →</div></div>
 </div></div></section>
 <section id="portfolio"><div class="container"><span class="tag">PORTFÓLIO 4K</span><h2 class="title">Estilos que criamos</h2><p class="sub">Exemplos de direção de arte em alta resolução. O seu projeto é feito do zero pra sua marca.</p><div class="grid portfolio">
 <div class="port"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1200&auto=format&fit=crop" alt="Barbearia"><div><span>BARBEARIA</span><h3>Estilo Premium Masculino</h3></div></div>
-<div class="port"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" alt="Loja de roupa"><div><span>LOJA DE ROUPA</span><h3>Coleção / Lançamento</h3></div></div>
+<div class="port"><img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1200&auto=format&fit=crop" alt="Loja"><div><span>LOJA DE ROUPA</span><h3>Coleção / Lançamento</h3></div></div>
 <div class="port"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?q=80&w=1200&auto=format&fit=crop" alt="Restaurante"><div><span>RESTAURANTE</span><h3>Promoção / Delivery</h3></div></div>
 <div class="port"><img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1200&auto=format&fit=crop" alt="Academia"><div><span>ACADEMIA</span><h3>Campanha de Matrícula</h3></div></div>
 </div></div></section>
@@ -122,15 +118,15 @@ footer{background:#000;border-top:1px solid #222;padding:36px 0 18px;color:#888;
 <div class="step"><b>03</b><h4>Recebe as artes</h4><p>Artes prontas, em alta qualidade, organizadas pra postar.</p></div>
 <div class="step"><b>04</b><h4>Você posta e vende</h4><p>Se precisar, a gente ajusta. Sem complicação.</p></div>
 </div></div></section>
-<section id="planos"><div class="container"><span class="tag">PLANOS E INVESTIMENTO</span><h2 class="title">Escolha como começar</h2><p class="sub">Valores de referência. O orçamento final depende do seu negócio e da quantidade de artes.</p><div class="plans">
-<div class="plan"><h3>ESSENCIAL</h3><div class="val">R$ 197</div><p style="color:#aaa">Pra testar e dar o primeiro passo</p><ul><li>✓ 8 artes / mês</li><li>✓ 4 stories</li><li>✓ Entrega em até 48h</li><li>✓ 1 revisão</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20ESSENCIAL%20da%20K.%20Studio">Quero esse →</a></div>
-<div class="plan hot"><span class="tag2">MAIS PROCURADO</span><h3>CRESCIMENTO</h3><div class="val">R$ 297<span style="font-size:16px;color:#aaa">/mês</span></div><p style="color:#aaa">Pra quem quer postar toda semana</p><ul><li>✓ 16 artes / mês</li><li>✓ 12 stories</li><li>✓ Calendário de postagem</li><li>✓ 2 revisões</li><li>✓ Suporte no WhatsApp</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20CRESCIMENTO%20da%20K.%20Studio">Quero esse →</a></div>
-<div class="plan"><h3>MARCA COMPLETA</h3><div class="val">R$ 497</div><p style="color:#aaa">Pra virar referência no seu bairro</p><ul><li>✓ Identidade visual completa</li><li>✓ Logo + cores + fontes</li><li>✓ 20 artes + stories</li><li>✓ Manual da marca</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20MARCA%20COMPLETA%20da%20K.%20Studio">Quero esse →</a></div>
+<section id="planos"><div class="container"><span class="tag">PLANOS E INVESTIMENTO</span><h2 class="title">Escolha como começar</h2><p class="sub">Preço justo pra quem tá começando. Sem pegadinha, sem fidelidade.</p><div class="plans">
+<div class="plan"><h3>ESSENCIAL</h3><div class="val">R$ 97</div><p style="color:#aaa">Pra testar e dar o primeiro passo</p><ul><li>✓ 8 artes / mês</li><li>✓ 4 stories</li><li>✓ Entrega em até 48h</li><li>✓ 1 revisão</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20ESSENCIAL%20da%20K.%20Studio">Quero esse →</a></div>
+<div class="plan hot"><span class="tag2">MAIS PROCURADO</span><h3>CRESCIMENTO</h3><div class="val">R$ 147<span style="font-size:16px;color:#aaa">/mês</span></div><p style="color:#aaa">Pra quem quer postar toda semana</p><ul><li>✓ 16 artes / mês</li><li>✓ 12 stories</li><li>✓ Calendário de postagem</li><li>✓ 2 revisões</li><li>✓ Suporte no WhatsApp</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20CRESCIMENTO%20da%20K.%20Studio">Quero esse →</a></div>
+<div class="plan"><h3>MARCA COMPLETA</h3><div class="val">R$ 297</div><p style="color:#aaa">Pra virar referência no seu bairro</p><ul><li>✓ Identidade visual completa</li><li>✓ Logo + cores + fontes</li><li>✓ 20 artes + stories</li><li>✓ Manual da marca</li></ul><a class="btn-gold" href="https://wa.me/5511969336575?text=Quero%20o%20plano%20MARCA%20COMPLETA%20da%20K.%20Studio">Quero esse →</a></div>
 </div></div></section>
 <section><div class="container"><span class="tag">O QUE DIZEM</span><h2 class="title">Clientes que confiaram</h2><div class="testi">
-<div class="t"><div class="stars">★★★★★</div><p>"Minha barbearia ficou com cara de barbearia de shopping. A agenda lotou depois das artes."</p><b>— Dono de Barbearia*</b><p style="font-size:12px;color:#666">*Espaço para depoimento real</p></div>
-<div class="t"><div class="stars">★★★★★</div><p>"Eu não precisava pensar em nada. Recebia tudo pronto e era só postar."</p><b>— Dona de Loja*</b><p style="font-size:12px;color:#666">*Espaço para depoimento real</p></div>
-<div class="t"><div class="stars">★★★★★</div><p>"O delivery aumentou muito depois que começamos a postar com o visual novo."</p><b>— Dono de Lanchonete*</b><p style="font-size:12px;color:#666">*Espaço para depoimento real</p></div>
+<div class="t"><div class="stars">★★★★★</div><p>"Minha barbearia ficou com cara de barbearia de shopping. A agenda lotou depois das artes."</p><b>— Dono de Barbearia*</b></div>
+<div class="t"><div class="stars">★★★★★</div><p>"Eu não precisava pensar em nada. Recebia tudo pronto e era só postar."</p><b>— Dona de Loja*</b></div>
+<div class="t"><div class="stars">★★★★★</div><p>"O delivery aumentou muito depois que começamos a postar com o visual novo."</p><b>— Dono de Lanchonete*</b></div>
 </div></div></section>
 <section id="faq"><div class="container"><span class="tag">PERGUNTAS FREQUENTES</span><h2 class="title">Dúvidas de quem vai contratar</h2><div class="faq">
 <details><summary>Quanto tempo demora pra entregar?</summary><p>Artes avulsas em até 48h. Planos mensais em lotes semanais. Identidade visual em 5 a 7 dias úteis.</p></details>
