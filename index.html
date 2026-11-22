@@ -10,9 +10,7 @@
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:#0A0A0A;color:#111;line-height:1.55}
 img{display:block;width:100%}
-/* BARRA DE PROGRESSO NOVA */
 #progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#FFC107,#25D366);width:0;z-index:9999;transition:width .1s}
-/* INTRO MAIS RÁPIDA */
 #intro{position:fixed;inset:0;background:#000;z-index:9998;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .4s}
 #intro.hide{opacity:0;pointer-events:none;visibility:hidden}
 #intro .bigM{font-family:'Playfair Display',serif;font-size:110px;line-height:1;color:#FFC107;font-weight:800;animation:netflixM 1.6s ease forwards}
@@ -30,7 +28,6 @@ img{display:block;width:100%}
 @keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
 @keyframes pulseBtn{0%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,0)}}
-/* REVEAL - APARECE QUANDO ROLA */
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .reveal.show{opacity:1;transform:translateY(0)}
 .nav{position:sticky;top:0;z-index:100;background:#0A0A0A;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:13px 16px}
@@ -59,9 +56,8 @@ img{display:block;width:100%}
 h2{font-size:28px;letter-spacing:-1px;line-height:1.1;margin-bottom:8px}
 h2 em{font-family:'Playfair Display',serif;color:#EAB308;font-style:italic}
 .muted{color:#777;margin-bottom:16px}
-/* SOBRE VOCÊ - NOVO */
 .about{display:flex;gap:14px;background:#111;color:#fff;border-radius:22px;padding:18px;align-items:center;margin-bottom:16px}
-.about img{width:78px;height:78px;border-radius:50%;object-fit:cover;border:3px solid #FFC107;flex-shrink:0}
+.about img{width:78px;height:78px;border-radius:50%;object-fit:cover;border:3px solid #FFC107;flex-shrink:0;background:#000}
 .about b{font-size:17px;display:block}.about span{color:#bbb;font-size:13px;line-height:1.4;display:block;margin-top:4px}
 .about small{color:#FFC107;font-weight:800;font-size:12px}
 .live-box{background:#111;color:#fff;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px}
@@ -131,7 +127,7 @@ details p{color:#666;margin-top:8px}
 <div class="white-section">
 <section class="wrap reveal">
 <div class="about">
-<img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80" alt="Moisés">
+<img src="logo.png" alt="Moisés Sites">
 <div><small>👋 PRAZER, EU SOU O MOISÉS</small><b>Eu mesmo faço seu site</b><span>Sem agência, sem enrolação. Você fala direto comigo no Zap e eu monto tudo pra você.</span></div>
 </div>
 <div class="live-box"><div><span class="live-dot"></span> <b id="clockBig">--:--:--</b><br><small id="dateBig">São Paulo • Hoje</small></div><div style="text-align:right"><b style="color:#25D366" id="lastOrder">há 4 min</b><br><small>Último pedido</small></div></div>
@@ -252,7 +248,6 @@ details p{color:#666;margin-top:8px}
 let introSec=3;
 let introTimer=setInterval(function(){introSec--; if(introSec>0){document.getElementById('introCount').innerText=introSec;} else{hideIntro();}},900);
 function hideIntro(){clearInterval(introTimer); var el=document.getElementById('intro'); el.classList.add('hide'); setTimeout(function(){el.style.display='none';},400);}
-// BARRA DE PROGRESSO + REVEAL
 window.addEventListener('scroll',function(){
   let h=document.documentElement;
   let p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;
@@ -346,4 +341,4 @@ function setDepo(i){ti=i; document.getElementById('ttext').innerText=depo[ti][0]
 setInterval(function(){setDepo((ti+1)%4);},4000);
 </script>
 </body>
-  </html>
+</html>
