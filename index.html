@@ -6,8 +6,8 @@
 <title>Moisés Sites — Seu negócio no ar em 24h | R$150</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Playfair+Display:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
 <style>
-:root{--gold:#FFC107;--green:#25D366;--bg:#0A0A0A;--card:#111;--accent:#FFC107}
-body[data-theme="vice"]{--gold:#FF2E9A;--green:#00E5FF;--bg:#12001F;--card:#1E0033;--accent:#FF2E9A}
+:root{--gold:#FFC107;--green:#25D366;--bg:#0A0A0A}
+body[data-theme="vice"]{--gold:#FF2E9A;--green:#00E5FF;--bg:#12001F}
 body[data-theme="vice"] .topbar{background:linear-gradient(90deg,#FF2E9A,#FF7A00,#00E5FF);color:#fff}
 body[data-theme="vice"] .hero{background:linear-gradient(180deg,#2D0055 0%,#FF2E9A 45%,#FF7A00 70%,#12001F 100%)}
 body[data-theme="vice"] .nav b span{color:#00E5FF}
@@ -44,7 +44,6 @@ img{display:block;width:100%}
 .nav a{background:var(--green);color:#fff;font-weight:800;font-size:13px;padding:9px 14px;border-radius:99px;text-decoration:none}
 .topbar{background:var(--gold);text-align:center;font-size:12.5px;font-weight:800;padding:8px 10px;transition:.3s}
 .live-dot{width:8px;height:8px;background:#25D366;border-radius:50%;display:inline-block;animation:blink 1.2s infinite;flex-shrink:0}
-/* THEME SWITCHER */
 .theme-bar{background:#111;color:#fff;padding:12px 16px;display:flex;gap:8px;align-items:center;justify-content:center;flex-wrap:wrap;border-bottom:1px solid #222}
 .theme-bar small{font-size:12px;color:#AAA}
 .theme-btn{border:2px solid #333;background:#1C1C1C;color:#fff;padding:9px 14px;border-radius:99px;font-weight:800;font-size:13px;cursor:pointer}
@@ -80,7 +79,6 @@ h2 em{font-family:'Playfair Display',serif;color:#EAB308;font-style:italic}
 body[data-theme="vice"] h2 em{color:#FF2E9A}
 .muted{color:#777;margin-bottom:16px}
 .about{background:#111;color:#fff;border-radius:22px;padding:18px;margin-bottom:16px;text-align:center;cursor:pointer}
-.about:active{transform:scale(.98)}
 .about small{color:var(--gold);font-weight:800;font-size:12px;letter-spacing:1px}
 .about b{font-size:18px;display:block;margin:4px 0}
 .about span{color:#bbb;font-size:13px;line-height:1.4;display:block}
@@ -90,7 +88,7 @@ body[data-theme="vice"] h2 em{color:#FF2E9A}
 .quiz-box .q-progress{height:6px;background:#333;border-radius:99px;overflow:hidden;margin:12px 0 16px}
 .quiz-box .q-progress i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--green));width:33%;transition:width .3s}
 .quiz-opt{display:block;width:100%;background:#fff;color:#111;border:0;padding:15px;border-radius:14px;font-weight:700;font-size:15px;margin-bottom:10px;cursor:pointer;text-align:left;transition:.15s}
-.quiz-opt:hover{transform:scale(1.02);background:var(--gold)}
+.quiz-opt:hover{transform:scale(1.02)}
 .quiz-opt:active{transform:scale(.97);background:var(--gold)}
 .quiz-result{background:#fff;color:#111;border-radius:18px;padding:20px;text-align:center;animation:popIn .4s ease;display:none}
 .quiz-result h3{font-size:22px;margin-bottom:8px}
@@ -137,10 +135,11 @@ details p{color:#666;margin-top:8px}
 .form-box{background:#fff;border-radius:22px;padding:22px;border:1px solid #F0EEE9}
 .form-box label{font-weight:700;font-size:13px;display:block;margin:14px 0 6px}
 .form-box input,.form-box select,.form-box textarea{width:100%;padding:14px;border:1.5px solid #E8E5DD;border-radius:12px;font-family:inherit;font-size:15px;outline:none;background:#FAFAF8}
-.float-wa{position:fixed;bottom:100px;right:16px;z-index:200;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 10px 25px rgba(37,211,102,.45);animation:float 2.5s infinite}
-.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.98);padding:10px 12px;border-top:1px solid #EEE;display:flex;gap:10px;align-items:center;z-index:150}
+/* CORRIGIDO: flutuante mais pra cima pra não tapar a foto */
+.float-wa{position:fixed;bottom:92px;right:16px;z-index:200;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 10px 25px rgba(37,211,102,.45);animation:float 2.5s infinite}
+.sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.98);padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #EEE;display:flex;gap:10px;align-items:center;z-index:150}
 .sticky div{flex:1;line-height:1.2}.sticky a{background:#25D366;color:#fff;font-weight:800;padding:13px 18px;border-radius:99px;text-decoration:none;white-space:nowrap}
-.footer{padding:28px 16px 100px;text-align:center;color:#999;font-size:13px;background:#FAFAF8}
+.footer{padding:28px 16px 120px;text-align:center;color:#999;font-size:13px;background:#FAFAF8}
 .garantia{background:#FFF8E1;border:1.5px dashed #EAB308;border-radius:18px;padding:16px;text-align:center;margin-top:16px}
 .garantia b{font-size:15px}.garantia span{color:#777;font-size:13px;display:block;margin-top:4px}
 #confetti{position:fixed;inset:0;pointer-events:none;z-index:9999;overflow:hidden}
@@ -157,22 +156,19 @@ body[data-theme="vice"] .vice-banner{display:block}
 <div id="intro"><div class="palms"><span>🌴</span><span>🌴</span><span>🌴</span><span>🌴</span></div><div class="bigM">M</div><div class="fullName">MOISÉS <span>Sites</span></div><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">1</div><div class="bar"><i></i></div><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
 <div class="vice-banner">🌴 VICE CITY MODE ON • GTA 6 VIBES • MIAMI NO SEU SITE ☀️</div>
 <div class="topbar">⚡ SÓ 2 VAGAS ESSA SEMANA • <span id="topClock">--:--:--</span> • São Paulo</div>
-<nav class="nav"><b>Moisés <span>Sites</span></b><a href="#" onclick="celebrate(event)">QUERO O MEU →</a></nav>
-
-<!-- SELETOR DE TEMA 100% INTERATIVO -->
+<nav class="nav"><b>Moisés <span>Sites</span></b><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO O MEU →</a></nav>
 <div class="theme-bar">
 <small>🎨 ESCOLHE O TEMA DO SITE:</small>
 <button class="theme-btn active" id="btnGold" onclick="setTheme('gold')">🖤💛 Preto + Dourado</button>
 <button class="theme-btn viceBtn" id="btnVice" onclick="setTheme('vice')">🌴💖 Vice City - GTA 6</button>
 </div>
-
 <header class="hero">
 <div class="palms-bg"><span>🌴</span><span>🌴</span><span>🌴</span></div>
 <div class="pill"><span class="live-dot" id="liveDot"></span> <span id="onlineStatus">Online agora</span> • <span id="viewers">12</span> pessoas vendo • <span id="likesCount">❤️ 128</span></div>
 <h1>Seu negócio com cara de <em>empresa grande.</em><br>Pronto amanhã.</h1>
 <p>Eu crio seu site profissional em até 24h. Você vê, aprova, e <b style="color:#fff">só depois paga.</b></p>
 <div class="badge-row"><span onclick="toast('✅ Sem mensalidade! Só R$150 único')">✅ Sem mensalidade</span><span onclick="toast('🛡️ Você só paga se aprovar!')">🛡️ Só paga se aprovar</span><span onclick="toast('⚡ Entrega em 24h garantida!')">⚡ Entrega em 24h</span></div>
-<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" onclick="celebrate(event)">QUERO MEU SITE NO WHATSAPP →</a>
+<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO MEU SITE NO WHATSAPP →</a>
 <p style="font-size:12px;color:#888">Sem mensalidade • Sem enrolação • Pix após aprovação</p>
 <button class="like-btn" id="likeBtn" onclick="likeSite()">❤️ Curtir esse site (<span id="likeNum">128</span>)</button>
 <div class="hero-stats"><div onclick="toast('⚡ Entrego em 24h mesmo!')"><b>24h</b><span>ENTREGA</span></div><div onclick="toast('⭐ 4.9 de avaliação dos clientes!')"><b>4.9 ★</b><span>AVALIAÇÃO</span></div><div onclick="toast('💰 R$150 único, sem mensalidade!')"><b>R$150</b><span>PREÇO ÚNICO</span></div></div>
@@ -310,7 +306,7 @@ body[data-theme="vice"] .vice-banner{display:block}
 <p style="margin:8px 0">De <span class="old">R$350</span> por</p>
 <p class="new"><small>R$</small>150</p>
 <p style="color:#AAA;margin:10px 0">Pagamento único • Sem mensalidade<br>1 revisão grátis • Entrega em 24h</p>
-<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" onclick="celebrate(event)">GARANTIR MEU SITE POR R$150 🎉</a>
+<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">GARANTIR MEU SITE POR R$150 🎉</a>
 <p style="font-size:12px;color:#888">⏰ <span id="countdown">Faltam 2 dias</span> pra acabar a oferta</p>
 </div>
 </section>
@@ -324,20 +320,49 @@ body[data-theme="vice"] .vice-banner{display:block}
 <section class="wrap reveal" style="text-align:center">
 <h2>Bora colocar seu negócio <em>no ar?</em></h2>
 <p class="muted">Me chama agora, respondo em minutos.</p>
-<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" onclick="celebrate(event)">CHAMAR O MOISÉS NO WHATSAPP 🌴</a>
+<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">CHAMAR O MOISÉS NO WHATSAPP 🌴</a>
 </section>
 <div class="footer">Moisés Sites • São Paulo • 11 98678-9954<br><span id="footerDate">Hoje</span> • Feito pra vender no celular 📱</div>
 </div>
 <a class="float-wa" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">💬</a>
-<div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><small id="stickyStatus">Online agora • Só paga depois</small></div><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" onclick="celebrate(event)">QUERO →</a></div>
+<div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><small id="stickyStatus">Online agora • Só paga depois</small></div><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO →</a></div>
 <div id="toast" style="position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:#111;color:#fff;padding:13px 18px;border-radius:99px;font-weight:700;font-size:14px;z-index:9999;opacity:0;pointer-events:none;transition:.3s;box-shadow:0 10px 30px rgba(0,0,0,.3);max-width:90%;text-align:center"></div>
 <script>
-function setTheme(t){document.body.setAttribute('data-theme',t);document.getElementById('btnGold').classList.toggle('active',t==='gold');document.getElementById('btnVice').classList.toggle('active',t==='vice');if(t==='vice'){celebrate(null);toast('🌴 VICE CITY ATIVADO! GTA 6 vibes!');}else{toast('🖤💛 Tema Preto + Dourado ativado!');}localStorage.setItem('moises-theme',t);}
-try{let saved=localStorage.getItem('moises-theme');if(saved) setTheme(saved);}catch(e){}
+// CORRIGIDO: setTheme agora tem modo silencioso, não solta confete ao abrir o site
+function setTheme(t,silent){
+  document.body.setAttribute('data-theme',t);
+  document.getElementById('btnGold').classList.toggle('active',t==='gold');
+  document.getElementById('btnVice').classList.toggle('active',t==='vice');
+  try{localStorage.setItem('moises-theme',t);}catch(e){}
+  if(silent) return;
+  if(t==='vice'){celebrate();toast('🌴 VICE CITY ATIVADO! GTA 6 vibes!');}
+  else{toast('🖤💛 Tema Preto + Dourado ativado!');}
+}
+// Carrega tema salvo SEM confete/toast
+try{let saved=localStorage.getItem('moises-theme');if(saved) setTheme(saved,true);}catch(e){}
 function toast(msg){let el=document.getElementById('toast');el.innerText=msg;el.style.opacity='1';el.style.transform='translateX(-50%) translateY(0)';clearTimeout(window._toastTimer);window._toastTimer=setTimeout(function(){el.style.opacity='0';el.style.transform='translateX(-50%) translateY(20px)';},2500);}
 let likes=128;let liked=false;
-function likeSite(){if(!liked){likes++;liked=true;document.getElementById('likeBtn').classList.add('liked');document.getElementById('likeBtn').innerHTML='❤️ Você curtiu! (<span id="likeNum">'+likes+'</span>)';toast('❤️ Valeu por curtir!');celebrate(null);}else{likes--;liked=false;document.getElementById('likeBtn').classList.remove('liked');document.getElementById('likeBtn').innerHTML='❤️ Curtir esse site (<span id="likeNum">'+likes+'</span>)';}}
-function celebrate(e){let colors=['#FFC107','#25D366','#FF2E9A','#00E5FF','#FF7A00','#fff'];let box=document.getElementById('confetti');for(let i=0;i<40;i++){let d=document.createElement('div');d.className='confetti-piece';d.style.left=Math.random()*100+'%';d.style.background=colors[Math.floor(Math.random()*colors.length)];d.style.animationDelay=(Math.random()*0.4)+'s';d.style.transform='rotate('+Math.random()*360+'deg)';box.appendChild(d);setTimeout(function(){d.remove();},2200);}if(e){/* deixa o link abrir normal */}}
+function updateLikes(){
+  document.getElementById('likeNum').innerText=likes;
+  document.getElementById('likesCount').innerText='❤️ '+likes;
+  document.getElementById('likeBtn').innerHTML=liked ? '❤️ Você curtiu! (<span id="likeNum">'+likes+'</span>)' : '❤️ Curtir esse site (<span id="likeNum">'+likes+'</span>)';
+  document.getElementById('likeBtn').classList.toggle('liked',liked);
+}
+function likeSite(){
+  if(!liked){likes++;liked=true;toast('❤️ Valeu por curtir!');celebrate();}
+  else{likes--;liked=false;}
+  updateLikes();
+}
+function celebrate(){
+  let colors=['#FFC107','#25D366','#FF2E9A','#00E5FF','#FF7A00','#fff'];
+  let box=document.getElementById('confetti');
+  for(let i=0;i<40;i++){
+    let d=document.createElement('div');d.className='confetti-piece';
+    d.style.left=Math.random()*100+'%';d.style.background=colors[Math.floor(Math.random()*colors.length)];
+    d.style.animationDelay=(Math.random()*0.4)+'s';box.appendChild(d);
+    setTimeout(function(){d.remove();},2200);
+  }
+}
 let introSec=1;
 let introTimer=setInterval(function(){introSec--; if(introSec>0){document.getElementById('introCount').innerText=introSec;} else{hideIntro();}},900);
 function hideIntro(){clearInterval(introTimer); var el=document.getElementById('intro'); el.classList.add('hide'); setTimeout(function(){el.style.display='none';},300);}
@@ -349,7 +374,7 @@ let viewers=12;setInterval(function(){viewers=Math.max(7,Math.min(28,viewers+Mat
 let lastMin=4;setInterval(function(){lastMin++;if(lastMin>59)lastMin=3;document.getElementById('lastOrder').innerText='há '+lastMin+' min';},60000);
 function simular(){let v=document.getElementById('simNome').value.trim();let box=document.getElementById('simPreview');if(v.length<2){box.style.display='none';return;}box.style.display='block';document.getElementById('simTitulo').innerText=v;document.getElementById('simBtn').href='https://wa.me/5511986789954?text='+encodeURIComponent('Opa Moisés! Testei o simulador com o nome '+v+' e quero meu site por R$150! Pode montar?');}
 let quizStep=1; let quizResp=[];
-function quizNext(resposta){quizResp.push(resposta);if(quizStep===1){quizStep=2;document.getElementById('quizPasso').innerText='PERGUNTA 2 DE 3';document.getElementById('quizBar').style.width='66%';document.getElementById('quizTitulo').innerText='Como seus clientes pedem hoje?';document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Pelo WhatsApp\')">💬 Pelo WhatsApp</button><button class="quiz-opt" onclick="quizNext(\'Pelo Instagram\')">📸 Pelo Instagram</button><button class="quiz-opt" onclick="quizNext(\'Ligação / na loja\')">📞 Ligação / na loja</button><button class="quiz-opt" onclick="quizNext(\'Ainda não vendem\')">😢 Ainda não vendem muito</button>';} else if(quizStep===2){quizStep=3;document.getElementById('quizPasso').innerText='PERGUNTA 3 DE 3';document.getElementById('quizBar').style.width='100%';document.getElementById('quizTitulo').innerText='Pra quando você quer o site?';document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Pra ontem!\')">⚡ Pra ontem!</button><button class="quiz-opt" onclick="quizNext(\'Essa semana\')">📅 Essa semana</button><button class="quiz-opt" onclick="quizNext(\'Esse mês\')">🗓️ Esse mês</button>';} else {document.getElementById('quizPergunta').style.display='none';let res=document.getElementById('quizResult');res.style.display='block';let neg=quizResp[0]||'seu negócio';let msg='Opa Moisés! Fiz o quiz: meu negócio é '+neg+', meus clientes pedem '+quizResp[1]+', quero pra '+quizResp[2]+'. Quero meu site ideal por R$150!';document.getElementById('quizResultTitulo').innerText='Seu site ideal é o de '+neg+'!';document.getElementById('quizResultTexto').innerText='Com agenda, preços e botão do Zap. Perfeito pra quem pede '+quizResp[1]+' e quer pra '+quizResp[2]+'.';document.getElementById('quizBtn').href='https://wa.me/5511986789954?text='+encodeURIComponent(msg);celebrate(null);}}
+function quizNext(resposta){quizResp.push(resposta);if(quizStep===1){quizStep=2;document.getElementById('quizPasso').innerText='PERGUNTA 2 DE 3';document.getElementById('quizBar').style.width='66%';document.getElementById('quizTitulo').innerText='Como seus clientes pedem hoje?';document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Pelo WhatsApp\')">💬 Pelo WhatsApp</button><button class="quiz-opt" onclick="quizNext(\'Pelo Instagram\')">📸 Pelo Instagram</button><button class="quiz-opt" onclick="quizNext(\'Ligação / na loja\')">📞 Ligação / na loja</button><button class="quiz-opt" onclick="quizNext(\'Ainda não vendem\')">😢 Ainda não vendem muito</button>';} else if(quizStep===2){quizStep=3;document.getElementById('quizPasso').innerText='PERGUNTA 3 DE 3';document.getElementById('quizBar').style.width='100%';document.getElementById('quizTitulo').innerText='Pra quando você quer o site?';document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Pra ontem!\')">⚡ Pra ontem!</button><button class="quiz-opt" onclick="quizNext(\'Essa semana\')">📅 Essa semana</button><button class="quiz-opt" onclick="quizNext(\'Esse mês\')">🗓️ Esse mês</button>';} else {document.getElementById('quizPergunta').style.display='none';let res=document.getElementById('quizResult');res.style.display='block';let neg=quizResp[0]||'seu negócio';let msg='Opa Moisés! Fiz o quiz: meu negócio é '+neg+', meus clientes pedem '+quizResp[1]+', quero pra '+quizResp[2]+'. Quero meu site ideal por R$150!';document.getElementById('quizResultTitulo').innerText='Seu site ideal é o de '+neg+'!';document.getElementById('quizResultTexto').innerText='Com agenda, preços e botão do Zap. Perfeito pra quem pede '+quizResp[1]+' e quer pra '+quizResp[2]+'.';document.getElementById('quizBtn').href='https://wa.me/5511986789954?text='+encodeURIComponent(msg);celebrate();}}
 function quizRestart(){quizStep=1; quizResp=[];document.getElementById('quizPergunta').style.display='block';document.getElementById('quizResult').style.display='none';document.getElementById('quizPasso').innerText='PERGUNTA 1 DE 3';document.getElementById('quizBar').style.width='33%';document.getElementById('quizTitulo').innerText='Qual é o seu negócio?';document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Barbearia\')">✂️ Barbearia</button><button class="quiz-opt" onclick="quizNext(\'Confeitaria / Doces\')">🎂 Confeitaria / Doces</button><button class="quiz-opt" onclick="quizNext(\'Salão / Estética\')">💅 Salão / Estética</button><button class="quiz-opt" onclick="quizNext(\'Lanchonete / Loja\')">🍔 Lanchonete / Loja</button>';}
 const data={barb:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80","Quero%20um%20site%20de%20barbearia","📅 Agenda online","💲 Preços","💬 WhatsApp"],bolo:["Doces da Camila","Fotos dos bolos, cardápio com preços e botão de encomendar. Cliente escolhe, clica e já pede no seu Zap.","https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1000&q=80","Quero%20um%20site%20de%20confeitaria","🎂 Cardápio","📸 Fotos","💬 Encomenda"],salao:["Studio de Beleza","Serviços, valores, antes e depois e botão pra agendar. Sua agenda cheia sem precisar responder todo mundo.","https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=1000&q=80","Quero%20um%20site%20de%20salao","💅 Serviços","⭐ Antes e depois","📅 Agendar"],lanche:["Lanches do Bairro","Cardápio completo com fotos, botão de pedir agora e seu endereço. Cliente pede em 1 clique.","https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&q=80","Quero%20um%20site%20de%20lanchonete","🍔 Cardápio","🛵 Delivery","💬 Pedir agora"],loja:["Loja da Bia","Vitrine com seus produtos, preços e botão de comprar no WhatsApp. Sua loja aberta 24h no celular do cliente.","https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&q=80","Quero%20um%20site%20de%20loja","👗 Vitrine","💲 Preços","💬 Comprar"],estetica:["Estética Bella","Procedimentos, valores, antes e depois e botão pra agendar avaliação. Agenda cheia sem esforço.","https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80","Quero%20um%20site%20de%20estetica","✨ Procedimentos","⭐ Antes e depois","📅 Agendar"]};
 function show(k,el){document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});if(el)el.classList.add('active');const d=data[k];const img=document.getElementById('pimg');img.style.opacity=0;setTimeout(function(){img.src=d[2];img.style.opacity=1;},140);document.getElementById('ptitle').innerText=d[0];document.getElementById('ptext').innerText=d[1];document.getElementById('pbtn').href='https://wa.me/5511986789954?text='+d[3];document.getElementById('chip1').innerText=d[4];document.getElementById('chip2').innerText=d[5];document.getElementById('chip3').innerText=d[6];toast('👀 Mostrando: '+d[0]);}
@@ -361,4 +386,4 @@ let ti=0;function setDepo(i){ti=i;document.getElementById('ttext').innerText=dep
 setInterval(function(){setDepo((ti+1)%4);},4000);
 </script>
 </body>
-  </html>
+ </html>
