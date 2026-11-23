@@ -9,7 +9,7 @@
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:#0A0A0A;color:#111;line-height:1.55}
-img{display:block;width:100%;background:#1A1A1A}
+img{display:block;width:100%;background:linear-gradient(135deg,#FFC107,#111)}
 svg{flex-shrink:0;vertical-align:middle}
 #progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#FFC107,#25D366);width:0;z-index:9999}
 #intro{position:fixed;inset:0;background:#000;z-index:9998;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .3s}
@@ -30,13 +30,13 @@ svg{flex-shrink:0;vertical-align:middle}
 @keyframes popIn{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .reveal.show{opacity:1;transform:translateY(0)}
-.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.96);backdrop-filter:blur(8px);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:13px 16px;gap:8px}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.96);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:13px 16px;gap:8px}
 .nav b{font-family:'Playfair Display',serif;font-size:20px;white-space:nowrap}.nav b span{color:#FFC107;font-style:italic}
 .nav .nav-btns{display:flex;gap:8px;align-items:center}
 .nav a{background:#25D366;color:#fff;font-weight:800;font-size:13px;padding:9px 14px;border-radius:99px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
 .nav a.insta{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);padding:9px 12px}
 .topbar{background:#FFC107;text-align:center;font-size:12.5px;font-weight:800;padding:8px 10px}
-.live-dot{width:8px;height:8px;background:#25D366;border-radius:50%;display:inline-block;animation:blink 1.2s infinite;flex-shrink:0}
+.live-dot{width:8px;height:8px;background:#25D366;border-radius:50%;display:inline-block;animation:blink 1.2s infinite}
 .hero{background:radial-gradient(ellipse at top,#1A1A1A 0%,#0A0A0A 60%);color:#fff;padding:28px 18px 0;text-align:center}
 .hero .pill{display:inline-flex;gap:7px;align-items:center;background:#1C1C1C;border:1px solid #2A2A2A;padding:8px 13px;border-radius:99px;font-size:12px}
 .hero h1{font-size:42px;line-height:1.02;letter-spacing:-1.5px;margin:18px 0 12px;font-weight:900}
@@ -50,9 +50,9 @@ svg{flex-shrink:0;vertical-align:middle}
 .btn-insta{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);box-shadow:0 12px 30px rgba(221,42,123,.3);animation:none}
 .hero-stats{display:flex;justify-content:center;margin:22px auto 0;max-width:500px;border-top:1px solid #222;padding:16px 0}
 .hero-stats div{flex:1}.hero-stats b{font-size:20px;display:block}.hero-stats span{font-size:11px;color:#999}
-.hero-img{max-width:520px;margin:20px auto 0;border-radius:22px 22px 0 0;overflow:hidden;position:relative}
+.hero-img{max-width:520px;margin:20px auto 0;border-radius:22px 22px 0 0;overflow:hidden;position:relative;background:linear-gradient(135deg,#FFC107,#111)}
 .hero-img img{height:250px;object-fit:cover}
-.hero-img .float-tag{position:absolute;left:12px;bottom:12px;background:#fff;color:#111;padding:10px 14px;border-radius:14px;font-size:12px;font-weight:800;line-height:1.3;box-shadow:0 10px 25px rgba(0,0,0,.3);text-align:left}
+.hero-img .float-tag{position:absolute;left:12px;bottom:12px;background:#fff;color:#111;padding:10px 14px;border-radius:14px;font-size:12px;font-weight:800;line-height:1.3;box-shadow:0 10px 25px rgba(0,0,0,.3)}
 .marquee{background:#111;color:#fff;overflow:hidden;padding:13px 0;white-space:nowrap;border-top:1px solid #222;border-bottom:1px solid #222}
 .marquee-track{display:inline-flex;animation:marquee 20s linear infinite}
 .marquee-track span{font-weight:700;font-size:13px;white-space:nowrap;padding:0 14px}
@@ -113,7 +113,6 @@ details p{color:#666;margin-top:8px}
 .form-box{background:#fff;border-radius:22px;padding:22px;border:1px solid #F0EEE9}
 .form-box label{font-weight:700;font-size:13px;display:block;margin:14px 0 6px}
 .form-box input,.form-box select,.form-box textarea{width:100%;padding:14px;border:1.5px solid #E8E5DD;border-radius:12px;font-family:inherit;font-size:15px;outline:none;background:#FAFAF8}
-/* CORRIGIDO: só 1 flutuante, não tapa mais os cards */
 .float-wa{position:fixed;bottom:92px;right:14px;z-index:200;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 10px 25px rgba(37,211,102,.45);animation:float 2.5s infinite}
 .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.98);padding:10px 12px calc(10px + env(safe-area-inset-bottom));border-top:1px solid #EEE;display:flex;gap:10px;align-items:center;z-index:150}
 .sticky div{flex:1;line-height:1.2}.sticky a{background:#25D366;color:#fff;font-weight:800;padding:13px 18px;border-radius:99px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px}
@@ -129,17 +128,17 @@ details p{color:#666;margin-top:8px}
 <div id="progress"></div>
 <div id="intro"><div class="bigM">M</div><div class="fullName">MOISÉS <span>Sites</span></div><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">1</div><div class="bar"><i></i></div><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
 <div class="topbar">⚡ SÓ 2 VAGAS ESSA SEMANA • <span id="topClock">--:--:--</span> • São Paulo</div>
-<nav class="nav"><b>Moisés <span>Sites</span></b><div class="nav-btns"><a class="insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> Insta</a><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.9 1-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.6.2-.8l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg> QUERO O MEU →</a></div></nav>
+<nav class="nav"><b>Moisés <span>Sites</span></b><div class="nav-btns"><a class="insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> Insta</a><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO O MEU →</a></div></nav>
 <header class="hero">
 <div class="pill"><span class="live-dot" id="liveDot"></span> <span id="onlineStatus">Online agora</span> • <span id="viewers">12</span> pessoas vendo</div>
 <h1>Seu negócio com cara de <em>empresa grande.</em><br>Pronto amanhã.</h1>
 <p>Eu crio seu site profissional em até 24h. Você vê, aprova, e <b style="color:#fff">só depois paga.</b></p>
 <div class="badge-row"><span>✅ Sem mensalidade</span><span>🛡️ Só paga se aprovar</span><span>⚡ Entrega em 24h</span></div>
-<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.9 1-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.6.2-.8l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg> QUERO MEU SITE NO WHATSAPP</a>
-<a class="btn btn-insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> VER MEU INSTAGRAM @moises.sites</a>
+<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO MEU SITE NO WHATSAPP</a>
+<a class="btn btn-insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> VER MEU INSTAGRAM @moises.sites</a>
 <p style="font-size:12px;color:#888">Sem mensalidade • Sem enrolação • Pix após aprovação</p>
 <div class="hero-stats"><div><b>24h</b><span>ENTREGA</span></div><div><b>4.9 ★</b><span>AVALIAÇÃO</span></div><div><b>R$150</b><span>PREÇO ÚNICO</span></div></div>
-<div class="hero-img"><img src="https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Cliente comprando no celular" fetchpriority="high"><div class="float-tag">⭐ 4.9 de avaliação<br><small style="font-weight:400;color:#666">Clientes em São Paulo</small></div></div>
+<div class="hero-img"><img id="heroImg" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1000&q=80&auto=format&fit=crop" alt="" referrerpolicy="no-referrer" onerror="fixImg(this,'hero')"><div class="float-tag">⭐ 4.9 de avaliação<br><small style="font-weight:400;color:#666">Clientes em São Paulo</small></div></div>
 </header>
 <div class="marquee"><div class="marquee-track"><span>BARBEARIA <i>✦</i></span><span>CONFEITARIA <i>✦</i></span><span>SALÃO <i>✦</i></span><span>LANCHONETE <i>✦</i></span><span>LOJA <i>✦</i></span><span>ESTÉTICA <i>✦</i></span><span>BARBEARIA <i>✦</i></span><span>CONFEITARIA <i>✦</i></span><span>SALÃO <i>✦</i></span><span>LANCHONETE <i>✦</i></span><span>LOJA <i>✦</i></span><span>ESTÉTICA <i>✦</i></span></div></div>
 <div class="white-section">
@@ -189,7 +188,7 @@ details p{color:#666;margin-top:8px}
 <b>Eu mesmo faço seu site</b>
 <span>Sem agência, sem enrolação. Você fala direto comigo no Zap e eu monto tudo pra você.</span>
 </div>
-<div class="social-box"><b>Me segue no Instagram</b><span>Vejo meus trabalhos e depoimentos lá: @moises.sites</span><a class="btn btn-insta" style="margin:0" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> SEGUIR @moises.sites</a></div>
+<div class="social-box"><b>Me segue no Instagram</b><span>Vejo meus trabalhos e depoimentos lá: @moises.sites</span><a class="btn btn-insta" style="margin:0" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> SEGUIR @moises.sites</a></div>
 <div class="live-box" style="margin-top:16px"><div><span class="live-dot"></span> <b id="clockBig">--:--:--</b><br><small id="dateBig">São Paulo • Hoje</small></div><div style="text-align:right"><b style="color:#25D366" id="lastOrder">há 4 min</b><br><small>Último pedido</small></div></div>
 <h2>Veja como ficaria <em>o seu</em> 👇</h2>
 <p class="muted">Clica no seu negócio e testa:</p>
@@ -202,7 +201,7 @@ details p{color:#666;margin-top:8px}
 <button class="tab" onclick="show('estetica',this)">✨ Estética</button>
 </div>
 <div class="preview">
-<img id="pimg" src="https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=1000" alt="Barbeiro cortando cabelo">
+<img id="pimg" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80&auto=format&fit=crop" alt="" referrerpolicy="no-referrer" onerror="fixImg(this,'barb')">
 <div class="in">
 <div><span class="chip" id="chip1">📅 Agenda online</span><span class="chip" id="chip2">💲 Preços</span><span class="chip" id="chip3">💬 WhatsApp</span></div>
 <h3 id="ptitle" style="font-size:22px;margin-top:8px">Barbearia do Seu Bairro</h3>
@@ -215,10 +214,10 @@ details p{color:#666;margin-top:8px}
 <h2>Últimos <em>trabalhos</em> 🔥</h2>
 <p class="muted">Sites que já entreguei:</p>
 <div class="portfolio">
-<div class="port-card"><img src="https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Barbearia - barbeiro cortando cabelo" loading="lazy"><div><b>Barbearia do Seu Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20barbearia">Quero um igual →</a></div></div>
-<div class="port-card"><img src="https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Confeitaria - bolo de chocolate" loading="lazy"><div><b>Doces da Camila</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20confeitaria">Quero um igual →</a></div></div>
-<div class="port-card"><img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Salão de beleza - lavando cabelo" loading="lazy"><div><b>Studio de Beleza</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20ao%20salao">Quero um igual →</a></div></div>
-<div class="port-card"><img src="https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Lanchonete - hambúrguer" loading="lazy"><div><b>Lanches do Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20lanchonete">Quero um igual →</a></div></div>
+<div class="port-card"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80&auto=format&fit=crop" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="fixImg(this,'barb')"><div><b>Barbearia do Seu Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20barbearia">Quero um igual →</a></div></div>
+<div class="port-card"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80&auto=format&fit=crop" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="fixImg(this,'bolo')"><div><b>Doces da Camila</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20confeitaria">Quero um igual →</a></div></div>
+<div class="port-card"><img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80&auto=format&fit=crop" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="fixImg(this,'salao')"><div><b>Studio de Beleza</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20ao%20salao">Quero um igual →</a></div></div>
+<div class="port-card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80&auto=format&fit=crop" alt="" referrerpolicy="no-referrer" loading="lazy" onerror="fixImg(this,'lanche')"><div><b>Lanches do Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20lanchonete">Quero um igual →</a></div></div>
 </div>
 </section>
 <section class="wrap reveal">
@@ -288,14 +287,40 @@ details p{color:#666;margin-top:8px}
 <section class="wrap reveal" style="text-align:center">
 <h2>Bora colocar seu negócio <em>no ar?</em></h2>
 <p class="muted">Me chama agora, respondo em minutos.</p>
-<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> CHAMAR O MOISÉS NO WHATSAPP</a>
-<a class="btn btn-insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> SEGUIR NO INSTAGRAM</a>
+<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">CHAMAR O MOISÉS NO WHATSAPP</a>
+<a class="btn btn-insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener">SEGUIR NO INSTAGRAM</a>
 </section>
 <div class="footer">Moisés Sites • São Paulo • 11 98678-9954<br><a href="https://instagram.com/moises.sites" target="_blank" rel="noopener" style="color:#DD2A7B;font-weight:800;text-decoration:none">@moises.sites no Instagram</a><br><span id="footerDate">Hoje</span> • Feito pra vender no celular 📱</div>
 </div>
-<a class="float-wa" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.6-6.1c-.3-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.3-.7.8-.9 1-.2.2-.3.2-.6.1a6.7 6.7 0 0 1-3.4-3c-.3-.4 0-.6.2-.8l.4-.5c.1-.2.1-.3 0-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.4 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg></a>
-<div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><small id="stickyStatus">Online agora • Só paga depois</small></div><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO →</a></div>
+<a class="float-wa" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg></a>
+<div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><small id="stickyStatus">Online agora • Só paga depois</small></div><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">QUERO →</a></div>
 <script>
+// FIX DEFINITIVO DAS IMAGENS - 3 fontes por foto, nunca fica preta
+const IMG_FALLBACKS = {
+hero: ["https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1000&q=80&auto=format&fit=crop","https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&q=80&auto=format&fit=crop"],
+barb: ["https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80&auto=format&fit=crop","https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.unsplash.com/photo-1521490878406-447c4c4d2d6b?w=1000&q=80&auto=format&fit=crop"],
+bolo: ["https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1000&q=80&auto=format&fit=crop","https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=1000&q=80&auto=format&fit=crop"],
+salao: ["https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1000&q=80&auto=format&fit=crop","https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=1000&q=80&auto=format&fit=crop"],
+lanche: ["https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&q=80&auto=format&fit=crop","https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.unsplash.com/photo-1550547660-d9450f859349?w=1000&q=80&auto=format&fit=crop"],
+loja: ["https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&q=80&auto=format&fit=crop","https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?w=1000&q=80&auto=format&fit=crop"],
+estetica: ["https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80&auto=format&fit=crop","https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=1000","https://images.unsplash.com/photo-1519415943484-9fa1873496d4?w=1000&q=80&auto=format&fit=crop"]
+};
+function fixImg(img, key){
+  let list = IMG_FALLBACKS[key] || [];
+  let current = img.src;
+  let idx = list.indexOf(current);
+  // tenta a próxima da lista
+  let next = list[idx + 1] || list[0];
+  if(next && next !== current){
+    img.onerror = function(){ fixImg(img, key); };
+    img.src = next;
+  } else {
+    img.onerror = null;
+    img.style.display = 'none';
+    // se tudo falhar, mostra o fundo dourado, nunca quadrado preto com ícone quebrado
+    if(img.parentElement) img.parentElement.style.background = 'linear-gradient(135deg,#FFC107,#111)';
+  }
+}
 let introSec=1;
 let introTimer=setInterval(function(){introSec--; if(introSec>0){document.getElementById('introCount').innerText=introSec;} else{hideIntro();}},900);
 function hideIntro(){clearInterval(introTimer); var el=document.getElementById('intro'); el.classList.add('hide'); setTimeout(function(){el.style.display='none';},300);}
@@ -310,13 +335,13 @@ let quizStep=1; let quizResp=[];
 function quizNext(resposta){quizResp.push(resposta);if(quizStep===1){quizStep=2;document.getElementById('quizPasso').innerText='PERGUNTA 2 DE 3';document.getElementById('quizBar').style.width='66%';document.getElementById('quizTitulo').innerText='Como seus clientes pedem hoje?';document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Pelo WhatsApp\')">💬 Pelo WhatsApp</button><button class="quiz-opt" onclick="quizNext(\'Pelo Instagram\')">📸 Pelo Instagram</button><button class="quiz-opt" onclick="quizNext(\'Ligação / na loja\')">📞 Ligação / na loja</button><button class="quiz-opt" onclick="quizNext(\'Ainda não vendem\')">😢 Ainda não vendem muito</button>';} else if(quizStep===2){quizStep=3;document.getElementById('quizPasso').innerText='PERGUNTA 3 DE 3';document.getElementById('quizBar').style.width='100%';document.getElementById('quizTitulo').innerText='Pra quando você quer o site?';document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Pra ontem!\')">⚡ Pra ontem!</button><button class="quiz-opt" onclick="quizNext(\'Essa semana\')">📅 Essa semana</button><button class="quiz-opt" onclick="quizNext(\'Esse mês\')">🗓️ Esse mês</button>';} else {document.getElementById('quizPergunta').style.display='none';let res=document.getElementById('quizResult');res.style.display='block';let neg=quizResp[0]||'seu negócio';let msg='Opa Moisés! Fiz o quiz: meu negócio é '+neg+', meus clientes pedem '+quizResp[1]+', quero pra '+quizResp[2]+'. Quero meu site ideal por R$150!';document.getElementById('quizResultTitulo').innerText='Seu site ideal é o de '+neg+'!';document.getElementById('quizResultTexto').innerText='Com agenda, preços e botão do Zap. Perfeito pra quem pede '+quizResp[1]+' e quer pra '+quizResp[2]+'.';document.getElementById('quizBtn').href='https://wa.me/5511986789954?text='+encodeURIComponent(msg);}}
 function quizRestart(){quizStep=1; quizResp=[];document.getElementById('quizPergunta').style.display='block';document.getElementById('quizResult').style.display='none';document.getElementById('quizPasso').innerText='PERGUNTA 1 DE 3';document.getElementById('quizBar').style.width='33%';document.getElementById('quizTitulo').innerText='Qual é o seu negócio?';document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Barbearia\')">✂️ Barbearia</button><button class="quiz-opt" onclick="quizNext(\'Confeitaria / Doces\')">🎂 Confeitaria / Doces</button><button class="quiz-opt" onclick="quizNext(\'Salão / Estética\')">💅 Salão / Estética</button><button class="quiz-opt" onclick="quizNext(\'Lanchonete / Loja\')">🍔 Lanchonete / Loja</button>';}
 const data={
-barb:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.","https://images.pexels.com/photos/1319460/pexels-photo-1319460.jpeg?auto=compress&cs=tinysrgb&w=1000","Quero%20um%20site%20de%20barbearia","📅 Agenda online","💲 Preços","💬 WhatsApp"],
-bolo:["Doces da Camila","Fotos dos bolos, cardápio com preços e botão de encomendar. Cliente escolhe, clica e já pede no seu Zap.","https://images.pexels.com/photos/291528/pexels-photo-291528.jpeg?auto=compress&cs=tinysrgb&w=1000","Quero%20um%20site%20de%20confeitaria","🎂 Cardápio","📸 Fotos","💬 Encomenda"],
-salao:["Studio de Beleza","Serviços, valores, antes e depois e botão pra agendar. Sua agenda cheia sem precisar responder todo mundo.","https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1000","Quero%20um%20site%20de%20salao","💅 Serviços","⭐ Antes e depois","📅 Agendar"],
-lanche:["Lanches do Bairro","Cardápio completo com fotos, botão de pedir agora e seu endereço. Cliente pede em 1 clique.","https://images.pexels.com/photos/1639557/pexels-photo-1639557.jpeg?auto=compress&cs=tinysrgb&w=1000","Quero%20um%20site%20de%20lanchonete","🍔 Cardápio","🛵 Delivery","💬 Pedir agora"],
-loja:["Loja da Bia","Vitrine com seus produtos, preços e botão de comprar no WhatsApp. Sua loja aberta 24h no celular do cliente.","https://images.pexels.com/photos/264636/pexels-photo-264636.jpeg?auto=compress&cs=tinysrgb&w=1000","Quero%20um%20site%20de%20loja","👗 Vitrine","💲 Preços","💬 Comprar"],
-estetica:["Estética Bella","Procedimentos, valores, antes e depois e botão pra agendar avaliação. Agenda cheia sem esforço.","https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=1000","Quero%20um%20site%20de%20estetica","✨ Procedimentos","⭐ Antes e depois","📅 Agendar"]};
-function show(k,el){document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});if(el)el.classList.add('active');const d=data[k];const img=document.getElementById('pimg');img.style.opacity=0;setTimeout(function(){img.src=d[2];img.style.opacity=1;},140);document.getElementById('ptitle').innerText=d[0];document.getElementById('ptext').innerText=d[1];document.getElementById('pbtn').href='https://wa.me/5511986789954?text='+d[3];document.getElementById('chip1').innerText=d[4];document.getElementById('chip2').innerText=d[5];document.getElementById('chip3').innerText=d[6];}
+barb:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80&auto=format&fit=crop","Quero%20um%20site%20de%20barbearia","📅 Agenda online","💲 Preços","💬 WhatsApp","barb"],
+bolo:["Doces da Camila","Fotos dos bolos, cardápio com preços e botão de encomendar. Cliente escolhe, clica e já pede no seu Zap.","https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1000&q=80&auto=format&fit=crop","Quero%20um%20site%20de%20confeitaria","🎂 Cardápio","📸 Fotos","💬 Encomenda","bolo"],
+salao:["Studio de Beleza","Serviços, valores, antes e depois e botão pra agendar. Sua agenda cheia sem precisar responder todo mundo.","https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1000&q=80&auto=format&fit=crop","Quero%20um%20site%20de%20salao","💅 Serviços","⭐ Antes e depois","📅 Agendar","salao"],
+lanche:["Lanches do Bairro","Cardápio completo com fotos, botão de pedir agora e seu endereço. Cliente pede em 1 clique.","https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&q=80&auto=format&fit=crop","Quero%20um%20site%20de%20lanchonete","🍔 Cardápio","🛵 Delivery","💬 Pedir agora","lanche"],
+loja:["Loja da Bia","Vitrine com seus produtos, preços e botão de comprar no WhatsApp. Sua loja aberta 24h no celular do cliente.","https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&q=80&auto=format&fit=crop","Quero%20um%20site%20de%20loja","👗 Vitrine","💲 Preços","💬 Comprar","loja"],
+estetica:["Estética Bella","Procedimentos, valores, antes e depois e botão pra agendar avaliação. Agenda cheia sem esforço.","https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80&auto=format&fit=crop","Quero%20um%20site%20de%20estetica","✨ Procedimentos","⭐ Antes e depois","📅 Agendar","estetica"]};
+function show(k,el){document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});if(el)el.classList.add('active');const d=data[k];const img=document.getElementById('pimg');img.style.opacity=0;img.onerror=function(){fixImg(img,d[6])};setTimeout(function(){img.src=d[2];img.style.opacity=1;},140);document.getElementById('ptitle').innerText=d[0];document.getElementById('ptext').innerText=d[1];document.getElementById('pbtn').href='https://wa.me/5511986789954?text='+d[3];document.getElementById('chip1').innerText=d[4];document.getElementById('chip2').innerText=d[5];document.getElementById('chip3').innerText=d[6];}
 let total=150;function calc(){total=150;if(document.getElementById('c1').checked)total+=30;if(document.getElementById('c2').checked)total+=20;if(document.getElementById('c3').checked)total+=30;document.getElementById('total').innerText='R$'+total;document.getElementById('calcBtn').innerText='QUERO ESSE PACOTE POR R$'+total+' →';}
 function sendCalc(e){if(e)e.preventDefault();let extras=[];if(document.getElementById('c1').checked)extras.push('Logo simples (+R$30)');if(document.getElementById('c2').checked)extras.push('Bio Instagram (+R$20)');if(document.getElementById('c3').checked)extras.push('Cardápio digital (+R$30)');let msg='Opa Moisés! Quero meu site por R$'+total;if(extras.length){msg+=' com: '+extras.join(', ');}else{msg+=' só o site completo';}msg+='. Pode montar pra mim?';window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');}
 function sendForm(e){if(e)e.preventDefault();let nome=document.getElementById('fNome').value||'Não informou';let neg=document.getElementById('fNegocio').value||'Não informou';let tipo=document.getElementById('fTipo').value;let zap=document.getElementById('fZap').value||'Não informou';let obs=document.getElementById('fObs').value||'Sem detalhes';let msg='NOVO PEDIDO DE SITE\n\nNome: '+nome+'\nNegócio: '+neg+'\nTipo: '+tipo+'\nZap do cliente: '+zap+'\nQuer no site: '+obs+'\n\nQuero meu site por R$150, pode montar?';window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');}
