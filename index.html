@@ -28,6 +28,7 @@ img{display:block;width:100%}
 @keyframes pulseBtn{0%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,0)}}
 @keyframes popIn{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
 @keyframes confetti{0%{transform:translateY(0) rotate(0)}100%{transform:translateY(120px) rotate(360deg);opacity:0}}
+@keyframes goldVibrate{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
 .reveal.show{opacity:1;transform:translateY(0)}
 .nav{position:sticky;top:0;z-index:100;background:#0A0A0A;color:#fff;display:flex;justify-content:space-between;align-items:center;padding:13px 16px}
@@ -51,7 +52,7 @@ img{display:block;width:100%}
 .marquee-track{display:inline-flex;animation:marquee 20s linear infinite}
 .marquee-track span{font-weight:700;font-size:13px;white-space:nowrap;padding:0 14px}
 .marquee-track i{color:#FFC107;font-style:normal}
-.white-section{background:#FAFAF8;border-radius:28px 28px 0 0;margin-top:-8px;position:relative;z-index:2;padding-bottom:30px}
+.white-section{background:linear-gradient(120deg,#FFD700,#FFC107,#FFF176,#FFB800,#FFD700);background-size:300% 300%;animation:goldVibrate 3s ease infinite;border-radius:28px 28px 0 0;margin-top:-8px;position:relative;z-index:2;padding-bottom:30px}
 .wrap{max-width:540px;margin:auto;padding:28px 16px 0}
 h2{font-size:28px;letter-spacing:-1px;line-height:1.1;margin-bottom:8px}
 h2 em{font-family:'Playfair Display',serif;color:#EAB308;font-style:italic}
@@ -112,7 +113,7 @@ details p{color:#666;margin-top:8px}
 .float-wa{position:fixed;bottom:100px;right:16px;z-index:200;background:#25D366;width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:26px;text-decoration:none;box-shadow:0 10px 25px rgba(37,211,102,.45);animation:float 2.5s infinite}
 .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.98);padding:10px 12px;border-top:1px solid #EEE;display:flex;gap:10px;align-items:center;z-index:150}
 .sticky div{flex:1;line-height:1.2}.sticky a{background:#25D366;color:#fff;font-weight:800;padding:13px 18px;border-radius:99px;text-decoration:none;white-space:nowrap}
-.footer{padding:28px 16px 100px;text-align:center;color:#999;font-size:13px;background:#FAFAF8}
+.footer{padding:28px 16px 100px;text-align:center;color:#999;font-size:13px;background:transparent}
 </style>
 </head>
 <body>
