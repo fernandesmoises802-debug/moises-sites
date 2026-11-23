@@ -11,7 +11,7 @@ html{scroll-behavior:smooth}
 body{font-family:'Inter',system-ui,sans-serif;background:#0A0A0A;color:#111;line-height:1.55;overflow-x:hidden}
 img{display:block;width:100%}
 svg{flex-shrink:0;vertical-align:middle}
-#progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#FFC107,#25D366,#FFC107);background-size:200% 100%;width:0;z-index:9999;box-shadow:0 0 12px rgba(255,193,7,.6)}
+#progress{position:fixed;top:0;left:0;height:4px;background:linear-gradient(90deg,#FFC107,#25D366);width:0;z-index:9999;box-shadow:0 0 12px rgba(255,193,7,.5);transition:width .1s linear}
 #intro{position:fixed;inset:0;background:radial-gradient(600px 300px at 50% 0%,#1a1a1a,#000);z-index:9998;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .4s}
 #intro.hide{opacity:0;pointer-events:none;visibility:hidden}
 #intro .bigM{font-family:'Playfair Display',serif;font-size:115px;line-height:1;color:#FFC107;font-weight:800;text-shadow:0 0 50px rgba(255,193,7,.6);animation:float 2s infinite}
@@ -29,33 +29,31 @@ svg{flex-shrink:0;vertical-align:middle}
 @keyframes pulseBtn{0%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,.5)}70%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 14px rgba(37,211,102,0)}100%{box-shadow:0 12px 30px rgba(37,211,102,.35),0 0 0 0 rgba(37,211,102,0)}}
 @keyframes popIn{0%{transform:scale(.9);opacity:0}100%{transform:scale(1);opacity:1}}
 @keyframes confettiFall{0%{transform:translateY(0) rotate(0);opacity:1}100%{transform:translateY(220px) rotate(720deg);opacity:0}}
-@keyframes shine{0%{transform:translateX(-100%)}100%{transform:translateX(200%)}}
-@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(255,193,7,.3)}50%{box-shadow:0 0 35px rgba(255,193,7,.6)}}
-.reveal{opacity:0;transform:translateY(28px) scale(.98);transition:opacity .6s ease,transform .6s ease}
-.reveal.show{opacity:1;transform:translateY(0) scale(1)}
-.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.92);backdrop-filter:blur(12px);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:13px 16px;gap:8px;border-bottom:1px solid #222}
+@keyframes glowPulse{0%,100%{box-shadow:0 0 20px rgba(255,193,7,.25)}50%{box-shadow:0 0 32px rgba(255,193,7,.5)}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.show{opacity:1;transform:translateY(0)}
+.nav{position:sticky;top:0;z-index:100;background:rgba(10,10,10,.94);backdrop-filter:blur(12px);color:#fff;display:flex;justify-content:space-between;align-items:center;padding:13px 16px;gap:8px;border-bottom:1px solid #222}
 .nav b{font-family:'Playfair Display',serif;font-size:20px;white-space:nowrap}.nav b span{color:#FFC107;font-style:italic}
 .nav .nav-btns{display:flex;gap:8px;align-items:center}
 .nav a{background:#25D366;color:#fff;font-weight:800;font-size:13px;padding:9px 14px;border-radius:99px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;box-shadow:0 6px 15px rgba(37,211,102,.3);transition:transform .2s}
 .nav a:active{transform:scale(.93)}
 .nav a.insta{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);padding:9px 12px;box-shadow:0 6px 15px rgba(221,42,123,.3)}
-.topbar{background:linear-gradient(90deg,#FFC107,#FFD54F,#FFC107);background-size:200% 100%;text-align:center;font-size:12.5px;font-weight:800;padding:9px 10px;letter-spacing:.2px;animation:shine 3s linear infinite}
+.topbar{background:linear-gradient(90deg,#FFC107,#FFD54F);text-align:center;font-size:12.5px;font-weight:800;padding:9px 10px}
 .live-dot{width:8px;height:8px;background:#25D366;border-radius:50%;display:inline-block;animation:blink 1.2s infinite;flex-shrink:0;box-shadow:0 0 0 4px rgba(37,211,102,.15)}
 .hero{background:radial-gradient(600px 260px at 50% 0%,#222,#0A0A0A);color:#fff;padding:32px 18px 0;text-align:center;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:radial-gradient(400px 150px at 50% 0%,rgba(255,193,7,.12),transparent);pointer-events:none}
-.hero .pill{display:inline-flex;gap:7px;align-items:center;background:rgba(28,28,28,.9);backdrop-filter:blur(8px);border:1px solid #2A2A2A;padding:9px 14px;border-radius:99px;font-size:12px;box-shadow:0 8px 20px rgba(0,0,0,.4);position:relative;z-index:1}
-.hero h1{font-size:40px;line-height:1.05;letter-spacing:-1.5px;margin:18px 0 12px;font-weight:900;text-shadow:0 4px 20px rgba(0,0,0,.5);position:relative;z-index:1}
+.hero .pill{display:inline-flex;gap:7px;align-items:center;background:rgba(28,28,28,.9);border:1px solid #2A2A2A;padding:9px 14px;border-radius:99px;font-size:12px;box-shadow:0 8px 20px rgba(0,0,0,.4)}
+.hero h1{font-size:40px;line-height:1.05;letter-spacing:-1.5px;margin:18px 0 12px;font-weight:900}
 .hero h1 em{font-family:'Playfair Display',serif;color:#FFC107;text-shadow:0 0 30px rgba(255,193,7,.45)}
-.hero p{color:#B8B8B8;font-size:16px;max-width:460px;margin:0 auto;position:relative;z-index:1}
-.btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(180deg,#2ee66b,#1ebc50);color:#fff;font-weight:800;font-size:16px;padding:17px;border-radius:99px;text-decoration:none;text-align:center;margin:20px auto;max-width:500px;box-shadow:0 14px 30px rgba(37,211,102,.35);cursor:pointer;border:0;width:100%;animation:pulseBtn 2s infinite;letter-spacing:.2px;transition:transform .2s,filter .2s;position:relative;overflow:hidden}
-.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}
+.hero p{color:#B8B8B8;font-size:16px;max-width:460px;margin:0 auto}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;background:linear-gradient(180deg,#2ee66b,#1ebc50);color:#fff;font-weight:800;font-size:16px;padding:17px;border-radius:99px;text-decoration:none;text-align:center;margin:20px auto;max-width:500px;box-shadow:0 14px 30px rgba(37,211,102,.35);cursor:pointer;border:0;width:100%;animation:pulseBtn 2s infinite;transition:transform .2s,filter .2s;position:relative;overflow:hidden}
+.btn:hover{filter:brightness(1.07);transform:translateY(-1px)}
 .btn:active{transform:scale(.96)}
 .btn-dark{background:linear-gradient(180deg,#222,#111);color:#fff;box-shadow:0 10px 20px rgba(0,0,0,.15);animation:none}
 .btn-insta{background:linear-gradient(45deg,#F58529,#DD2A7B,#8134AF);box-shadow:0 14px 30px rgba(221,42,123,.35);animation:none}
-.hero-stats{display:flex;justify-content:center;margin:22px auto 0;max-width:500px;border-top:1px solid #222;padding:16px 0;position:relative;z-index:1}
+.hero-stats{display:flex;justify-content:center;margin:22px auto 0;max-width:500px;border-top:1px solid #222;padding:16px 0}
 .hero-stats div{flex:1;transition:transform .2s}.hero-stats div:hover{transform:translateY(-3px)}
 .hero-stats b{font-size:20px;display:block}.hero-stats span{font-size:11px;color:#999;letter-spacing:.5px}
-.hero-img{max-width:520px;margin:20px auto 0;border-radius:22px 22px 0 0;overflow:hidden;box-shadow:0 -10px 40px rgba(0,0,0,.5);position:relative;z-index:1}
+.hero-img{max-width:520px;margin:20px auto 0;border-radius:22px 22px 0 0;overflow:hidden;box-shadow:0 -10px 40px rgba(0,0,0,.5)}
 .hero-img img{height:250px;object-fit:cover;transition:transform .4s}
 .hero-img:hover img{transform:scale(1.03)}
 .marquee{background:#111;color:#fff;overflow:hidden;padding:13px 0;white-space:nowrap;border-top:1px solid #222;border-bottom:1px solid #222}
@@ -72,8 +70,7 @@ h2 em{font-family:'Playfair Display',serif;color:#EAB308;font-style:italic}
 .about small{color:#FFC107;font-weight:800;font-size:12px;letter-spacing:1px}
 .about b{font-size:18px;display:block;margin:4px 0}
 .about span{color:#bbb;font-size:13px;line-height:1.4;display:block}
-.live-box{background:linear-gradient(135deg,#111,#1e1e1e);color:#fff;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px;box-shadow:0 10px 22px rgba(0,0,0,.13);border:1px solid #222;transition:transform .2s}
-.live-box:hover{transform:translateY(-2px)}
+.live-box{background:linear-gradient(135deg,#111,#1e1e1e);color:#fff;border-radius:18px;padding:16px;display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;gap:10px;box-shadow:0 10px 22px rgba(0,0,0,.13);border:1px solid #222}
 .live-box b{font-size:17px}.live-box small{color:#aaa}
 .quiz-box{background:linear-gradient(135deg,#0f0f0f,#1F1F1F);color:#fff;border-radius:24px;padding:24px;border:2px solid #FFC107;position:relative;overflow:hidden;box-shadow:0 18px 40px rgba(0,0,0,.25);animation:glowPulse 3s infinite}
 .quiz-box .q-progress{height:6px;background:#333;border-radius:99px;overflow:hidden;margin:12px 0 16px}
@@ -83,8 +80,7 @@ h2 em{font-family:'Playfair Display',serif;color:#EAB308;font-style:italic}
 .quiz-opt:active{transform:scale(.96);background:#FFC107}
 .quiz-result{background:#fff;color:#111;border-radius:18px;padding:20px;text-align:center;animation:popIn .4s ease;display:none;box-shadow:0 10px 25px rgba(0,0,0,.1)}
 .quiz-result h3{font-size:22px;margin-bottom:8px}
-.sim-box{background:#fff;border-radius:24px;padding:22px;border:1.5px solid #FFC107;box-shadow:0 14px 32px rgba(0,0,0,.08);text-align:center;transition:transform .2s}
-.sim-box:hover{transform:translateY(-2px)}
+.sim-box{background:#fff;border-radius:24px;padding:22px;border:1.5px solid #FFC107;box-shadow:0 14px 32px rgba(0,0,0,.08);text-align:center}
 .sim-box input{width:100%;padding:15px;border:2px solid #111;border-radius:14px;font-size:16px;font-weight:700;text-align:center;outline:none;margin:12px 0;transition:border-color .2s,box-shadow .2s}
 .sim-box input:focus{border-color:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.15)}
 .sim-preview{background:#0A0A0A;color:#fff;border-radius:18px;padding:20px;margin-top:14px;display:none;animation:popIn .4s ease;box-shadow:0 14px 28px rgba(0,0,0,.28)}
@@ -94,31 +90,27 @@ h2 em{font-family:'Playfair Display',serif;color:#EAB308;font-style:italic}
 .tabs::-webkit-scrollbar{display:none}
 .tab{border:1.5px solid #E8E5DD;background:#fff;padding:11px 15px;border-radius:99px;font-weight:700;font-size:14px;cursor:pointer;white-space:nowrap;flex-shrink:0;box-shadow:0 3px 8px rgba(0,0,0,.04);transition:all .15s}
 .tab:hover{transform:translateY(-2px);border-color:#111}
-.tab.active{background:#111;color:#fff;border-color:#111;box-shadow:0 10px 20px rgba(0,0,0,.2);transform:translateY(-1px)}
+.tab.active{background:#111;color:#fff;border-color:#111;box-shadow:0 10px 20px rgba(0,0,0,.2)}
 .preview{background:#fff;border-radius:24px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.1);margin-top:4px;border:1px solid #EFEDE8;transition:transform .25s}
 .preview:hover{transform:translateY(-3px)}
 .preview img{height:230px;object-fit:cover;transition:opacity .2s,transform .4s}
 .preview:hover img{transform:scale(1.03)}
 .preview .in{padding:20px}
-.chip{display:inline-block;background:#FFF3CD;padding:7px 12px;border-radius:99px;font-size:12px;font-weight:700;margin:0 4px 6px 0;border:1px solid #FFE9A8;transition:transform .15s}
-.chip:hover{transform:scale(1.05)}
+.chip{display:inline-block;background:#FFF3CD;padding:7px 12px;border-radius:99px;font-size:12px;font-weight:700;margin:0 4px 6px 0;border:1px solid #FFE9A8}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .card{background:#fff;border-radius:18px;padding:18px;box-shadow:0 10px 22px rgba(0,0,0,.06);border:1px solid #F0EEE9;min-height:130px;transition:transform .2s,box-shadow .2s;cursor:pointer}
 .card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 30px rgba(0,0,0,.12)}
 .card .ico{font-size:26px;margin-bottom:8px}.card b{font-size:15px;display:block;line-height:1.3}.card span{color:#777;font-size:13px;line-height:1.4;display:block;margin-top:4px}
 .pricebox{background:linear-gradient(135deg,#111,#1c1c1c);color:#fff;border-radius:24px;padding:26px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,.28);border:1px solid #222;position:relative;overflow:hidden}
-.pricebox::before{content:"";position:absolute;top:-50px;left:-50px;width:150px;height:150px;background:radial-gradient(circle,rgba(255,193,7,.2),transparent);border-radius:50%}
-.old{color:#999;text-decoration:line-through}.new{font-size:58px;font-weight:900;line-height:1;text-shadow:0 4px 20px rgba(255,193,7,.3)}.new small{font-size:18px}
+.old{color:#999;text-decoration:line-through}.new{font-size:58px;font-weight:900;line-height:1}.new small{font-size:18px}
 .opt{display:flex;justify-content:space-between;align-items:center;background:#F3F2EE;border-radius:14px;padding:13px;margin:10px 0;gap:10px;cursor:pointer;border:1px solid #EEE;transition:transform .15s,background .15s}
 .opt:hover{transform:translateY(-1px);background:#FFF8D6}
 .opt input{width:22px;height:22px;accent-color:#25D366;cursor:pointer}
-.testi{background:#fff;border-radius:22px;padding:22px;box-shadow:0 14px 32px rgba(0,0,0,.08);min-height:170px;border:1px solid #F0EEE9;transition:transform .2s}
-.testi:hover{transform:translateY(-2px)}
+.testi{background:#fff;border-radius:22px;padding:22px;box-shadow:0 14px 32px rgba(0,0,0,.08);min-height:170px;border:1px solid #F0EEE9}
 .testi .stars{color:#FFB800;font-size:20px;letter-spacing:2px}
 .testi p{font-size:17px;margin:12px 0;line-height:1.6}
 .dots{text-align:center;margin-top:12px}.dot{display:inline-block;width:8px;height:8px;background:#DDD;border-radius:50%;margin:0 3px;cursor:pointer;padding:6px;transition:all .2s}.dot:hover{transform:scale(1.3)}.dot.on{background:#111;width:22px;border-radius:99px}
-details{background:#fff;border-radius:14px;padding:16px;margin-bottom:10px;border:1px solid #EEE;box-shadow:0 4px 12px rgba(0,0,0,.03);transition:transform .15s}
-details:hover{transform:translateY(-1px)}
+details{background:#fff;border-radius:14px;padding:16px;margin-bottom:10px;border:1px solid #EEE;box-shadow:0 4px 12px rgba(0,0,0,.03)}
 summary{font-weight:800;cursor:pointer;list-style:none;display:flex;justify-content:space-between}
 details p{color:#666;margin-top:8px}
 .step{display:flex;gap:14px;margin-bottom:16px;align-items:flex-start;transition:transform .2s}
@@ -126,44 +118,43 @@ details p{color:#666;margin-top:8px}
 .num{background:linear-gradient(135deg,#222,#111);color:#FFC107;width:38px;height:38px;min-width:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:900;box-shadow:0 6px 14px rgba(0,0,0,.2)}
 .portfolio{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .port-card{background:#fff;border-radius:18px;overflow:hidden;border:1px solid #F0EEE9;box-shadow:0 10px 22px rgba(0,0,0,.06);transition:transform .2s}
-.port-card:hover{transform:translateY(-4px) scale(1.02);box-shadow:0 16px 30px rgba(0,0,0,.12)}
+.port-card:hover{transform:translateY(-4px) scale(1.02)}
 .port-card img{height:140px;object-fit:cover;transition:transform .4s}
 .port-card:hover img{transform:scale(1.07)}
 .port-card div{padding:14px}
 .port-card b{font-size:15px;display:block}.port-card span{color:#777;font-size:12px}
 .port-card a{color:#25D366;font-weight:800;font-size:13px;text-decoration:none}
-.form-box{background:#fff;border-radius:22px;padding:22px;border:1px solid #F0EEE9;box-shadow:0 14px 32px rgba(0,0,0,.07);transition:transform .2s}
-.form-box:hover{transform:translateY(-2px)}
+.form-box{background:#fff;border-radius:22px;padding:22px;border:1px solid #F0EEE9;box-shadow:0 14px 32px rgba(0,0,0,.07)}
 .form-box label{font-weight:700;font-size:13px;display:block;margin:14px 0 6px}
 .form-box input,.form-box select,.form-box textarea{width:100%;padding:14px;border:1.5px solid #E8E5DD;border-radius:12px;font-family:inherit;font-size:15px;outline:none;background:#FAFAF8;transition:border-color .2s,box-shadow .2s}
 .form-box input:focus,.form-box select:focus,.form-box textarea:focus{border-color:#25D366;box-shadow:0 0 0 4px rgba(37,211,102,.12)}
 .float-wa{position:fixed;bottom:100px;right:16px;z-index:200;background:linear-gradient(180deg,#2ee66b,#1ebc50);width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;box-shadow:0 14px 28px rgba(37,211,102,.5);animation:float 2.5s infinite;transition:transform .2s}
 .float-wa:hover{transform:scale(1.1)}
 .sticky{position:fixed;bottom:0;left:0;right:0;background:rgba(255,255,255,.98);backdrop-filter:blur(12px);padding:10px 12px;border-top:1px solid #EEE;display:flex;gap:10px;align-items:center;z-index:150;box-shadow:0 -10px 25px rgba(0,0,0,.1)}
-.sticky div{flex:1;line-height:1.2}.sticky a{background:linear-gradient(180deg,#2ee66b,#1ebc50);color:#fff;font-weight:800;padding:13px 18px;border-radius:99px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;box-shadow:0 10px 20px rgba(37,211,102,.35);transition:transform .2s}
+.sticky div{flex:1;line-height:1.2}.sticky a{background:linear-gradient(180deg,#2ee66b,#1ebc50);color:#fff;font-weight:800;padding:13px 18px;border-radius:99px;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;box-shadow:0 10px 20px rgba(37,211,102,.35)}
 .sticky a:active{transform:scale(.94)}
 .footer{padding:28px 16px 100px;text-align:center;color:#999;font-size:13px;background:#FAFAF8}
 .social-box{background:linear-gradient(135deg,#111,#1e1e1e);color:#fff;border-radius:22px;padding:20px;text-align:center;margin-top:16px;box-shadow:0 14px 28px rgba(0,0,0,.22);border:1px solid #222;transition:transform .2s}
 .social-box:hover{transform:translateY(-3px)}
 .social-box b{font-size:18px;display:block}
 .social-box span{color:#bbb;font-size:13px;display:block;margin:6px 0 14px}
-.confetti{position:fixed;width:8px;height:14px;top:50%;left:50%;pointer-events:none;z-index:9999;border-radius:2px;animation:confettiFall .9s ease-out forwards}
+.confetti{position:fixed;width:8px;height:14px;pointer-events:none;z-index:9999;border-radius:2px;animation:confettiFall .9s ease-out forwards}
 </style>
 </head>
 <body>
 <div id="progress"></div>
 <div id="intro"><div class="bigM">M</div><div class="fullName">MOISÉS <span>Sites</span></div><p>SEU NEGÓCIO NO AR EM 24H</p><div class="count" id="introCount">3</div><div class="bar"><i></i></div><button id="skip" onclick="hideIntro()">PULAR INTRO →</button></div>
 <div class="topbar">⚡ SÓ 2 VAGAS ESSA SEMANA • <span id="topClock">--:--:--</span> • São Paulo</div>
-<nav class="nav"><b>Moisés <span>Sites</span></b><div class="nav-btns"><a class="insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> Insta</a><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO O MEU →</a></div></nav>
+<nav class="nav"><b>Moisés <span>Sites</span></b><div class="nav-btns"><a class="insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> Insta</a><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO O MEU →</a></div></nav>
 <header class="hero">
 <div class="pill"><span class="live-dot" id="liveDot"></span> <span id="onlineStatus">Online agora</span> • <span id="viewers">12</span> pessoas vendo</div>
 <h1>Seu negócio com cara de <em>empresa grande.</em><br>Pronto amanhã.</h1>
 <p>Eu crio seu site profissional em até 24h. Você vê, aprova, e <b style="color:#fff">só depois paga.</b></p>
-<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO MEU SITE NO WHATSAPP →</a>
+<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO MEU SITE NO WHATSAPP →</a>
 <a class="btn btn-insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> VER MEU INSTAGRAM @moises.sites</a>
 <p style="font-size:12px;color:#888">Sem mensalidade • Sem enrolação • Pix após aprovação</p>
 <div class="hero-stats"><div><b>24h</b><span>ENTREGA</span></div><div><b>4.9 ★</b><span>AVALIAÇÃO</span></div><div><b>R$150</b><span>PREÇO ÚNICO</span></div></div>
-<div class="hero-img"><img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1000&q=80"></div>
+<div class="hero-img"><img loading="lazy" src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?w=1000&q=80" alt="Site profissional no celular"></div>
 </header>
 <div class="marquee"><div class="marquee-track"><span>BARBEARIA <i>✦</i></span><span>CONFEITARIA <i>✦</i></span><span>SALÃO <i>✦</i></span><span>LANCHONETE <i>✦</i></span><span>LOJA <i>✦</i></span><span>ESTÉTICA <i>✦</i></span><span>BARBEARIA <i>✦</i></span><span>CONFEITARIA <i>✦</i></span><span>SALÃO <i>✦</i></span><span>LANCHONETE <i>✦</i></span><span>LOJA <i>✦</i></span><span>ESTÉTICA <i>✦</i></span></div></div>
 <div class="white-section">
@@ -172,12 +163,12 @@ details p{color:#666;margin-top:8px}
 <p class="muted">Digita o nome do seu negócio e vê como ficaria:</p>
 <div class="sim-box">
 <label style="font-weight:800;font-size:14px">Nome do seu negócio:</label>
-<input id="simNome" placeholder="Ex: Barbearia do João" oninput="simular()">
+<input id="simNome" placeholder="Ex: Barbearia do João" oninput="simular()" autocomplete="off">
 <div id="simPreview" class="sim-preview">
 <span>SEU SITE FICARIA ASSIM 👇</span>
 <b id="simTitulo">Barbearia do João</b>
 <p style="color:#bbb;font-size:14px;margin:8px 0">⭐ 4.9 • Aberto agora • São Paulo<br>📅 Agendar • 💲 Ver preços • 💬 Pedir no Zap</p>
-<a class="btn" style="margin:10px 0 0" id="simBtn" href="https://wa.me/5511986789954?text=Quero%20meu%20site">QUERO UM SITE COM MEU NOME →</a>
+<a class="btn" style="margin:10px 0 0" id="simBtn" href="https://wa.me/5511986789954?text=Quero%20meu%20site" target="_blank" rel="noopener">QUERO UM SITE COM MEU NOME →</a>
 </div>
 <p style="font-size:12px;color:#888;margin-top:10px">👆 Digita aí em cima que aparece na hora!</p>
 </div>
@@ -202,7 +193,7 @@ details p{color:#666;margin-top:8px}
 <h3 id="quizResultTitulo">Seu site ideal é o COMPLETO!</h3>
 <p id="quizResultTexto" style="color:#666;font-size:14px;line-height:1.5">Com agenda, preços e botão do Zap. Perfeito pra você vender todos os dias.</p>
 <p style="font-size:28px;font-weight:900;margin:10px 0">R$150 <span style="font-size:14px;color:#888;font-weight:400">• só paga depois de aprovar</span></p>
-<a class="btn" style="margin:0" id="quizBtn" href="https://wa.me/5511986789954?text=Quero%20meu%20site">QUERO MEU SITE IDEAL →</a>
+<a class="btn" style="margin:0" id="quizBtn" href="https://wa.me/5511986789954?text=Quero%20meu%20site" target="_blank" rel="noopener">QUERO MEU SITE IDEAL →</a>
 <button onclick="quizRestart()" style="background:none;border:0;color:#888;font-size:13px;margin-top:10px;cursor:pointer;text-decoration:underline">Fazer quiz de novo</button>
 </div>
 </div>
@@ -226,12 +217,12 @@ details p{color:#666;margin-top:8px}
 <button class="tab" onclick="show('estetica',this)">✨ Estética</button>
 </div>
 <div class="preview">
-<img id="pimg" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80">
+<img id="pimg" loading="lazy" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80" alt="Exemplo de site">
 <div class="in">
 <div><span class="chip" id="chip1">📅 Agenda online</span><span class="chip" id="chip2">💲 Preços</span><span class="chip" id="chip3">💬 WhatsApp</span></div>
 <h3 id="ptitle" style="font-size:22px;margin-top:8px">Barbearia do Seu Bairro</h3>
 <p id="ptext" style="color:#666;margin:8px 0 14px">Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.</p>
-<a class="btn btn-dark" style="margin:0" id="pbtn" href="https://wa.me/5511986789954?text=Quero%20um%20site%20de%20barbearia">QUERO UM ASSIM →</a>
+<a class="btn btn-dark" style="margin:0" id="pbtn" href="https://wa.me/5511986789954?text=Quero%20um%20site%20de%20barbearia" target="_blank" rel="noopener">QUERO UM ASSIM →</a>
 </div>
 </div>
 </section>
@@ -239,10 +230,10 @@ details p{color:#666;margin-top:8px}
 <h2>Últimos <em>trabalhos</em> 🔥</h2>
 <p class="muted">Sites que já entreguei:</p>
 <div class="portfolio">
-<div class="port-card"><img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80"><div><b>Barbearia do Seu Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20barbearia">Quero um igual →</a></div></div>
-<div class="port-card"><img src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80"><div><b>Doces da Camila</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20confeitaria">Quero um igual →</a></div></div>
-<div class="port-card"><img src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80"><div><b>Studio de Beleza</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20ao%20salao">Quero um igual →</a></div></div>
-<div class="port-card"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80"><div><b>Lanches do Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20lanchonete">Quero um igual →</a></div></div>
+<div class="port-card"><img loading="lazy" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=800&q=80" alt="Barbearia"><div><b>Barbearia do Seu Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20barbearia" target="_blank" rel="noopener">Quero um igual →</a></div></div>
+<div class="port-card"><img loading="lazy" src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80" alt="Confeitaria"><div><b>Doces da Camila</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20confeitaria" target="_blank" rel="noopener">Quero um igual →</a></div></div>
+<div class="port-card"><img loading="lazy" src="https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=800&q=80" alt="Salão"><div><b>Studio de Beleza</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20ao%20salao" target="_blank" rel="noopener">Quero um igual →</a></div></div>
+<div class="port-card"><img loading="lazy" src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=800&q=80" alt="Lanchonete"><div><b>Lanches do Bairro</b><span>Entregue em 24h • São Paulo</span><br><a href="https://wa.me/5511986789954?text=Quero%20um%20site%20igual%20a%20lanchonete" target="_blank" rel="noopener">Quero um igual →</a></div></div>
 </div>
 </section>
 <section class="wrap reveal">
@@ -269,10 +260,10 @@ details p{color:#666;margin-top:8px}
 <h2>Peça seu site <em>agora</em> 📝</h2>
 <p class="muted">Preenche aqui, chega tudo pronto no meu Zap:</p>
 <div class="form-box">
-<label>Seu nome</label><input id="fNome" placeholder="Ex: João">
-<label>Nome do seu negócio</label><input id="fNegocio" placeholder="Ex: Barbearia do João">
+<label>Seu nome</label><input id="fNome" placeholder="Ex: João" autocomplete="name">
+<label>Nome do seu negócio</label><input id="fNegocio" placeholder="Ex: Barbearia do João" autocomplete="organization">
 <label>Tipo de negócio</label><select id="fTipo"><option>Barbearia</option><option>Confeitaria</option><option>Salão / Estética</option><option>Lanchonete</option><option>Loja</option><option>Outro</option></select>
-<label>Seu WhatsApp</label><input id="fZap" placeholder="Ex: 11 99999-9999">
+<label>Seu WhatsApp</label><input id="fZap" placeholder="Ex: 11 99999-9999" inputmode="tel" autocomplete="tel">
 <label>O que você quer no site?</label><textarea id="fObs" rows="3" placeholder="Ex: Quero agenda, preços e fotos..."></textarea>
 <button class="btn" onclick="sendForm(event)">ENVIAR PEDIDO NO WHATSAPP →</button>
 <p style="text-align:center;font-size:12px;color:#888;margin-top:8px">Respondo em minutos • Sem compromisso</p>
@@ -297,7 +288,7 @@ details p{color:#666;margin-top:8px}
 <p style="margin:8px 0">De <span class="old">R$350</span> por</p>
 <p class="new"><small>R$</small>150</p>
 <p style="color:#AAA;margin:10px 0">Pagamento único • Sem mensalidade<br>1 revisão grátis • Entrega em 24h</p>
-<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150">GARANTIR MEU SITE POR R$150</a>
+<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" target="_blank" rel="noopener">GARANTIR MEU SITE POR R$150</a>
 <p style="font-size:12px;color:#888">⏰ <span id="countdown">Faltam 2 dias</span> pra acabar a oferta</p>
 </div>
 </section>
@@ -311,33 +302,37 @@ details p{color:#666;margin-top:8px}
 <section class="wrap reveal" style="text-align:center">
 <h2>Bora colocar seu negócio <em>no ar?</em></h2>
 <p class="muted">Me chama agora, respondo em minutos.</p>
-<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> CHAMAR O MOISÉS NO WHATSAPP</a>
+<a class="btn" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> CHAMAR O MOISÉS NO WHATSAPP</a>
 <a class="btn btn-insta" href="https://instagram.com/moises.sites" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="white"/></svg> SEGUIR NO INSTAGRAM</a>
 </section>
 <div class="footer">Moisés Sites • São Paulo • 11 98678-9954<br><a href="https://instagram.com/moises.sites" target="_blank" rel="noopener" style="color:#DD2A7B;font-weight:800;text-decoration:none">@moises.sites no Instagram</a><br><span id="footerDate">Hoje</span> • Feito pra vender no celular 📱</div>
 </div>
-<a class="float-wa" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg></a>
-<div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><small id="stickyStatus">Online agora • Só paga depois</small></div><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO →</a></div>
+<a class="float-wa" href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" target="_blank" rel="noopener" aria-label="WhatsApp"><svg width="30" height="30" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg></a>
+<div class="sticky"><div><b>R$150 • Pronto em 24h</b><br><small id="stickyStatus">Online agora • Só paga depois</small></div><a href="https://wa.me/5511986789954?text=Quero%20meu%20site%20por%20R%24150" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5.1-1.3A10 10 0 1 0 12 2z"/></svg> QUERO →</a></div>
 <script>
 let introSec=3;
-let introTimer=setInterval(function(){introSec--; if(introSec>0){document.getElementById('introCount').innerText=introSec;} else{hideIntro();}},900);
-function hideIntro(){clearInterval(introTimer); var el=document.getElementById('intro'); el.classList.add('hide'); setTimeout(function(){el.style.display='none';},400);}
-window.addEventListener('scroll',function(){let h=document.documentElement;let p=h.scrollTop/(h.scrollHeight-h.clientHeight)*100;document.getElementById('progress').style.width=p+'%';document.querySelectorAll('.reveal').forEach(function(el){if(el.getBoundingClientRect().top < window.innerHeight-60) el.classList.add('show');});});
+let introDone=false;
+let introTimer=setInterval(function(){if(introDone) return; introSec--; if(introSec>0){let el=document.getElementById('introCount'); if(el) el.innerText=introSec;} else{hideIntro();}},900);
+function hideIntro(){if(introDone) return; introDone=true; clearInterval(introTimer); var el=document.getElementById('intro'); if(!el) return; el.classList.add('hide'); setTimeout(function(){el.style.display='none';},400);}
+function onScrollReveal(){let h=document.documentElement;let max=h.scrollHeight-h.clientHeight;let p=max>0 ? (h.scrollTop/max)*100 : 100;let prog=document.getElementById('progress'); if(prog) prog.style.width=p+'%';document.querySelectorAll('.reveal').forEach(function(el){if(el.getBoundingClientRect().top < window.innerHeight-60) el.classList.add('show');});}
+window.addEventListener('scroll',onScrollReveal,{passive:true});
 setTimeout(function(){document.querySelectorAll('.reveal').forEach(function(el){if(el.getBoundingClientRect().top < window.innerHeight) el.classList.add('show');});},500);
-function updateTime(){let now=new Date();let time=now.toLocaleTimeString('pt-BR',{timeZone:'America/Sao_Paulo'});let date=now.toLocaleDateString('pt-BR',{timeZone:'America/Sao_Paulo',weekday:'long',day:'numeric',month:'long'});let hour=now.getHours();document.getElementById('clockBig').innerText=time;document.getElementById('topClock').innerText=time;document.getElementById('dateBig').innerText='São Paulo • '+date;document.getElementById('footerDate').innerText=date;let open=hour>=8&&hour<23;document.getElementById('onlineStatus').innerText=open?'Online agora':'Respondo cedo';var dot=document.getElementById('liveDot');if(dot){dot.style.background=open?'#25D366':'#FFC107';}document.getElementById('stickyStatus').innerText=open?'Online agora • Só paga depois':'Respondo cedo • Só paga depois';let day=now.getDay();let left=7-day;let c=document.getElementById('countdown');if(left===7){c.innerText='Hoje é o último dia';}else if(left===1){c.innerText='Falta 1 dia';}else{c.innerText='Faltam '+left+' dias';}}
+function updateTime(){try{let now=new Date();let time=now.toLocaleTimeString('pt-BR',{timeZone:'America/Sao_Paulo'});let date=now.toLocaleDateString('pt-BR',{timeZone:'America/Sao_Paulo',weekday:'long',day:'numeric',month:'long'});let hour=now.getHours();let elClock=document.getElementById('clockBig'); if(elClock) elClock.innerText=time;let elTop=document.getElementById('topClock'); if(elTop) elTop.innerText=time;let elDate=document.getElementById('dateBig'); if(elDate) elDate.innerText='São Paulo • '+date;let elFoot=document.getElementById('footerDate'); if(elFoot) elFoot.innerText=date;let open=hour>=8&&hour<23;let elOnline=document.getElementById('onlineStatus'); if(elOnline) elOnline.innerText=open?'Online agora':'Respondo cedo';var dot=document.getElementById('liveDot');if(dot){dot.style.background=open?'#25D366':'#FFC107';}let elSticky=document.getElementById('stickyStatus'); if(elSticky) elSticky.innerText=open?'Online agora • Só paga depois':'Respondo cedo • Só paga depois';let day=now.getDay();let left=7-day;let c=document.getElementById('countdown'); if(c){if(left===7){c.innerText='Hoje é o último dia';}else if(left===1){c.innerText='Falta 1 dia';}else{c.innerText='Faltam '+left+' dias';}}}catch(e){}}
 setInterval(updateTime,1000);updateTime();
-let viewers=12;setInterval(function(){viewers=Math.max(7,Math.min(28,viewers+Math.floor(Math.random()*5)-2));document.getElementById('viewers').innerText=viewers;},3500);
-let lastMin=4;setInterval(function(){lastMin++;if(lastMin>59)lastMin=3;document.getElementById('lastOrder').innerText='há '+lastMin+' min';},60000);
+let viewers=12;setInterval(function(){viewers=Math.max(7,Math.min(28,viewers+Math.floor(Math.random()*5)-2));let v=document.getElementById('viewers'); if(v) v.innerText=viewers;},3500);
+let lastMin=4;setInterval(function(){lastMin++;if(lastMin>59)lastMin=3;let l=document.getElementById('lastOrder'); if(l) l.innerText='há '+lastMin+' min';},60000);
 function simular(){
 let v=document.getElementById('simNome').value.trim();
 let box=document.getElementById('simPreview');
+if(!box) return;
 if(v.length<2){box.style.display='none';return;}
 box.style.display='block';
 document.getElementById('simTitulo').innerText=v;
 document.getElementById('simBtn').href='https://wa.me/5511986789954?text='+encodeURIComponent('Opa Moisés! Testei o simulador com o nome '+v+' e quero meu site por R$150! Pode montar?');
 }
-let quizStep=1; let quizResp=[];
+let quizStep=1; let quizResp=[]; let quizLock=false;
 function quizNext(resposta){
+if(quizLock) return; quizLock=true; setTimeout(function(){quizLock=false;},300);
 quizResp.push(resposta);
 if(quizStep===1){
 quizStep=2;
@@ -363,7 +358,7 @@ document.getElementById('quizBtn').href='https://wa.me/5511986789954?text='+enco
 }
 }
 function quizRestart(){
-quizStep=1; quizResp=[];
+quizStep=1; quizResp=[]; quizLock=false;
 document.getElementById('quizPergunta').style.display='block';
 document.getElementById('quizResult').style.display='none';
 document.getElementById('quizPasso').innerText='PERGUNTA 1 DE 3';
@@ -372,15 +367,17 @@ document.getElementById('quizTitulo').innerText='Qual é o seu negócio?';
 document.getElementById('quizOpts').innerHTML='<button class="quiz-opt" onclick="quizNext(\'Barbearia\')">✂️ Barbearia</button><button class="quiz-opt" onclick="quizNext(\'Confeitaria / Doces\')">🎂 Confeitaria / Doces</button><button class="quiz-opt" onclick="quizNext(\'Salão / Estética\')">💅 Salão / Estética</button><button class="quiz-opt" onclick="quizNext(\'Lanchonete / Loja\')">🍔 Lanchonete / Loja</button>';
 }
 const data={barb:["Barbearia do Seu Bairro","Agenda online, tabela de preços, fotos dos cortes e botão pra agendar direto no WhatsApp. Seu cliente marca sem precisar te ligar.","https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=1000&q=80","Quero%20um%20site%20de%20barbearia","📅 Agenda online","💲 Preços","💬 WhatsApp"],bolo:["Doces da Camila","Fotos dos bolos, cardápio com preços e botão de encomendar. Cliente escolhe, clica e já pede no seu Zap.","https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=1000&q=80","Quero%20um%20site%20de%20confeitaria","🎂 Cardápio","📸 Fotos","💬 Encomenda"],salao:["Studio de Beleza","Serviços, valores, antes e depois e botão pra agendar. Sua agenda cheia sem precisar responder todo mundo.","https://images.unsplash.com/photo-1522337660859-02fbefca4702?w=1000&q=80","Quero%20um%20site%20de%20salao","💅 Serviços","⭐ Antes e depois","📅 Agendar"],lanche:["Lanches do Bairro","Cardápio completo com fotos, botão de pedir agora e seu endereço. Cliente pede em 1 clique.","https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1000&q=80","Quero%20um%20site%20de%20lanchonete","🍔 Cardápio","🛵 Delivery","💬 Pedir agora"],loja:["Loja da Bia","Vitrine com seus produtos, preços e botão de comprar no WhatsApp. Sua loja aberta 24h no celular do cliente.","https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1000&q=80","Quero%20um%20site%20de%20loja","👗 Vitrine","💲 Preços","💬 Comprar"],estetica:["Estética Bella","Procedimentos, valores, antes e depois e botão pra agendar avaliação. Agenda cheia sem esforço.","https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1000&q=80","Quero%20um%20site%20de%20estetica","✨ Procedimentos","⭐ Antes e depois","📅 Agendar"]};
-function show(k,el){document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});if(el)el.classList.add('active');const d=data[k];const img=document.getElementById('pimg');img.style.opacity=0;setTimeout(function(){img.src=d[2];img.style.opacity=1;},140);document.getElementById('ptitle').innerText=d[0];document.getElementById('ptext').innerText=d[1];document.getElementById('pbtn').href='https://wa.me/5511986789954?text='+d[3];document.getElementById('chip1').innerText=d[4];document.getElementById('chip2').innerText=d[5];document.getElementById('chip3').innerText=d[6];}
+function show(k,el){document.querySelectorAll('.tab').forEach(function(b){b.classList.remove('active');});if(el)el.classList.add('active');const d=data[k];if(!d) return;const img=document.getElementById('pimg');img.style.opacity=0;setTimeout(function(){img.src=d[2];img.style.opacity=1;},140);document.getElementById('ptitle').innerText=d[0];document.getElementById('ptext').innerText=d[1];document.getElementById('pbtn').href='https://wa.me/5511986789954?text='+d[3];document.getElementById('chip1').innerText=d[4];document.getElementById('chip2').innerText=d[5];document.getElementById('chip3').innerText=d[6];}
 let total=150;function calc(){total=150;if(document.getElementById('c1').checked)total+=30;if(document.getElementById('c2').checked)total+=20;if(document.getElementById('c3').checked)total+=30;document.getElementById('total').innerText='R$'+total;document.getElementById('calcBtn').innerText='QUERO ESSE PACOTE POR R$'+total+' →';}
 function sendCalc(e){if(e)e.preventDefault();let extras=[];if(document.getElementById('c1').checked)extras.push('Logo simples (+R$30)');if(document.getElementById('c2').checked)extras.push('Bio Instagram (+R$20)');if(document.getElementById('c3').checked)extras.push('Cardápio digital (+R$30)');let msg='Opa Moisés! Quero meu site por R$'+total;if(extras.length){msg+=' com: '+extras.join(', ');}else{msg+=' só o site completo';}msg+='. Pode montar pra mim?';window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');}
-function sendForm(e){if(e)e.preventDefault();let nome=document.getElementById('fNome').value||'Não informou';let neg=document.getElementById('fNegocio').value||'Não informou';let tipo=document.getElementById('fTipo').value;let zap=document.getElementById('fZap').value||'Não informou';let obs=document.getElementById('fObs').value||'Sem detalhes';let msg='NOVO PEDIDO DE SITE\n\nNome: '+nome+'\nNegócio: '+neg+'\nTipo: '+tipo+'\nZap do cliente: '+zap+'\nQuer no site: '+obs+'\n\nQuero meu site por R$150, pode montar?';window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');}
+function sendForm(e){if(e)e.preventDefault();let nome=document.getElementById('fNome').value.trim()||'Não informou';let neg=document.getElementById('fNegocio').value.trim()||'Não informou';let tipo=document.getElementById('fTipo').value;let zap=document.getElementById('fZap').value.trim()||'Não informou';let obs=document.getElementById('fObs').value.trim()||'Sem detalhes';let msg='NOVO PEDIDO DE SITE\n\nNome: '+nome+'\nNegócio: '+neg+'\nTipo: '+tipo+'\nZap do cliente: '+zap+'\nQuer no site: '+obs+'\n\nQuero meu site por R$150, pode montar?';window.open('https://wa.me/5511986789954?text='+encodeURIComponent(msg),'_blank');}
 const depo=[["\"Ficou pronto no mesmo dia. Meus clientes falaram que parecia site de franquia. Já fechei 3 encomendas pelo link.\"","Camila","Confeitaria em SP"],["\"Achei que era golpe por ser barato. Ele mandou antes, eu gostei, aí paguei. Hoje todo mundo agenda por lá.\"","Diego","Barbearia em SP"],["\"Meu movimento dobrou depois que botei o link na bio. Vale cada centavo.\"","Ana","Salão em SP"],["\"Atendimento rápido demais. Mandei de manhã, à noite já tava vendendo.\"","Rafa","Lanchonete em SP"]];
-let ti=0;function setDepo(i){ti=i;document.getElementById('ttext').innerText=depo[ti][0];document.getElementById('tname').innerText=depo[ti][1];document.getElementById('tsub').innerText=depo[ti][2];for(let j=0;j<4;j++)document.getElementById('d'+j).className='dot'+(j===ti?' on':'');}
-setInterval(function(){setDepo((ti+1)%4);},4000);
-function confetti(x,y){let colors=['#FFC107','#25D366','#DD2A7B','#00CFFF','#fff'];for(let i=0;i<24;i++){let c=document.createElement('div');c.className='confetti';c.style.background=colors[i%colors.length];c.style.left=x+'px';c.style.top=y+'px';c.style.transform='translate(-50%,-50%)';document.body.appendChild(c);setTimeout(function(){c.remove();},950);}}
+let ti=0;let depoTimer=null;
+function setDepo(i){ti=i;document.getElementById('ttext').innerText=depo[ti][0];document.getElementById('tname').innerText=depo[ti][1];document.getElementById('tsub').innerText=depo[ti][2];for(let j=0;j<4;j++){let d=document.getElementById('d'+j); if(d) d.className='dot'+(j===ti?' on':'');}restartDepoTimer();}
+function restartDepoTimer(){if(depoTimer) clearInterval(depoTimer); depoTimer=setInterval(function(){setDepo((ti+1)%4);},6000);}
+restartDepoTimer();
+function confetti(x,y){let colors=['#FFC107','#25D366','#DD2A7B','#00CFFF','#ffffff'];for(let i=0;i<22;i++){let c=document.createElement('div');c.className='confetti';c.style.background=colors[i%colors.length];c.style.left=x+'px';c.style.top=y+'px';document.body.appendChild(c);setTimeout(function(){c.remove();},950);}}
 document.addEventListener('click',function(e){let b=e.target.closest('.btn');if(b){let r=b.getBoundingClientRect();confetti(r.left+r.width/2,r.top+10);}});
 </script>
 </body>
-</html>
+  </html>
